@@ -51,7 +51,7 @@ def test_specific_version():
     conn = ConnectorClient(config)
 
     conn.create_service_client(ConnectorServiceName.CertificateService, '6.0.1')
-    
+
     with pytest.raises(Exception):
         conn.create_service_client('CertificateService', '10.0.0')
 
