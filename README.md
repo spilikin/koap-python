@@ -15,6 +15,34 @@
 | *Mutual TLS Auth* |
 | Not implemented yet | 
 
+```bash
+export KONNEKTOR_BASE_URL=https://.../
+export KONNEKTOR_MANDANT_ID=m1
+export KONNEKTOR_CLIENT_SYSTEM_ID=c1
+export KONNEKTOR_WORKPLACE_ID=w1
+export KONNEKTOR_USER_ID=user1
+export KONNEKTOR_AUTH_BASIC_USERNAME=user1
+export KONNEKTOR_AUTH_BASIC_PASSWORD='use strong passwords in production'
+```
+
+Once the environmant variables are set, the `koap.config.ConnectorConfig`can be instantiated without parameters. We make use of [Pydantic Model Config](https://docs.pydantic.dev/latest/usage/model_config/).
+
+```python
+from koap.config import ConnectorConfig
+from koap.client import ConnectorClient
+
+config = ConnectorConfig()
+
+client = ConnectorClient(config)
+
+event_service = client.create_service_client('EventService', '7.2.0')
+
+cards = event_service.GetCards(client.context())
+
+print(cards)
+
+```
+
 ## Configuration in code
 
 ```python
