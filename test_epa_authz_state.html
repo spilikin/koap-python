@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<style>
+.r1 {color: #4876d6; text-decoration-color: #4876d6; font-weight: bold}
+.r2 {font-weight: bold}
+.r3 {color: #403f53; text-decoration-color: #403f53; font-weight: bold}
+.r4 {color: #daaa01; text-decoration-color: #daaa01}
+.r5 {color: #2aa298; text-decoration-color: #2aa298}
+.r6 {color: #403f53; text-decoration-color: #403f53; font-style: italic}
+.r7 {color: #697098; text-decoration-color: #697098; font-weight: bold}
+.r8 {color: #403f53; text-decoration-color: #403f53}
+.r9 {color: #49d0c5; text-decoration-color: #49d0c5; font-weight: bold}
+.r10 {color: #697098; text-decoration-color: #697098}
+.r11 {color: #08916a; text-decoration-color: #08916a; font-weight: bold}
+.r12 {color: #dac26b; text-decoration-color: #dac26b}
+.r13 {color: #5ca7e4; text-decoration-color: #5ca7e4; text-decoration: underline}
+body {
+    color: #403f53;
+    background-color: #ffffff;
+}
+</style>
+</head>
+<html>
+<body>
+    <code>
+        <pre style="font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span class="r1">Services</span><span class="r2">]</span>
+<span class="r3">ConnectorServices</span><span class="r2">(</span>
+    <span class="r4">ProductInformation</span>=<span class="r3">ProductInformation</span><span class="r2">(</span>
+        <span class="r4">ProductTypeInformation</span>=<span class="r3">ProductTypeInformation</span><span class="r2">(</span>
+            <span class="r4">ProductType</span>=<span class="r5">&#x27;Konnektor&#x27;</span>,
+            <span class="r4">ProductTypeVersion</span>=<span class="r5">&#x27;5.53.0&#x27;</span>
+        <span class="r2">)</span>,
+        <span class="r4">ProductIdentification</span>=<span class="r3">ProductIdentification</span><span class="r2">(</span>
+            <span class="r4">ProductVendorID</span>=<span class="r5">&#x27;SECUN&#x27;</span>,
+            <span class="r4">ProductCode</span>=<span class="r5">&#x27;secu_kon&#x27;</span>,
+            <span class="r4">ProductVersion</span>=<span class="r3">ProductVersion</span><span class="r2">(</span>
+                <span class="r4">Local</span>=<span class="r3">LocalProductVersion</span><span class="r2">(</span>
+                    <span class="r4">HWVersion</span>=<span class="r5">&#x27;2.0.0&#x27;</span>,
+                    <span class="r4">FWVersion</span>=<span class="r5">&#x27;5.10.0&#x27;</span>
+                <span class="r2">)</span>
+            <span class="r2">)</span>
+        <span class="r2">)</span>
+    <span class="r2">)</span>,
+    <span class="r4">ServiceInformation</span>=<span class="r3">ServiceInformation</span><span class="r2">(</span>
+        <span class="r4">Service</span>=<span class="r2">[</span>
+            <span class="r3">Service</span><span class="r2">(</span>
+                <span class="r4">Name</span>=<span class="r5">&#x27;SignatureService&#x27;</span>,
+                <span class="r4">Versions</span>=<span class="r2">[</span>
+                    <span class="r3">ServiceVersion</span><span class="r2">(</span>
+                        <span class="r4">TargetNamespace</span>=<span class="r5">&#x27;http://ws.gematik.de/conn/SignatureServ</span>
+<span class="r5">ice/WSDL/v7.4&#x27;</span>,
+                        <span class="r4">Version</span>=<span class="r5">&#x27;7.4.2&#x27;</span>,
+                        <span class="r4">EndpointTLS</span>=<span class="r3">Endpoint</span><span class="r2">(</span>
+                            <span class="r4">Location</span>=<span class="r5">&#x27;https://192.168.1.194:443/ws/SignatureServ</span>
+<span class="r5">ice&#x27;</span>
+                        <span class="r2">)</span>,
+                        <span class="r4">Endpoint</span>=<span class="r6">None</span>
+                    <span class="r2">)</span>,
+                    <span class="r3">ServiceVersion</span><span class="r2">(</span>
+                        <span class="r4">TargetNamespace</span>=<span class="r5">&#x27;http://ws.gematik.de/conn/SignatureServ</span>
+<span class="r5">ice/WSDL/v7.4&#x27;</span>,
+                        <span class="r4">Version</span>=<span class="r5">&#x27;7.4.0&#x27;</span>,
+                        <span class="r4">EndpointTLS</span>=<span class="r3">Endpoint</span><span class="r2">(</span>
+                            <span class="r4">Location</span>=<span class="r5">&#x27;https://192.168.1.194:443/ws/SignatureServ</span>
+<span class="r5">ice&#x27;</span>
+                        <span class="r2">)</span>,
+                        <span class="r4">Endpoint</span>=<span class="r6">None</span>
+                    <span class="r2">)</span>,
+                    <span class="r3">ServiceVersion</span><span class="r2">(</span>
+                        <span class="r4">TargetNamespace</span>=<span class="r5">&#x27;http://ws.gematik.de/conn/SignatureServ</span>
+<span class="r5">ice/WSDL/v7.5&#x27;</span>,
+                        <span class="r4">Version</span>=<span class="r5">&#x27;7.5.5&#x27;</span>,
+                        <span class="r4">EndpointTLS</span>=<span class="r3">Endpoint</span><span class="r2">(</span>
+                            <span class="r4">Location</span>=<span class="r5">&#x27;https://192.168.1.194:443/ws/SignatureServ</span>
+<span class="r5">ice&#x27;</span>
+                        <span class="r2">)</span>,
+                        <span class="r4">Endpoint</span>=<span class="r6">None</span>
+                    <span class="r2">)</span>
+                <span class="r2">]</span>
+            <span class="r2">)</span>,
+            <span class="r3">Service</span><span class="r2">(</span>
+                <span class="r4">Name</span>=<span class="r5">&#x27;EncryptionService&#x27;</span>,
+                <span class="r4">Versions</span>=<span class="r2">[</span>
+                    <span class="r3">ServiceVersion</span><span class="r2">(</span>
+                        <span class="r4">TargetNamespace</span>=<span class="r5">&#x27;http://ws.gematik.de/conn/EncryptionSer</span>
+<span class="r5">vice/WSDL/v6.1&#x27;</span>,
+                        <span class="r4">Version</span>=<span class="r5">&#x27;6.1.1&#x27;</span>,
+                        <span class="r4">EndpointTLS</span>=<span class="r3">Endpoint</span><span class="r2">(</span>
+                            <span class="r4">Location</span>=<span class="r5">&#x27;https://192.168.1.194:443/ws/EncryptionSer</span>
+<span class="r5">vice&#x27;</span>
+                        <span class="r2">)</span>,
+                        <span class="r4">Endpoint</span>=<span class="r6">None</span>
+                    <span class="r2">)</span>,
+                    <span class="r3">ServiceVersion</span><span class="r2">(</span>
+                        <span class="r4">TargetNamespace</span>=<span class="r5">&#x27;http://ws.gematik.de/conn/EncryptionSer</span>
+<span class="r5">vice/WSDL/v6.1&#x27;</span>,
+                        <span class="r4">Version</span>=<span class="r5">&#x27;6.1.0&#x27;</span>,
+                        <span class="r4">EndpointTLS</span>=<span class="r3">Endpoint</span><span class="r2">(</span>
+                            <span class="r4">Location</span>=<span class="r5">&#x27;https://192.168.1.194:443/ws/EncryptionSer</span>
+<span class="r5">vice&#x27;</span>
+                        <span class="r2">)</span>,
+                        <span class="r4">Endpoint</span>=<span class="r6">None</span>
+                    <span class="r2">)</span>
+                <span class="r2">]</span>
+            <span class="r2">)</span>,
+            <span class="r3">Service</span><span class="r2">(</span>
+                <span class="r4">Name</span>=<span class="r5">&#x27;AuthSignatureService&#x27;</span>,
+                <span class="r4">Versions</span>=<span class="r2">[</span>
+                    <span class="r3">ServiceVersion</span><span class="r2">(</span>
+                        <span class="r4">TargetNamespace</span>=<span class="r5">&#x27;http://ws.gematik.de/conn/AuthSignature</span>
+<span class="r5">Service/WSDL/v7.4&#x27;</span>,
+                        <span class="r4">Version</span>=<span class="r5">&#x27;7.4.1&#x27;</span>,
+                        <span class="r4">EndpointTLS</span>=<span class="r3">Endpoint</span><span class="r2">(</span>
+                            <span class="r4">Location</span>=<span class="r5">&#x27;https://192.168.1.194:443/ws/AuthSignature</span>
+<span class="r5">Service&#x27;</span>
+                        <span class="r2">)</span>,
+                        <span class="r4">Endpoint</span>=<span class="r6">None</span>
+                    <span class="r2">)</span>,
+                    <span class="r3">ServiceVersion</span><span class="r2">(</span>
+                        <span class="r4">TargetNamespace</span>=<span class="r5">&#x27;http://ws.gematik.de/conn/AuthSignature</span>
+<span class="r5">Service/WSDL/v7.4&#x27;</span>,
+                        <span class="r4">Version</span>=<span class="r5">&#x27;7.4.0&#x27;</span>,
+                        <span class="r4">EndpointTLS</span>=<span class="r3">Endpoint</span><span class="r2">(</span>
+                            <span class="r4">Location</span>=<span class="r5">&#x27;https://192.168.1.194:443/ws/AuthSignature</span>
+<span class="r5">Service&#x27;</span>
+                        <span class="r2">)</span>,
+                        <span class="r4">Endpoint</span>=<span class="r6">None</span>
+                    <span class="r2">)</span>
+                <span class="r2">]</span>
+            <span class="r2">)</span>,
+            <span class="r3">Service</span><span class="r2">(</span>
+                <span class="r4">Name</span>=<span class="r5">&#x27;EventService&#x27;</span>,
+                <span class="r4">Versions</span>=<span class="r2">[</span>
+                    <span class="r3">ServiceVersion</span><span class="r2">(</span>
+                        <span class="r4">TargetNamespace</span>=<span class="r5">&#x27;http://ws.gematik.de/conn/EventService/</span>
+<span class="r5">WSDL/v7.2&#x27;</span>,
+                        <span class="r4">Version</span>=<span class="r5">&#x27;7.2.0&#x27;</span>,
+                        <span class="r4">EndpointTLS</span>=<span class="r3">Endpoint</span><span class="r2">(</span>
+                            <span class="r4">Location</span>=<span class="r5">&#x27;https://192.168.1.194:443/ws/EventService&#x27;</span>
+                        <span class="r2">)</span>,
+                        <span class="r4">Endpoint</span>=<span class="r6">None</span>
+                    <span class="r2">)</span>
+                <span class="r2">]</span>
+            <span class="r2">)</span>,
+            <span class="r3">Service</span><span class="r2">(</span>
+                <span class="r4">Name</span>=<span class="r5">&#x27;CardService&#x27;</span>,
+                <span class="r4">Versions</span>=<span class="r2">[</span>
+                    <span class="r3">ServiceVersion</span><span class="r2">(</span>
+                        <span class="r4">TargetNamespace</span>=<span class="r5">&#x27;http://ws.gematik.de/conn/CardService/W</span>
+<span class="r5">SDL/v8.1&#x27;</span>,
+                        <span class="r4">Version</span>=<span class="r5">&#x27;8.1.2&#x27;</span>,
+                        <span class="r4">EndpointTLS</span>=<span class="r3">Endpoint</span><span class="r2">(</span>
+                            <span class="r4">Location</span>=<span class="r5">&#x27;https://192.168.1.194:443/ws/CardService&#x27;</span>
+                        <span class="r2">)</span>,
+                        <span class="r4">Endpoint</span>=<span class="r6">None</span>
+                    <span class="r2">)</span>,
+                    <span class="r3">ServiceVersion</span><span class="r2">(</span>
+                        <span class="r4">TargetNamespace</span>=<span class="r5">&#x27;http://ws.gematik.de/conn/CardService/W</span>
+<span class="r5">SDL/v8.1&#x27;</span>,
+                        <span class="r4">Version</span>=<span class="r5">&#x27;8.1.1&#x27;</span>,
+                        <span class="r4">EndpointTLS</span>=<span class="r3">Endpoint</span><span class="r2">(</span>
+                            <span class="r4">Location</span>=<span class="r5">&#x27;https://192.168.1.194:443/ws/CardService&#x27;</span>
+                        <span class="r2">)</span>,
+                        <span class="r4">Endpoint</span>=<span class="r6">None</span>
+                    <span class="r2">)</span>,
+                    <span class="r3">ServiceVersion</span><span class="r2">(</span>
+                        <span class="r4">TargetNamespace</span>=<span class="r5">&#x27;http://ws.gematik.de/conn/CardService/W</span>
+<span class="r5">SDL/v8.1&#x27;</span>,
+                        <span class="r4">Version</span>=<span class="r5">&#x27;8.1.0&#x27;</span>,
+                        <span class="r4">EndpointTLS</span>=<span class="r3">Endpoint</span><span class="r2">(</span>
+                            <span class="r4">Location</span>=<span class="r5">&#x27;https://192.168.1.194:443/ws/CardService&#x27;</span>
+                        <span class="r2">)</span>,
+                        <span class="r4">Endpoint</span>=<span class="r6">None</span>
+                    <span class="r2">)</span>
+                <span class="r2">]</span>
+            <span class="r2">)</span>,
+            <span class="r3">Service</span><span class="r2">(</span>
+                <span class="r4">Name</span>=<span class="r5">&#x27;CertificateService&#x27;</span>,
+                <span class="r4">Versions</span>=<span class="r2">[</span>
+                    <span class="r3">ServiceVersion</span><span class="r2">(</span>
+                        <span class="r4">TargetNamespace</span>=<span class="r5">&#x27;http://ws.gematik.de/conn/CertificateSe</span>
+<span class="r5">rvice/WSDL/v6.0&#x27;</span>,
+                        <span class="r4">Version</span>=<span class="r5">&#x27;6.0.1&#x27;</span>,
+                        <span class="r4">EndpointTLS</span>=<span class="r3">Endpoint</span><span class="r2">(</span>
+                            <span class="r4">Location</span>=<span class="r5">&#x27;https://192.168.1.194:443/ws/CertificateSe</span>
+<span class="r5">rvice&#x27;</span>
+                        <span class="r2">)</span>,
+                        <span class="r4">Endpoint</span>=<span class="r6">None</span>
+                    <span class="r2">)</span>,
+                    <span class="r3">ServiceVersion</span><span class="r2">(</span>
+                        <span class="r4">TargetNamespace</span>=<span class="r5">&#x27;http://ws.gematik.de/conn/CertificateSe</span>
+<span class="r5">rvice/WSDL/v6.0&#x27;</span>,
+                        <span class="r4">Version</span>=<span class="r5">&#x27;6.0.0&#x27;</span>,
+                        <span class="r4">EndpointTLS</span>=<span class="r3">Endpoint</span><span class="r2">(</span>
+                            <span class="r4">Location</span>=<span class="r5">&#x27;https://192.168.1.194:443/ws/CertificateSe</span>
+<span class="r5">rvice&#x27;</span>
+                        <span class="r2">)</span>,
+                        <span class="r4">Endpoint</span>=<span class="r6">None</span>
+                    <span class="r2">)</span>
+                <span class="r2">]</span>
+            <span class="r2">)</span>,
+            <span class="r3">Service</span><span class="r2">(</span>
+                <span class="r4">Name</span>=<span class="r5">&#x27;CardTerminalService&#x27;</span>,
+                <span class="r4">Versions</span>=<span class="r2">[</span>
+                    <span class="r3">ServiceVersion</span><span class="r2">(</span>
+                        <span class="r4">TargetNamespace</span>=<span class="r5">&#x27;http://ws.gematik.de/conn/CardTerminalS</span>
+<span class="r5">ervice/WSDL/v1.1&#x27;</span>,
+                        <span class="r4">Version</span>=<span class="r5">&#x27;1.1.0&#x27;</span>,
+                        <span class="r4">EndpointTLS</span>=<span class="r3">Endpoint</span><span class="r2">(</span>
+                            <span class="r4">Location</span>=<span class="r5">&#x27;https://192.168.1.194:443/ws/CardTerminalS</span>
+<span class="r5">ervice&#x27;</span>
+                        <span class="r2">)</span>,
+                        <span class="r4">Endpoint</span>=<span class="r6">None</span>
+                    <span class="r2">)</span>
+                <span class="r2">]</span>
+            <span class="r2">)</span>,
+            <span class="r3">Service</span><span class="r2">(</span>
+                <span class="r4">Name</span>=<span class="r5">&#x27;AMTSService&#x27;</span>,
+                <span class="r4">Versions</span>=<span class="r2">[</span>
+                    <span class="r3">ServiceVersion</span><span class="r2">(</span>
+                        <span class="r4">TargetNamespace</span>=<span class="r5">&#x27;http://ws.gematik.de/conn/amts/AMTSServ</span>
+<span class="r5">ice/v1.0&#x27;</span>,
+                        <span class="r4">Version</span>=<span class="r5">&#x27;1.0.0&#x27;</span>,
+                        <span class="r4">EndpointTLS</span>=<span class="r3">Endpoint</span><span class="r2">(</span>
+                            <span class="r4">Location</span>=<span class="r5">&#x27;https://192.168.1.194:443/ws/AMTSService&#x27;</span>
+                        <span class="r2">)</span>,
+                        <span class="r4">Endpoint</span>=<span class="r6">None</span>
+                    <span class="r2">)</span>
+                <span class="r2">]</span>
+            <span class="r2">)</span>,
+            <span class="r3">Service</span><span class="r2">(</span>
+                <span class="r4">Name</span>=<span class="r5">&#x27;PHRManagementService&#x27;</span>,
+                <span class="r4">Versions</span>=<span class="r2">[</span>
+                    <span class="r3">ServiceVersion</span><span class="r2">(</span>
+                        <span class="r4">TargetNamespace</span>=<span class="r5">&#x27;http://ws.gematik.de/conn/phrs/PHRManag</span>
+<span class="r5">ementService/WSDL/v2.5&#x27;</span>,
+                        <span class="r4">Version</span>=<span class="r5">&#x27;2.5.1&#x27;</span>,
+                        <span class="r4">EndpointTLS</span>=<span class="r3">Endpoint</span><span class="r2">(</span>
+                            <span class="r4">Location</span>=<span class="r5">&#x27;https://192.168.1.194:443/ws/PHRManagement</span>
+<span class="r5">Service&#x27;</span>
+                        <span class="r2">)</span>,
+                        <span class="r4">Endpoint</span>=<span class="r6">None</span>
+                    <span class="r2">)</span>,
+                    <span class="r3">ServiceVersion</span><span class="r2">(</span>
+                        <span class="r4">TargetNamespace</span>=<span class="r5">&#x27;http://ws.gematik.de/conn/phrs/PHRManag</span>
+<span class="r5">ementService/WSDL/v2.5&#x27;</span>,
+                        <span class="r4">Version</span>=<span class="r5">&#x27;2.5.0&#x27;</span>,
+                        <span class="r4">EndpointTLS</span>=<span class="r3">Endpoint</span><span class="r2">(</span>
+                            <span class="r4">Location</span>=<span class="r5">&#x27;https://192.168.1.194:443/ws/PHRManagement</span>
+<span class="r5">Service&#x27;</span>
+                        <span class="r2">)</span>,
+                        <span class="r4">Endpoint</span>=<span class="r6">None</span>
+                    <span class="r2">)</span>,
+                    <span class="r3">ServiceVersion</span><span class="r2">(</span>
+                        <span class="r4">TargetNamespace</span>=<span class="r5">&#x27;http://ws.gematik.de/conn/phrs/PHRManag</span>
+<span class="r5">ementService/WSDL/v1.3&#x27;</span>,
+                        <span class="r4">Version</span>=<span class="r5">&#x27;1.3.0&#x27;</span>,
+                        <span class="r4">EndpointTLS</span>=<span class="r3">Endpoint</span><span class="r2">(</span>
+                            <span class="r4">Location</span>=<span class="r5">&#x27;https://192.168.1.194:443/ws/PHRManagement</span>
+<span class="r5">Service&#x27;</span>
+                        <span class="r2">)</span>,
+                        <span class="r4">Endpoint</span>=<span class="r6">None</span>
+                    <span class="r2">)</span>,
+                    <span class="r3">ServiceVersion</span><span class="r2">(</span>
+                        <span class="r4">TargetNamespace</span>=<span class="r5">&#x27;http://ws.gematik.de/conn/phrs/PHRManag</span>
+<span class="r5">ementService/WSDL/v2.0&#x27;</span>,
+                        <span class="r4">Version</span>=<span class="r5">&#x27;2.0.0&#x27;</span>,
+                        <span class="r4">EndpointTLS</span>=<span class="r3">Endpoint</span><span class="r2">(</span>
+                            <span class="r4">Location</span>=<span class="r5">&#x27;https://192.168.1.194:443/ws/PHRManagement</span>
+<span class="r5">Service&#x27;</span>
+                        <span class="r2">)</span>,
+                        <span class="r4">Endpoint</span>=<span class="r6">None</span>
+                    <span class="r2">)</span>,
+                    <span class="r3">ServiceVersion</span><span class="r2">(</span>
+                        <span class="r4">TargetNamespace</span>=<span class="r5">&#x27;http://ws.gematik.de/conn/phrs/PHRManag</span>
+<span class="r5">ementService/WSDL/v2.0&#x27;</span>,
+                        <span class="r4">Version</span>=<span class="r5">&#x27;2.0.1&#x27;</span>,
+                        <span class="r4">EndpointTLS</span>=<span class="r3">Endpoint</span><span class="r2">(</span>
+                            <span class="r4">Location</span>=<span class="r5">&#x27;https://192.168.1.194:443/ws/PHRManagement</span>
+<span class="r5">Service&#x27;</span>
+                        <span class="r2">)</span>,
+                        <span class="r4">Endpoint</span>=<span class="r6">None</span>
+                    <span class="r2">)</span>
+                <span class="r2">]</span>
+            <span class="r2">)</span>,
+            <span class="r3">Service</span><span class="r2">(</span>
+                <span class="r4">Name</span>=<span class="r5">&#x27;PHRService&#x27;</span>,
+                <span class="r4">Versions</span>=<span class="r2">[</span>
+                    <span class="r3">ServiceVersion</span><span class="r2">(</span>
+                        <span class="r4">TargetNamespace</span>=<span class="r5">&#x27;http://ws.gematik.de/conn/phrs/PHRServi</span>
+<span class="r5">ce/WSDL/v1.3&#x27;</span>,
+                        <span class="r4">Version</span>=<span class="r5">&#x27;1.3.0&#x27;</span>,
+                        <span class="r4">EndpointTLS</span>=<span class="r3">Endpoint</span><span class="r2">(</span>
+                            <span class="r4">Location</span>=<span class="r5">&#x27;https://192.168.1.194:443/ws/PHRService&#x27;</span>
+                        <span class="r2">)</span>,
+                        <span class="r4">Endpoint</span>=<span class="r6">None</span>
+                    <span class="r2">)</span>,
+                    <span class="r3">ServiceVersion</span><span class="r2">(</span>
+                        <span class="r4">TargetNamespace</span>=<span class="r5">&#x27;http://ws.gematik.de/conn/phrs/PHRServi</span>
+<span class="r5">ce/WSDL/v2.0&#x27;</span>,
+                        <span class="r4">Version</span>=<span class="r5">&#x27;2.0.1&#x27;</span>,
+                        <span class="r4">EndpointTLS</span>=<span class="r3">Endpoint</span><span class="r2">(</span>
+                            <span class="r4">Location</span>=<span class="r5">&#x27;https://192.168.1.194:443/ws/PHRService&#x27;</span>
+                        <span class="r2">)</span>,
+                        <span class="r4">Endpoint</span>=<span class="r6">None</span>
+                    <span class="r2">)</span>
+                <span class="r2">]</span>
+            <span class="r2">)</span>,
+            <span class="r3">Service</span><span class="r2">(</span>
+                <span class="r4">Name</span>=<span class="r5">&#x27;DPEService&#x27;</span>,
+                <span class="r4">Versions</span>=<span class="r2">[</span>
+                    <span class="r3">ServiceVersion</span><span class="r2">(</span>
+                        <span class="r4">TargetNamespace</span>=<span class="r5">&#x27;http://ws.gematik.de/conn/nfds/DPEServi</span>
+<span class="r5">ce/WSDL/v1.0&#x27;</span>,
+                        <span class="r4">Version</span>=<span class="r5">&#x27;1.0.0&#x27;</span>,
+                        <span class="r4">EndpointTLS</span>=<span class="r3">Endpoint</span><span class="r2">(</span>
+                            <span class="r4">Location</span>=<span class="r5">&#x27;https://192.168.1.194:443/ws/DPEService&#x27;</span>
+                        <span class="r2">)</span>,
+                        <span class="r4">Endpoint</span>=<span class="r6">None</span>
+                    <span class="r2">)</span>
+                <span class="r2">]</span>
+            <span class="r2">)</span>,
+            <span class="r3">Service</span><span class="r2">(</span>
+                <span class="r4">Name</span>=<span class="r5">&#x27;NFDService&#x27;</span>,
+                <span class="r4">Versions</span>=<span class="r2">[</span>
+                    <span class="r3">ServiceVersion</span><span class="r2">(</span>
+                        <span class="r4">TargetNamespace</span>=<span class="r5">&#x27;http://ws.gematik.de/conn/nfds/NFDServi</span>
+<span class="r5">ce/WSDL/v1.0&#x27;</span>,
+                        <span class="r4">Version</span>=<span class="r5">&#x27;1.0.0&#x27;</span>,
+                        <span class="r4">EndpointTLS</span>=<span class="r3">Endpoint</span><span class="r2">(</span>
+                            <span class="r4">Location</span>=<span class="r5">&#x27;https://192.168.1.194:443/ws/NFDService&#x27;</span>
+                        <span class="r2">)</span>,
+                        <span class="r4">Endpoint</span>=<span class="r6">None</span>
+                    <span class="r2">)</span>
+                <span class="r2">]</span>
+            <span class="r2">)</span>,
+            <span class="r3">Service</span><span class="r2">(</span>
+                <span class="r4">Name</span>=<span class="r5">&#x27;VSDService&#x27;</span>,
+                <span class="r4">Versions</span>=<span class="r2">[</span>
+                    <span class="r3">ServiceVersion</span><span class="r2">(</span>
+                        <span class="r4">TargetNamespace</span>=<span class="r5">&#x27;http://ws.gematik.de/conn/vsds/VSDServi</span>
+<span class="r5">ce/v5.2&#x27;</span>,
+                        <span class="r4">Version</span>=<span class="r5">&#x27;5.2.0&#x27;</span>,
+                        <span class="r4">EndpointTLS</span>=<span class="r3">Endpoint</span><span class="r2">(</span>
+                            <span class="r4">Location</span>=<span class="r5">&#x27;https://192.168.1.194:443/ws/VSDService&#x27;</span>
+                        <span class="r2">)</span>,
+                        <span class="r4">Endpoint</span>=<span class="r6">None</span>
+                    <span class="r2">)</span>
+                <span class="r2">]</span>
+            <span class="r2">)</span>,
+            <span class="r3">Service</span><span class="r2">(</span>
+                <span class="r4">Name</span>=<span class="r5">&#x27;KVKService&#x27;</span>,
+                <span class="r4">Versions</span>=<span class="r2">[</span>
+                    <span class="r3">ServiceVersion</span><span class="r2">(</span>
+                        <span class="r4">TargetNamespace</span>=<span class="r5">&#x27;http://ws.gematik.de/conn/vsds/KvkServi</span>
+<span class="r5">ce/v4.0&#x27;</span>,
+                        <span class="r4">Version</span>=<span class="r5">&#x27;4.0.0&#x27;</span>,
+                        <span class="r4">EndpointTLS</span>=<span class="r3">Endpoint</span><span class="r2">(</span>
+                            <span class="r4">Location</span>=<span class="r5">&#x27;https://192.168.1.194:443/ws/KVKService&#x27;</span>
+                        <span class="r2">)</span>,
+                        <span class="r4">Endpoint</span>=<span class="r6">None</span>
+                    <span class="r2">)</span>
+                <span class="r2">]</span>
+            <span class="r2">)</span>
+        <span class="r2">]</span>
+    <span class="r2">)</span>
+<span class="r2">)</span>
+Request:
+<span class="r2">&lt;</span><span class="r7">soap-env:Envelope</span><span class="r8"> xmlns:soap-</span><span class="r4">env</span><span class="r8">=</span><span class="r5">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span><span class="r2">&gt;</span>
+  <span class="r2">&lt;</span><span class="r7">soap-env:Body</span><span class="r2">&gt;</span>
+    <span class="r2">&lt;</span><span class="r7">ns0:GetCards</span><span class="r8"> xmlns:</span><span class="r4">ns0</span><span class="r8">=</span><span class="r5">&quot;http://ws.gematik.de/conn/EventService/v7.2&quot;</span><span class="r8"> </span>
+<span class="r8">mandant-</span><span class="r4">wide</span><span class="r8">=</span><span class="r5">&quot;false&quot;</span><span class="r2">&gt;</span>
+      <span class="r2">&lt;</span><span class="r7">ns</span><span class="r9">1:C</span><span class="r7">ontext</span><span class="r8"> xmlns:</span><span class="r4">ns1</span><span class="r8">=</span><span class="r5">&quot;http://ws.gematik.de/conn/ConnectorContext/v2.0&quot;</span><span class="r2">&gt;</span>
+        <span class="r2">&lt;</span><span class="r7">ns2:MandantId</span><span class="r8"> </span>
+<span class="r8">xmlns:</span><span class="r4">ns2</span><span class="r8">=</span><span class="r5">&quot;http://ws.gematik.de/conn/ConnectorCommon/v5.0&quot;</span><span class="r2">&gt;</span>M1<span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns2</span><span class="r8">:MandantId</span><span class="r2">&gt;</span>
+        <span class="r2">&lt;</span><span class="r7">ns</span><span class="r9">3:C</span><span class="r7">lientSystemId</span><span class="r8"> </span>
+<span class="r8">xmlns:</span><span class="r4">ns3</span><span class="r8">=</span><span class="r5">&quot;http://ws.gematik.de/conn/ConnectorCommon/v5.0&quot;</span><span class="r2">&gt;</span>C1<span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns3</span><span class="r8">:ClientSystemI</span>
+<span class="r8">d</span><span class="r2">&gt;</span>
+        <span class="r2">&lt;</span><span class="r7">ns4:WorkplaceId</span><span class="r8"> </span>
+<span class="r8">xmlns:</span><span class="r4">ns4</span><span class="r8">=</span><span class="r5">&quot;http://ws.gematik.de/conn/ConnectorCommon/v5.0&quot;</span><span class="r2">&gt;</span>A1<span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns4</span><span class="r8">:WorkplaceId</span><span class="r2">&gt;</span>
+        <span class="r2">&lt;</span><span class="r7">ns5:UserId</span><span class="r8"> </span>
+<span class="r8">xmlns:</span><span class="r4">ns5</span><span class="r8">=</span><span class="r5">&quot;http://ws.gematik.de/conn/ConnectorCommon/v5.0&quot;</span><span class="r2">&gt;</span>user1<span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:UserId</span><span class="r2">&gt;</span>
+      <span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns1</span><span class="r8">:Context</span><span class="r2">&gt;</span>
+    <span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns0</span><span class="r8">:GetCards</span><span class="r2">&gt;</span>
+  <span class="r2">&lt;</span><span class="r8">/</span><span class="r10">soap-env</span><span class="r8">:Body</span><span class="r2">&gt;</span>
+<span class="r2">&lt;</span><span class="r8">/</span><span class="r10">soap-env</span><span class="r8">:Envelope</span><span class="r2">&gt;</span>
+
+Response:
+<span class="r2">&lt;</span><span class="r7">SOAP-ENV:Envelope</span><span class="r8"> xmlns:SOAP-</span><span class="r4">ENV</span><span class="r8">=</span><span class="r5">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span><span class="r2">&gt;</span>
+  <span class="r2">&lt;</span><span class="r7">SOAP-ENV:Header</span><span class="r8">/</span><span class="r2">&gt;</span>
+  <span class="r2">&lt;</span><span class="r7">SOAP-ENV:Body</span><span class="r2">&gt;</span>
+    <span class="r2">&lt;</span><span class="r7">ns6:GetCardsResponse</span><span class="r8"> </span>
+<span class="r8">xmlns:</span><span class="r4">ns2</span><span class="r8">=</span><span class="r5">&quot;http://ws.gematik.de/conn/ConnectorCommon/v5.0&quot;</span><span class="r8"> </span>
+<span class="r8">xmlns:</span><span class="r4">ns3</span><span class="r8">=</span><span class="r5">&quot;http://ws.gematik.de/tel/error/v2.0&quot;</span><span class="r8"> </span>
+<span class="r8">xmlns:</span><span class="r4">ns4</span><span class="r8">=</span><span class="r5">&quot;http://ws.gematik.de/conn/CardServiceCommon/v2.0&quot;</span><span class="r8"> </span>
+<span class="r8">xmlns:</span><span class="r4">ns5</span><span class="r8">=</span><span class="r5">&quot;http://ws.gematik.de/conn/CardService/v8.1&quot;</span><span class="r8"> </span>
+<span class="r8">xmlns:</span><span class="r4">ns6</span><span class="r8">=</span><span class="r5">&quot;http://ws.gematik.de/conn/EventService/v7.2&quot;</span><span class="r2">&gt;</span>
+      <span class="r2">&lt;</span><span class="r7">ns2:Status</span><span class="r2">&gt;</span>
+        <span class="r2">&lt;</span><span class="r7">ns2:Result</span><span class="r2">&gt;</span>OK<span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns2</span><span class="r8">:Result</span><span class="r2">&gt;</span>
+      <span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns2</span><span class="r8">:Status</span><span class="r2">&gt;</span>
+      <span class="r2">&lt;</span><span class="r7">ns</span><span class="r9">5:Ca</span><span class="r7">rds</span><span class="r2">&gt;</span>
+        <span class="r2">&lt;</span><span class="r7">ns</span><span class="r9">5:Ca</span><span class="r7">rd</span><span class="r2">&gt;</span>
+          <span class="r2">&lt;</span><span class="r7">ns</span><span class="r9">2:Ca</span><span class="r7">rdHandle</span><span class="r2">&gt;</span>EGK-<span class="r11">11</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns2</span><span class="r8">:CardHandle</span><span class="r2">&gt;</span>
+          <span class="r2">&lt;</span><span class="r7">ns</span><span class="r9">4:Ca</span><span class="r7">rdType</span><span class="r2">&gt;</span>EGK<span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns4</span><span class="r8">:CardType</span><span class="r2">&gt;</span>
+          <span class="r2">&lt;</span><span class="r7">ns</span><span class="r9">5:Ca</span><span class="r7">rdVersion</span><span class="r2">&gt;</span>
+            <span class="r2">&lt;</span><span class="r7">ns</span><span class="r9">5:C</span><span class="r7">OSVersion</span><span class="r2">&gt;</span>
+              <span class="r2">&lt;</span><span class="r7">ns5:Major</span><span class="r2">&gt;</span><span class="r11">4</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:Major</span><span class="r2">&gt;</span>
+              <span class="r2">&lt;</span><span class="r7">ns5:Minor</span><span class="r2">&gt;</span><span class="r11">3</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:Minor</span><span class="r2">&gt;</span>
+              <span class="r2">&lt;</span><span class="r7">ns5:Revision</span><span class="r2">&gt;</span><span class="r11">0</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:Revision</span><span class="r2">&gt;</span>
+            <span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:COSVersion</span><span class="r2">&gt;</span>
+            <span class="r2">&lt;</span><span class="r7">ns5:ObjectSystemVersion</span><span class="r2">&gt;</span>
+              <span class="r2">&lt;</span><span class="r7">ns5:Major</span><span class="r2">&gt;</span><span class="r11">4</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:Major</span><span class="r2">&gt;</span>
+              <span class="r2">&lt;</span><span class="r7">ns5:Minor</span><span class="r2">&gt;</span><span class="r11">5</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:Minor</span><span class="r2">&gt;</span>
+              <span class="r2">&lt;</span><span class="r7">ns5:Revision</span><span class="r2">&gt;</span><span class="r11">2</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:Revision</span><span class="r2">&gt;</span>
+            <span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:ObjectSystemVersion</span><span class="r2">&gt;</span>
+            <span class="r2">&lt;</span><span class="r7">ns5:LoggingVersion</span><span class="r2">&gt;</span>
+              <span class="r2">&lt;</span><span class="r7">ns5:Major</span><span class="r2">&gt;</span><span class="r11">1</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:Major</span><span class="r2">&gt;</span>
+              <span class="r2">&lt;</span><span class="r7">ns5:Minor</span><span class="r2">&gt;</span><span class="r11">0</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:Minor</span><span class="r2">&gt;</span>
+              <span class="r2">&lt;</span><span class="r7">ns5:Revision</span><span class="r2">&gt;</span><span class="r11">0</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:Revision</span><span class="r2">&gt;</span>
+            <span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:LoggingVersion</span><span class="r2">&gt;</span>
+            <span class="r2">&lt;</span><span class="r7">ns</span><span class="r9">5:A</span><span class="r7">TRVersion</span><span class="r2">&gt;</span>
+              <span class="r2">&lt;</span><span class="r7">ns5:Major</span><span class="r2">&gt;</span><span class="r11">2</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:Major</span><span class="r2">&gt;</span>
+              <span class="r2">&lt;</span><span class="r7">ns5:Minor</span><span class="r2">&gt;</span><span class="r11">0</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:Minor</span><span class="r2">&gt;</span>
+              <span class="r2">&lt;</span><span class="r7">ns5:Revision</span><span class="r2">&gt;</span><span class="r11">0</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:Revision</span><span class="r2">&gt;</span>
+            <span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:ATRVersion</span><span class="r2">&gt;</span>
+            <span class="r2">&lt;</span><span class="r7">ns5:GDOVersion</span><span class="r2">&gt;</span>
+              <span class="r2">&lt;</span><span class="r7">ns5:Major</span><span class="r2">&gt;</span><span class="r11">1</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:Major</span><span class="r2">&gt;</span>
+              <span class="r2">&lt;</span><span class="r7">ns5:Minor</span><span class="r2">&gt;</span><span class="r11">0</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:Minor</span><span class="r2">&gt;</span>
+              <span class="r2">&lt;</span><span class="r7">ns5:Revision</span><span class="r2">&gt;</span><span class="r11">0</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:Revision</span><span class="r2">&gt;</span>
+            <span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:GDOVersion</span><span class="r2">&gt;</span>
+          <span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:CardVersion</span><span class="r2">&gt;</span>
+          <span class="r2">&lt;</span><span class="r7">ns4:Iccsn</span><span class="r2">&gt;</span><span class="r11">80276883110000113345</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns4</span><span class="r8">:Iccsn</span><span class="r2">&gt;</span>
+          <span class="r2">&lt;</span><span class="r7">ns</span><span class="r9">4:C</span><span class="r7">tId</span><span class="r2">&gt;</span><span class="r12">974e4b1d-cd76-4d05-abe2-1eaac2fa9482</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns4</span><span class="r8">:CtId</span><span class="r2">&gt;</span>
+          <span class="r2">&lt;</span><span class="r7">ns4:SlotId</span><span class="r2">&gt;</span><span class="r11">1</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns4</span><span class="r8">:SlotId</span><span class="r2">&gt;</span>
+          <span class="r2">&lt;</span><span class="r7">ns5:InsertTime</span><span class="r2">&gt;</span><span class="r11">2023</span>-<span class="r11">05</span>-29T<span class="r9">13:30:53</span>.681Z<span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:InsertTime</span><span class="r2">&gt;</span>
+          <span class="r2">&lt;</span><span class="r7">ns</span><span class="r9">5:Ca</span><span class="r7">rdHolderName</span><span class="r2">&gt;</span>Alexander Graf von 
+BurgundTEST-ONLY<span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:CardHolderName</span><span class="r2">&gt;</span>
+          <span class="r2">&lt;</span><span class="r7">ns5:Kvnr</span><span class="r2">&gt;</span>X110476138<span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:Kvnr</span><span class="r2">&gt;</span>
+          <span class="r2">&lt;</span><span class="r7">ns</span><span class="r9">5:Ce</span><span class="r7">rtificateExpirationDate</span><span class="r2">&gt;</span><span class="r11">2025</span>-<span class="r11">01</span>-22Z<span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:CertificateExpirationD</span>
+<span class="r8">ate</span><span class="r2">&gt;</span>
+        <span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:Card</span><span class="r2">&gt;</span>
+        <span class="r2">&lt;</span><span class="r7">ns</span><span class="r9">5:Ca</span><span class="r7">rd</span><span class="r2">&gt;</span>
+          <span class="r2">&lt;</span><span class="r7">ns</span><span class="r9">2:Ca</span><span class="r7">rdHandle</span><span class="r2">&gt;</span>SMC-B-<span class="r11">8</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns2</span><span class="r8">:CardHandle</span><span class="r2">&gt;</span>
+          <span class="r2">&lt;</span><span class="r7">ns</span><span class="r9">4:Ca</span><span class="r7">rdType</span><span class="r2">&gt;</span>SMC-B<span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns4</span><span class="r8">:CardType</span><span class="r2">&gt;</span>
+          <span class="r2">&lt;</span><span class="r7">ns</span><span class="r9">5:Ca</span><span class="r7">rdVersion</span><span class="r2">&gt;</span>
+            <span class="r2">&lt;</span><span class="r7">ns</span><span class="r9">5:C</span><span class="r7">OSVersion</span><span class="r2">&gt;</span>
+              <span class="r2">&lt;</span><span class="r7">ns5:Major</span><span class="r2">&gt;</span><span class="r11">4</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:Major</span><span class="r2">&gt;</span>
+              <span class="r2">&lt;</span><span class="r7">ns5:Minor</span><span class="r2">&gt;</span><span class="r11">3</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:Minor</span><span class="r2">&gt;</span>
+              <span class="r2">&lt;</span><span class="r7">ns5:Revision</span><span class="r2">&gt;</span><span class="r11">0</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:Revision</span><span class="r2">&gt;</span>
+            <span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:COSVersion</span><span class="r2">&gt;</span>
+            <span class="r2">&lt;</span><span class="r7">ns5:ObjectSystemVersion</span><span class="r2">&gt;</span>
+              <span class="r2">&lt;</span><span class="r7">ns5:Major</span><span class="r2">&gt;</span><span class="r11">4</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:Major</span><span class="r2">&gt;</span>
+              <span class="r2">&lt;</span><span class="r7">ns5:Minor</span><span class="r2">&gt;</span><span class="r11">3</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:Minor</span><span class="r2">&gt;</span>
+              <span class="r2">&lt;</span><span class="r7">ns5:Revision</span><span class="r2">&gt;</span><span class="r11">0</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:Revision</span><span class="r2">&gt;</span>
+            <span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:ObjectSystemVersion</span><span class="r2">&gt;</span>
+            <span class="r2">&lt;</span><span class="r7">ns</span><span class="r9">5:A</span><span class="r7">TRVersion</span><span class="r2">&gt;</span>
+              <span class="r2">&lt;</span><span class="r7">ns5:Major</span><span class="r2">&gt;</span><span class="r11">2</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:Major</span><span class="r2">&gt;</span>
+              <span class="r2">&lt;</span><span class="r7">ns5:Minor</span><span class="r2">&gt;</span><span class="r11">0</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:Minor</span><span class="r2">&gt;</span>
+              <span class="r2">&lt;</span><span class="r7">ns5:Revision</span><span class="r2">&gt;</span><span class="r11">0</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:Revision</span><span class="r2">&gt;</span>
+            <span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:ATRVersion</span><span class="r2">&gt;</span>
+            <span class="r2">&lt;</span><span class="r7">ns5:GDOVersion</span><span class="r2">&gt;</span>
+              <span class="r2">&lt;</span><span class="r7">ns5:Major</span><span class="r2">&gt;</span><span class="r11">1</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:Major</span><span class="r2">&gt;</span>
+              <span class="r2">&lt;</span><span class="r7">ns5:Minor</span><span class="r2">&gt;</span><span class="r11">0</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:Minor</span><span class="r2">&gt;</span>
+              <span class="r2">&lt;</span><span class="r7">ns5:Revision</span><span class="r2">&gt;</span><span class="r11">0</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:Revision</span><span class="r2">&gt;</span>
+            <span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:GDOVersion</span><span class="r2">&gt;</span>
+          <span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:CardVersion</span><span class="r2">&gt;</span>
+          <span class="r2">&lt;</span><span class="r7">ns4:Iccsn</span><span class="r2">&gt;</span><span class="r11">80276883110000096089</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns4</span><span class="r8">:Iccsn</span><span class="r2">&gt;</span>
+          <span class="r2">&lt;</span><span class="r7">ns</span><span class="r9">4:C</span><span class="r7">tId</span><span class="r2">&gt;</span><span class="r12">974e4b1d-cd76-4d05-abe2-1eaac2fa9482</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns4</span><span class="r8">:CtId</span><span class="r2">&gt;</span>
+          <span class="r2">&lt;</span><span class="r7">ns4:SlotId</span><span class="r2">&gt;</span><span class="r11">2</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns4</span><span class="r8">:SlotId</span><span class="r2">&gt;</span>
+          <span class="r2">&lt;</span><span class="r7">ns5:InsertTime</span><span class="r2">&gt;</span><span class="r11">2023</span>-<span class="r11">05</span>-28T<span class="r9">13:23:33</span>.177Z<span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:InsertTime</span><span class="r2">&gt;</span>
+          <span class="r2">&lt;</span><span class="r7">ns</span><span class="r9">5:Ca</span><span class="r7">rdHolderName</span><span class="r2">&gt;</span>Praxis Simon Freiherr 
+&amp;#<span class="r11">214</span>;zdemirTEST-ONLY<span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:CardHolderName</span><span class="r2">&gt;</span>
+          <span class="r2">&lt;</span><span class="r7">ns</span><span class="r9">5:Ce</span><span class="r7">rtificateExpirationDate</span><span class="r2">&gt;</span><span class="r11">2023</span>-<span class="r11">11</span>-15Z<span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:CertificateExpirationD</span>
+<span class="r8">ate</span><span class="r2">&gt;</span>
+        <span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:Card</span><span class="r2">&gt;</span>
+        <span class="r2">&lt;</span><span class="r7">ns</span><span class="r9">5:Ca</span><span class="r7">rd</span><span class="r2">&gt;</span>
+          <span class="r2">&lt;</span><span class="r7">ns</span><span class="r9">2:Ca</span><span class="r7">rdHandle</span><span class="r2">&gt;</span>SMC-KT-<span class="r11">9</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns2</span><span class="r8">:CardHandle</span><span class="r2">&gt;</span>
+          <span class="r2">&lt;</span><span class="r7">ns</span><span class="r9">4:Ca</span><span class="r7">rdType</span><span class="r2">&gt;</span>SMC-KT<span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns4</span><span class="r8">:CardType</span><span class="r2">&gt;</span>
+          <span class="r2">&lt;</span><span class="r7">ns</span><span class="r9">5:Ca</span><span class="r7">rdVersion</span><span class="r2">&gt;</span>
+            <span class="r2">&lt;</span><span class="r7">ns</span><span class="r9">5:C</span><span class="r7">OSVersion</span><span class="r2">&gt;</span>
+              <span class="r2">&lt;</span><span class="r7">ns5:Major</span><span class="r2">&gt;</span><span class="r11">4</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:Major</span><span class="r2">&gt;</span>
+              <span class="r2">&lt;</span><span class="r7">ns5:Minor</span><span class="r2">&gt;</span><span class="r11">6</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:Minor</span><span class="r2">&gt;</span>
+              <span class="r2">&lt;</span><span class="r7">ns5:Revision</span><span class="r2">&gt;</span><span class="r11">0</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:Revision</span><span class="r2">&gt;</span>
+            <span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:COSVersion</span><span class="r2">&gt;</span>
+            <span class="r2">&lt;</span><span class="r7">ns5:ObjectSystemVersion</span><span class="r2">&gt;</span>
+              <span class="r2">&lt;</span><span class="r7">ns5:Major</span><span class="r2">&gt;</span><span class="r11">4</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:Major</span><span class="r2">&gt;</span>
+              <span class="r2">&lt;</span><span class="r7">ns5:Minor</span><span class="r2">&gt;</span><span class="r11">4</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:Minor</span><span class="r2">&gt;</span>
+              <span class="r2">&lt;</span><span class="r7">ns5:Revision</span><span class="r2">&gt;</span><span class="r11">1</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:Revision</span><span class="r2">&gt;</span>
+            <span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:ObjectSystemVersion</span><span class="r2">&gt;</span>
+            <span class="r2">&lt;</span><span class="r7">ns</span><span class="r9">5:A</span><span class="r7">TRVersion</span><span class="r2">&gt;</span>
+              <span class="r2">&lt;</span><span class="r7">ns5:Major</span><span class="r2">&gt;</span><span class="r11">2</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:Major</span><span class="r2">&gt;</span>
+              <span class="r2">&lt;</span><span class="r7">ns5:Minor</span><span class="r2">&gt;</span><span class="r11">0</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:Minor</span><span class="r2">&gt;</span>
+              <span class="r2">&lt;</span><span class="r7">ns5:Revision</span><span class="r2">&gt;</span><span class="r11">0</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:Revision</span><span class="r2">&gt;</span>
+            <span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:ATRVersion</span><span class="r2">&gt;</span>
+            <span class="r2">&lt;</span><span class="r7">ns5:GDOVersion</span><span class="r2">&gt;</span>
+              <span class="r2">&lt;</span><span class="r7">ns5:Major</span><span class="r2">&gt;</span><span class="r11">1</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:Major</span><span class="r2">&gt;</span>
+              <span class="r2">&lt;</span><span class="r7">ns5:Minor</span><span class="r2">&gt;</span><span class="r11">0</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:Minor</span><span class="r2">&gt;</span>
+              <span class="r2">&lt;</span><span class="r7">ns5:Revision</span><span class="r2">&gt;</span><span class="r11">0</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:Revision</span><span class="r2">&gt;</span>
+            <span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:GDOVersion</span><span class="r2">&gt;</span>
+            <span class="r2">&lt;</span><span class="r7">ns5:KeyInfoVersion</span><span class="r2">&gt;</span>
+              <span class="r2">&lt;</span><span class="r7">ns5:Major</span><span class="r2">&gt;</span><span class="r11">2</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:Major</span><span class="r2">&gt;</span>
+              <span class="r2">&lt;</span><span class="r7">ns5:Minor</span><span class="r2">&gt;</span><span class="r11">0</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:Minor</span><span class="r2">&gt;</span>
+              <span class="r2">&lt;</span><span class="r7">ns5:Revision</span><span class="r2">&gt;</span><span class="r11">0</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:Revision</span><span class="r2">&gt;</span>
+            <span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:KeyInfoVersion</span><span class="r2">&gt;</span>
+          <span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:CardVersion</span><span class="r2">&gt;</span>
+          <span class="r2">&lt;</span><span class="r7">ns4:Iccsn</span><span class="r2">&gt;</span><span class="r11">80276883110000135469</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns4</span><span class="r8">:Iccsn</span><span class="r2">&gt;</span>
+          <span class="r2">&lt;</span><span class="r7">ns</span><span class="r9">4:C</span><span class="r7">tId</span><span class="r2">&gt;</span><span class="r12">974e4b1d-cd76-4d05-abe2-1eaac2fa9482</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns4</span><span class="r8">:CtId</span><span class="r2">&gt;</span>
+          <span class="r2">&lt;</span><span class="r7">ns4:SlotId</span><span class="r2">&gt;</span><span class="r11">3</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns4</span><span class="r8">:SlotId</span><span class="r2">&gt;</span>
+          <span class="r2">&lt;</span><span class="r7">ns5:InsertTime</span><span class="r2">&gt;</span><span class="r11">2023</span>-<span class="r11">05</span>-28T<span class="r9">13:23:35</span>.125Z<span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:InsertTime</span><span class="r2">&gt;</span>
+          <span class="r2">&lt;</span><span class="r7">ns</span><span class="r9">5:Ca</span><span class="r7">rdHolderName</span><span class="r2">&gt;</span><span class="r11">80276883110000135469</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:CardHolderName</span><span class="r2">&gt;</span>
+          <span class="r2">&lt;</span><span class="r7">ns</span><span class="r9">5:Ce</span><span class="r7">rtificateExpirationDate</span><span class="r2">&gt;</span><span class="r11">2026</span>-<span class="r11">03</span>-06Z<span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:CertificateExpirationD</span>
+<span class="r8">ate</span><span class="r2">&gt;</span>
+        <span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:Card</span><span class="r2">&gt;</span>
+      <span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:Cards</span><span class="r2">&gt;</span>
+    <span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns6</span><span class="r8">:GetCardsResponse</span><span class="r2">&gt;</span>
+  <span class="r2">&lt;</span><span class="r8">/</span><span class="r10">SOAP-ENV</span><span class="r8">:Body</span><span class="r2">&gt;</span>
+<span class="r2">&lt;</span><span class="r8">/</span><span class="r10">SOAP-ENV</span><span class="r8">:Envelope</span><span class="r2">&gt;</span>
+
+<span class="r1">Got me some eGKs</span><span class="r2">]</span>
+<span class="r2">[</span>
+    <span class="r3">Card</span><span class="r2">(</span>
+        <span class="r4">CardType</span>=<span class="r2">&lt;</span><span class="r7">CardTypeEnum.EGK:</span><span class="r8"> </span><span class="r5">&#x27;EGK&#x27;</span><span class="r2">&gt;</span>,
+        <span class="r4">CardHandle</span>=<span class="r5">&#x27;EGK-11&#x27;</span>,
+        <span class="r4">CardHolderName</span>=<span class="r5">&#x27;Alexander Graf von BurgundTEST-ONLY&#x27;</span>,
+        <span class="r4">raw</span>=<span class="r3">OrderedDict</span><span class="r2">([(</span><span class="r5">&#x27;CardHandle&#x27;</span>, <span class="r5">&#x27;EGK-11&#x27;</span><span class="r2">)</span>, <span class="r2">(</span><span class="r5">&#x27;CardType&#x27;</span>, <span class="r5">&#x27;EGK&#x27;</span><span class="r2">)</span>, 
+<span class="r2">(</span><span class="r5">&#x27;CardVersion&#x27;</span>, <span class="r3">OrderedDict</span><span class="r2">([(</span><span class="r5">&#x27;COSVersion&#x27;</span>, <span class="r3">OrderedDict</span><span class="r2">([(</span><span class="r5">&#x27;Major&#x27;</span>, <span class="r11">4</span><span class="r2">)</span>, <span class="r2">(</span><span class="r5">&#x27;Minor&#x27;</span>,
+<span class="r11">3</span><span class="r2">)</span>, <span class="r2">(</span><span class="r5">&#x27;Revision&#x27;</span>, <span class="r11">0</span><span class="r2">)]))</span>, <span class="r2">(</span><span class="r5">&#x27;ObjectSystemVersion&#x27;</span>, <span class="r3">OrderedDict</span><span class="r2">([(</span><span class="r5">&#x27;Major&#x27;</span>, <span class="r11">4</span><span class="r2">)</span>, 
+<span class="r2">(</span><span class="r5">&#x27;Minor&#x27;</span>, <span class="r11">5</span><span class="r2">)</span>, <span class="r2">(</span><span class="r5">&#x27;Revision&#x27;</span>, <span class="r11">2</span><span class="r2">)]))</span>, <span class="r2">(</span><span class="r5">&#x27;CardPTPersVersion&#x27;</span>, <span class="r6">None</span><span class="r2">)</span>, 
+<span class="r2">(</span><span class="r5">&#x27;DataStructureVersion&#x27;</span>, <span class="r6">None</span><span class="r2">)</span>, <span class="r2">(</span><span class="r5">&#x27;LoggingVersion&#x27;</span>, <span class="r3">OrderedDict</span><span class="r2">([(</span><span class="r5">&#x27;Major&#x27;</span>, <span class="r11">1</span><span class="r2">)</span>, 
+<span class="r2">(</span><span class="r5">&#x27;Minor&#x27;</span>, <span class="r11">0</span><span class="r2">)</span>, <span class="r2">(</span><span class="r5">&#x27;Revision&#x27;</span>, <span class="r11">0</span><span class="r2">)]))</span>, <span class="r2">(</span><span class="r5">&#x27;ATRVersion&#x27;</span>, <span class="r3">OrderedDict</span><span class="r2">([(</span><span class="r5">&#x27;Major&#x27;</span>, <span class="r11">2</span><span class="r2">)</span>, 
+<span class="r2">(</span><span class="r5">&#x27;Minor&#x27;</span>, <span class="r11">0</span><span class="r2">)</span>, <span class="r2">(</span><span class="r5">&#x27;Revision&#x27;</span>, <span class="r11">0</span><span class="r2">)]))</span>, <span class="r2">(</span><span class="r5">&#x27;GDOVersion&#x27;</span>, <span class="r3">OrderedDict</span><span class="r2">([(</span><span class="r5">&#x27;Major&#x27;</span>, <span class="r11">1</span><span class="r2">)</span>, 
+<span class="r2">(</span><span class="r5">&#x27;Minor&#x27;</span>, <span class="r11">0</span><span class="r2">)</span>, <span class="r2">(</span><span class="r5">&#x27;Revision&#x27;</span>, <span class="r11">0</span><span class="r2">)]))</span>, <span class="r2">(</span><span class="r5">&#x27;KeyInfoVersion&#x27;</span>, <span class="r6">None</span><span class="r2">)]))</span>, <span class="r2">(</span><span class="r5">&#x27;Iccsn&#x27;</span>, 
+<span class="r5">&#x27;80276883110000113345&#x27;</span><span class="r2">)</span>, <span class="r2">(</span><span class="r5">&#x27;CtId&#x27;</span>, <span class="r5">&#x27;974e4b1d-cd76-4d05-abe2-1eaac2fa9482&#x27;</span><span class="r2">)</span>, 
+<span class="r2">(</span><span class="r5">&#x27;SlotId&#x27;</span>, <span class="r11">1</span><span class="r2">)</span>, <span class="r2">(</span><span class="r5">&#x27;InsertTime&#x27;</span>, <span class="r3">datetime.datetime</span><span class="r2">(</span><span class="r11">2023</span>, <span class="r11">5</span>, <span class="r11">29</span>, <span class="r11">13</span>, <span class="r11">30</span>, <span class="r11">53</span>, <span class="r11">681000</span>,
+<span class="r4">tzinfo</span>=<span class="r2">&lt;</span><span class="r7">isodate.tzinfo.Utc</span><span class="r8"> object at </span><span class="r11">0x102cc3d90</span><span class="r2">&gt;))</span>, <span class="r2">(</span><span class="r5">&#x27;CardHolderName&#x27;</span>, 
+<span class="r5">&#x27;Alexander Graf von BurgundTEST-ONLY&#x27;</span><span class="r2">)</span>, <span class="r2">(</span><span class="r5">&#x27;Kvnr&#x27;</span>, <span class="r5">&#x27;X110476138&#x27;</span><span class="r2">)</span>, 
+<span class="r2">(</span><span class="r5">&#x27;CertificateExpirationDate&#x27;</span>, <span class="r3">datetime.date</span><span class="r2">(</span><span class="r11">2025</span>, <span class="r11">1</span>, <span class="r11">22</span><span class="r2">))])</span>
+    <span class="r2">)</span>
+<span class="r2">]</span>
+Request:
+<span class="r2">&lt;</span><span class="r7">soap-env:Envelope</span><span class="r8"> xmlns:soap-</span><span class="r4">env</span><span class="r8">=</span><span class="r5">&quot;http://www.w3.org/2003/05/soap-envelope&quot;</span><span class="r2">&gt;</span>
+  <span class="r2">&lt;</span><span class="r7">soap-env:Header</span><span class="r8"> xmlns:</span><span class="r4">wsa</span><span class="r8">=</span><span class="r5">&quot;http://www.w3.org/2005/08/addressing&quot;</span><span class="r2">&gt;</span>
+    <span class="r2">&lt;</span><span class="r7">ws</span><span class="r9">a:Ac</span><span class="r7">tion</span><span class="r2">&gt;</span><span class="r13">http://ws.gematik.de/conn/phrs/PHRManagementService/v2.0/GetHome</span>
+<span class="r13">CommunityID</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">wsa</span><span class="r8">:Action</span><span class="r2">&gt;</span>
+    <span class="r2">&lt;</span><span class="r7">wsa:MessageID</span><span class="r2">&gt;</span>urn:uui<span class="r9">d:a8f3</span>b036-6f84-<span class="r11">4687</span>-a292-0135a233fe50<span class="r2">&lt;</span><span class="r8">/</span><span class="r10">wsa</span><span class="r8">:MessageID</span><span class="r2">&gt;</span>
+    <span class="r2">&lt;</span><span class="r7">wsa:To</span><span class="r2">&gt;</span><span class="r13">https://192.168.1.194:443/ws/PHRManagementService</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">wsa</span><span class="r8">:To</span><span class="r2">&gt;</span>
+  <span class="r2">&lt;</span><span class="r8">/</span><span class="r10">soap-env</span><span class="r8">:Header</span><span class="r2">&gt;</span>
+  <span class="r2">&lt;</span><span class="r7">soap-env:Body</span><span class="r2">&gt;</span>
+    <span class="r2">&lt;</span><span class="r7">ns0:GetHomeCommunityID</span><span class="r8"> </span>
+<span class="r8">xmlns:</span><span class="r4">ns0</span><span class="r8">=</span><span class="r5">&quot;http://ws.gematik.de/conn/phrs/PHRManagementService/v2.0&quot;</span><span class="r2">&gt;</span>
+      <span class="r2">&lt;</span><span class="r7">ns</span><span class="r9">1:C</span><span class="r7">ontext</span><span class="r8"> xmlns:</span><span class="r4">ns1</span><span class="r8">=</span><span class="r5">&quot;http://ws.gematik.de/conn/ConnectorContext/v2.0&quot;</span><span class="r2">&gt;</span>
+        <span class="r2">&lt;</span><span class="r7">ns2:MandantId</span><span class="r8"> </span>
+<span class="r8">xmlns:</span><span class="r4">ns2</span><span class="r8">=</span><span class="r5">&quot;http://ws.gematik.de/conn/ConnectorCommon/v5.0&quot;</span><span class="r2">&gt;</span>M1<span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns2</span><span class="r8">:MandantId</span><span class="r2">&gt;</span>
+        <span class="r2">&lt;</span><span class="r7">ns</span><span class="r9">3:C</span><span class="r7">lientSystemId</span><span class="r8"> </span>
+<span class="r8">xmlns:</span><span class="r4">ns3</span><span class="r8">=</span><span class="r5">&quot;http://ws.gematik.de/conn/ConnectorCommon/v5.0&quot;</span><span class="r2">&gt;</span>C1<span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns3</span><span class="r8">:ClientSystemI</span>
+<span class="r8">d</span><span class="r2">&gt;</span>
+        <span class="r2">&lt;</span><span class="r7">ns4:WorkplaceId</span><span class="r8"> </span>
+<span class="r8">xmlns:</span><span class="r4">ns4</span><span class="r8">=</span><span class="r5">&quot;http://ws.gematik.de/conn/ConnectorCommon/v5.0&quot;</span><span class="r2">&gt;</span>A1<span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns4</span><span class="r8">:WorkplaceId</span><span class="r2">&gt;</span>
+        <span class="r2">&lt;</span><span class="r7">ns5:UserId</span><span class="r8"> </span>
+<span class="r8">xmlns:</span><span class="r4">ns5</span><span class="r8">=</span><span class="r5">&quot;http://ws.gematik.de/conn/ConnectorCommon/v5.0&quot;</span><span class="r2">&gt;</span>user1<span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:UserId</span><span class="r2">&gt;</span>
+      <span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns1</span><span class="r8">:Context</span><span class="r2">&gt;</span>
+      <span class="r2">&lt;</span><span class="r7">ns0:InsurantID</span><span class="r8"> </span><span class="r4">root</span><span class="r8">=</span><span class="r5">&quot;1.2.276.0.76.4.8&quot;</span><span class="r8"> </span><span class="r4">extension</span><span class="r8">=</span><span class="r5">&quot;X110476138&quot;</span><span class="r8">/</span><span class="r2">&gt;</span>
+    <span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns0</span><span class="r8">:GetHomeCommunityID</span><span class="r2">&gt;</span>
+  <span class="r2">&lt;</span><span class="r8">/</span><span class="r10">soap-env</span><span class="r8">:Body</span><span class="r2">&gt;</span>
+<span class="r2">&lt;</span><span class="r8">/</span><span class="r10">soap-env</span><span class="r8">:Envelope</span><span class="r2">&gt;</span>
+
+Response:
+<span class="r2">&lt;</span><span class="r7">env:Envelope</span><span class="r8"> xmlns:</span><span class="r4">env</span><span class="r8">=</span><span class="r5">&quot;http://www.w3.org/2003/05/soap-envelope&quot;</span><span class="r2">&gt;</span>
+  <span class="r2">&lt;</span><span class="r7">env:Header</span><span class="r8"> xmlns:</span><span class="r4">wsa</span><span class="r8">=</span><span class="r5">&quot;http://www.w3.org/2005/08/addressing&quot;</span><span class="r2">&gt;</span>
+    <span class="r2">&lt;</span><span class="r7">wsa:To</span><span class="r8"> </span>
+<span class="r8">env:</span><span class="r4">mustUnderstand</span><span class="r8">=</span><span class="r5">&quot;true&quot;</span><span class="r2">&gt;</span><span class="r13">http://www.w3.org/2005/08/addressing/anonymous</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">wsa</span><span class="r8">:To</span>
+<span class="r2">&gt;</span>
+    <span class="r2">&lt;</span><span class="r7">ws</span><span class="r9">a:Ac</span><span class="r7">tion</span><span class="r2">&gt;</span><span class="r13">http://ws.gematik.de/conn/phrs/PHRManagementService/v2.0/GetHome</span>
+<span class="r13">CommunityIDResponse</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">wsa</span><span class="r8">:Action</span><span class="r2">&gt;</span>
+    <span class="r2">&lt;</span><span class="r7">wsa:MessageID</span><span class="r2">&gt;</span>urn:uui<span class="r9">d:399e</span>0358-<span class="r11">4e21</span>-4bdc-<span class="r11">8525</span>-1f5b56747f83<span class="r2">&lt;</span><span class="r8">/</span><span class="r10">wsa</span><span class="r8">:MessageID</span><span class="r2">&gt;</span>
+    <span class="r2">&lt;</span><span class="r7">wsa:RelatesTo</span><span class="r2">&gt;</span>urn:uui<span class="r9">d:a8f3</span>b036-6f84-<span class="r11">4687</span>-a292-0135a233fe50<span class="r2">&lt;</span><span class="r8">/</span><span class="r10">wsa</span><span class="r8">:RelatesTo</span><span class="r2">&gt;</span>
+  <span class="r2">&lt;</span><span class="r8">/</span><span class="r10">env</span><span class="r8">:Header</span><span class="r2">&gt;</span>
+  <span class="r2">&lt;</span><span class="r7">env:Body</span><span class="r2">&gt;</span>
+    <span class="r2">&lt;</span><span class="r7">ns8:GetHomeCommunityIDResponse</span><span class="r8"> </span>
+<span class="r8">xmlns:</span><span class="r4">ns10</span><span class="r8">=</span><span class="r5">&quot;urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0&quot;</span><span class="r8"> </span>
+<span class="r8">xmlns:</span><span class="r4">ns11</span><span class="r8">=</span><span class="r5">&quot;urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0&quot;</span><span class="r8"> </span>
+<span class="r8">xmlns:</span><span class="r4">ns12</span><span class="r8">=</span><span class="r5">&quot;urn:ihe:iti:xds-b:2007&quot;</span><span class="r8"> </span>
+<span class="r8">xmlns:</span><span class="r4">ns13</span><span class="r8">=</span><span class="r5">&quot;urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0&quot;</span><span class="r8"> </span>
+<span class="r8">xmlns:</span><span class="r4">ns14</span><span class="r8">=</span><span class="r5">&quot;urn:oasis:names:tc:ebxml-regrep:xsd:lcm:3.0&quot;</span><span class="r8"> </span>
+<span class="r8">xmlns:</span><span class="r4">ns2</span><span class="r8">=</span><span class="r5">&quot;http://ws.gematik.de/conn/ConnectorCommon/v5.0&quot;</span><span class="r8"> </span>
+<span class="r8">xmlns:</span><span class="r4">ns3</span><span class="r8">=</span><span class="r5">&quot;http://ws.gematik.de/conn/ConnectorContext/v2.0&quot;</span><span class="r8"> </span>
+<span class="r8">xmlns:</span><span class="r4">ns4</span><span class="r8">=</span><span class="r5">&quot;http://ws.gematik.de/conn/phrs/PHRManagementService/v1.3&quot;</span><span class="r8"> </span>
+<span class="r8">xmlns:</span><span class="r4">ns5</span><span class="r8">=</span><span class="r5">&quot;http://ws.gematik.de/fa/phr/v1.1&quot;</span><span class="r8"> </span>
+<span class="r8">xmlns:</span><span class="r4">ns6</span><span class="r8">=</span><span class="r5">&quot;http://ws.gematik.de/tel/error/v2.0&quot;</span><span class="r8"> </span>
+<span class="r8">xmlns:</span><span class="r4">ns7</span><span class="r8">=</span><span class="r5">&quot;http://ws.gematik.de/conn/phrs/PHRService/v1.3&quot;</span><span class="r8"> </span>
+<span class="r8">xmlns:</span><span class="r4">ns8</span><span class="r8">=</span><span class="r5">&quot;http://ws.gematik.de/conn/phrs/PHRManagementService/v2.0&quot;</span><span class="r8"> </span>
+<span class="r8">xmlns:</span><span class="r4">ns9</span><span class="r8">=</span><span class="r5">&quot;http://ws.gematik.de/conn/phrs/PHRService/v2.0&quot;</span><span class="r2">&gt;</span>
+      <span class="r2">&lt;</span><span class="r7">ns2:Status</span><span class="r2">&gt;</span>
+        <span class="r2">&lt;</span><span class="r7">ns2:Result</span><span class="r2">&gt;</span>OK<span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns2</span><span class="r8">:Result</span><span class="r2">&gt;</span>
+      <span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns2</span><span class="r8">:Status</span><span class="r2">&gt;</span>
+      <span class="r2">&lt;</span><span class="r7">ns8:HomeCommunityID</span><span class="r2">&gt;</span>urn:oi<span class="r9">d:1</span>.<span class="r9">2.276.0.76</span>.<span class="r9">3.1.315.3</span>.<span class="r11">3.1</span>.<span class="r11">1</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns8</span><span class="r8">:HomeCommuni</span>
+<span class="r8">tyID</span><span class="r2">&gt;</span>
+    <span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns8</span><span class="r8">:GetHomeCommunityIDResponse</span><span class="r2">&gt;</span>
+  <span class="r2">&lt;</span><span class="r8">/</span><span class="r10">env</span><span class="r8">:Body</span><span class="r2">&gt;</span>
+<span class="r2">&lt;</span><span class="r8">/</span><span class="r10">env</span><span class="r8">:Envelope</span><span class="r2">&gt;</span>
+
+Request:
+<span class="r2">&lt;</span><span class="r7">soap-env:Envelope</span><span class="r8"> xmlns:soap-</span><span class="r4">env</span><span class="r8">=</span><span class="r5">&quot;http://www.w3.org/2003/05/soap-envelope&quot;</span><span class="r2">&gt;</span>
+  <span class="r2">&lt;</span><span class="r7">soap-env:Header</span><span class="r8"> xmlns:</span><span class="r4">wsa</span><span class="r8">=</span><span class="r5">&quot;http://www.w3.org/2005/08/addressing&quot;</span><span class="r2">&gt;</span>
+    <span class="r2">&lt;</span><span class="r7">ws</span><span class="r9">a:Ac</span><span class="r7">tion</span><span class="r2">&gt;</span><span class="r13">http://ws.gematik.de/conn/phrs/PHRManagementService/v2.0/GetAuth</span>
+<span class="r13">orizationState</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">wsa</span><span class="r8">:Action</span><span class="r2">&gt;</span>
+    <span class="r2">&lt;</span><span class="r7">wsa:MessageID</span><span class="r2">&gt;</span>urn:uui<span class="r9">d:a9ef</span>0086-d491-44ea-b223-7efb69097812<span class="r2">&lt;</span><span class="r8">/</span><span class="r10">wsa</span><span class="r8">:MessageID</span><span class="r2">&gt;</span>
+    <span class="r2">&lt;</span><span class="r7">wsa:To</span><span class="r2">&gt;</span><span class="r13">https://192.168.1.194:443/ws/PHRManagementService</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">wsa</span><span class="r8">:To</span><span class="r2">&gt;</span>
+  <span class="r2">&lt;</span><span class="r8">/</span><span class="r10">soap-env</span><span class="r8">:Header</span><span class="r2">&gt;</span>
+  <span class="r2">&lt;</span><span class="r7">soap-env:Body</span><span class="r2">&gt;</span>
+    <span class="r2">&lt;</span><span class="r7">ns0:GetAuthorizationState</span><span class="r8"> </span>
+<span class="r8">xmlns:</span><span class="r4">ns0</span><span class="r8">=</span><span class="r5">&quot;http://ws.gematik.de/conn/phrs/PHRManagementService/v2.0&quot;</span><span class="r2">&gt;</span>
+      <span class="r2">&lt;</span><span class="r7">ns</span><span class="r9">1:C</span><span class="r7">ontext</span><span class="r8"> xmlns:</span><span class="r4">ns1</span><span class="r8">=</span><span class="r5">&quot;http://ws.gematik.de/conn/ConnectorContext/v2.0&quot;</span><span class="r2">&gt;</span>
+        <span class="r2">&lt;</span><span class="r7">ns2:MandantId</span><span class="r8"> </span>
+<span class="r8">xmlns:</span><span class="r4">ns2</span><span class="r8">=</span><span class="r5">&quot;http://ws.gematik.de/conn/ConnectorCommon/v5.0&quot;</span><span class="r2">&gt;</span>M1<span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns2</span><span class="r8">:MandantId</span><span class="r2">&gt;</span>
+        <span class="r2">&lt;</span><span class="r7">ns</span><span class="r9">3:C</span><span class="r7">lientSystemId</span><span class="r8"> </span>
+<span class="r8">xmlns:</span><span class="r4">ns3</span><span class="r8">=</span><span class="r5">&quot;http://ws.gematik.de/conn/ConnectorCommon/v5.0&quot;</span><span class="r2">&gt;</span>C1<span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns3</span><span class="r8">:ClientSystemI</span>
+<span class="r8">d</span><span class="r2">&gt;</span>
+        <span class="r2">&lt;</span><span class="r7">ns4:WorkplaceId</span><span class="r8"> </span>
+<span class="r8">xmlns:</span><span class="r4">ns4</span><span class="r8">=</span><span class="r5">&quot;http://ws.gematik.de/conn/ConnectorCommon/v5.0&quot;</span><span class="r2">&gt;</span>A1<span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns4</span><span class="r8">:WorkplaceId</span><span class="r2">&gt;</span>
+        <span class="r2">&lt;</span><span class="r7">ns5:UserId</span><span class="r8"> </span>
+<span class="r8">xmlns:</span><span class="r4">ns5</span><span class="r8">=</span><span class="r5">&quot;http://ws.gematik.de/conn/ConnectorCommon/v5.0&quot;</span><span class="r2">&gt;</span>user1<span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns5</span><span class="r8">:UserId</span><span class="r2">&gt;</span>
+      <span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns1</span><span class="r8">:Context</span><span class="r2">&gt;</span>
+      <span class="r2">&lt;</span><span class="r7">ns0:RecordIdentifier</span><span class="r2">&gt;</span>
+        <span class="r2">&lt;</span><span class="r7">ns6:InsurantId</span><span class="r8"> xmlns:</span><span class="r4">ns6</span><span class="r8">=</span><span class="r5">&quot;http://ws.gematik.de/fa/phr/v1.1&quot;</span><span class="r8"> </span>
+<span class="r4">root</span><span class="r8">=</span><span class="r5">&quot;1.2.276.0.76.4.8&quot;</span><span class="r8"> </span><span class="r4">extension</span><span class="r8">=</span><span class="r5">&quot;X110476138&quot;</span><span class="r8">/</span><span class="r2">&gt;</span>
+        <span class="r2">&lt;</span><span class="r7">ns7:HomeCommunityId</span><span class="r8"> </span>
+<span class="r8">xmlns:</span><span class="r4">ns7</span><span class="r8">=</span><span class="r5">&quot;http://ws.gematik.de/fa/phr/v1.1&quot;</span><span class="r2">&gt;</span>urn:oi<span class="r9">d:1</span>.<span class="r9">2.276.0.76</span>.<span class="r9">3.1.315.3</span>.<span class="r11">3.1</span>.
+<span class="r11">1</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns7</span><span class="r8">:HomeCommunityId</span><span class="r2">&gt;</span>
+      <span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns0</span><span class="r8">:RecordIdentifier</span><span class="r2">&gt;</span>
+      <span class="r2">&lt;</span><span class="r7">ns0:UserAgent</span><span class="r2">&gt;</span>koap/<span class="r11">0.1</span>.<span class="r11">0</span>/spilikin<span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns0</span><span class="r8">:UserAgent</span><span class="r2">&gt;</span>
+    <span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns0</span><span class="r8">:GetAuthorizationState</span><span class="r2">&gt;</span>
+  <span class="r2">&lt;</span><span class="r8">/</span><span class="r10">soap-env</span><span class="r8">:Body</span><span class="r2">&gt;</span>
+<span class="r2">&lt;</span><span class="r8">/</span><span class="r10">soap-env</span><span class="r8">:Envelope</span><span class="r2">&gt;</span>
+
+Response:
+<span class="r2">&lt;</span><span class="r7">env:Envelope</span><span class="r8"> xmlns:</span><span class="r4">env</span><span class="r8">=</span><span class="r5">&quot;http://www.w3.org/2003/05/soap-envelope&quot;</span><span class="r2">&gt;</span>
+  <span class="r2">&lt;</span><span class="r7">env:Header</span><span class="r8"> xmlns:</span><span class="r4">wsa</span><span class="r8">=</span><span class="r5">&quot;http://www.w3.org/2005/08/addressing&quot;</span><span class="r2">&gt;</span>
+    <span class="r2">&lt;</span><span class="r7">wsa:To</span><span class="r8"> </span>
+<span class="r8">env:</span><span class="r4">mustUnderstand</span><span class="r8">=</span><span class="r5">&quot;true&quot;</span><span class="r2">&gt;</span><span class="r13">http://www.w3.org/2005/08/addressing/anonymous</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">wsa</span><span class="r8">:To</span>
+<span class="r2">&gt;</span>
+    <span class="r2">&lt;</span><span class="r7">ws</span><span class="r9">a:Ac</span><span class="r7">tion</span><span class="r2">&gt;</span><span class="r13">http://ws.gematik.de/conn/phrs/PHRManagementService/v2.0/GetAuth</span>
+<span class="r13">orizationStateResponse</span><span class="r2">&lt;</span><span class="r8">/</span><span class="r10">wsa</span><span class="r8">:Action</span><span class="r2">&gt;</span>
+    <span class="r2">&lt;</span><span class="r7">wsa:MessageID</span><span class="r2">&gt;</span>urn:uui<span class="r9">d:f8f2</span>7038-7c08-<span class="r11">4701</span>-99a0-708851ff54b6<span class="r2">&lt;</span><span class="r8">/</span><span class="r10">wsa</span><span class="r8">:MessageID</span><span class="r2">&gt;</span>
+    <span class="r2">&lt;</span><span class="r7">wsa:RelatesTo</span><span class="r2">&gt;</span>urn:uui<span class="r9">d:a9ef</span>0086-d491-44ea-b223-7efb69097812<span class="r2">&lt;</span><span class="r8">/</span><span class="r10">wsa</span><span class="r8">:RelatesTo</span><span class="r2">&gt;</span>
+  <span class="r2">&lt;</span><span class="r8">/</span><span class="r10">env</span><span class="r8">:Header</span><span class="r2">&gt;</span>
+  <span class="r2">&lt;</span><span class="r7">env:Body</span><span class="r2">&gt;</span>
+    <span class="r2">&lt;</span><span class="r7">ns8:GetAuthorizationStateResponse</span><span class="r8"> </span>
+<span class="r8">xmlns:</span><span class="r4">ns10</span><span class="r8">=</span><span class="r5">&quot;urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0&quot;</span><span class="r8"> </span>
+<span class="r8">xmlns:</span><span class="r4">ns11</span><span class="r8">=</span><span class="r5">&quot;urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0&quot;</span><span class="r8"> </span>
+<span class="r8">xmlns:</span><span class="r4">ns12</span><span class="r8">=</span><span class="r5">&quot;urn:ihe:iti:xds-b:2007&quot;</span><span class="r8"> </span>
+<span class="r8">xmlns:</span><span class="r4">ns13</span><span class="r8">=</span><span class="r5">&quot;urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0&quot;</span><span class="r8"> </span>
+<span class="r8">xmlns:</span><span class="r4">ns14</span><span class="r8">=</span><span class="r5">&quot;urn:oasis:names:tc:ebxml-regrep:xsd:lcm:3.0&quot;</span><span class="r8"> </span>
+<span class="r8">xmlns:</span><span class="r4">ns2</span><span class="r8">=</span><span class="r5">&quot;http://ws.gematik.de/conn/ConnectorCommon/v5.0&quot;</span><span class="r8"> </span>
+<span class="r8">xmlns:</span><span class="r4">ns3</span><span class="r8">=</span><span class="r5">&quot;http://ws.gematik.de/conn/ConnectorContext/v2.0&quot;</span><span class="r8"> </span>
+<span class="r8">xmlns:</span><span class="r4">ns4</span><span class="r8">=</span><span class="r5">&quot;http://ws.gematik.de/conn/phrs/PHRManagementService/v1.3&quot;</span><span class="r8"> </span>
+<span class="r8">xmlns:</span><span class="r4">ns5</span><span class="r8">=</span><span class="r5">&quot;http://ws.gematik.de/fa/phr/v1.1&quot;</span><span class="r8"> </span>
+<span class="r8">xmlns:</span><span class="r4">ns6</span><span class="r8">=</span><span class="r5">&quot;http://ws.gematik.de/tel/error/v2.0&quot;</span><span class="r8"> </span>
+<span class="r8">xmlns:</span><span class="r4">ns7</span><span class="r8">=</span><span class="r5">&quot;http://ws.gematik.de/conn/phrs/PHRService/v1.3&quot;</span><span class="r8"> </span>
+<span class="r8">xmlns:</span><span class="r4">ns8</span><span class="r8">=</span><span class="r5">&quot;http://ws.gematik.de/conn/phrs/PHRManagementService/v2.0&quot;</span><span class="r8"> </span>
+<span class="r8">xmlns:</span><span class="r4">ns9</span><span class="r8">=</span><span class="r5">&quot;http://ws.gematik.de/conn/phrs/PHRService/v2.0&quot;</span><span class="r2">&gt;</span>
+      <span class="r2">&lt;</span><span class="r7">ns2:Status</span><span class="r2">&gt;</span>
+        <span class="r2">&lt;</span><span class="r7">ns2:Result</span><span class="r2">&gt;</span>OK<span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns2</span><span class="r8">:Result</span><span class="r2">&gt;</span>
+      <span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns2</span><span class="r8">:Status</span><span class="r2">&gt;</span>
+      <span class="r2">&lt;</span><span class="r7">ns</span><span class="r9">8:A</span><span class="r7">uthorizationStatusList</span><span class="r2">&gt;</span>
+        <span class="r2">&lt;</span><span class="r7">ns</span><span class="r9">8:A</span><span class="r7">uthorizedApplication</span><span class="r2">&gt;</span>
+          <span class="r2">&lt;</span><span class="r7">ns</span><span class="r9">8:A</span><span class="r7">pplicationName</span><span class="r2">&gt;</span>ePA<span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns8</span><span class="r8">:ApplicationName</span><span class="r2">&gt;</span>
+          <span class="r2">&lt;</span><span class="r7">ns8:ValidTo</span><span class="r2">&gt;</span><span class="r11">2024</span>-<span class="r11">12</span>-31Z<span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns8</span><span class="r8">:ValidTo</span><span class="r2">&gt;</span>
+        <span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns8</span><span class="r8">:AuthorizedApplication</span><span class="r2">&gt;</span>
+      <span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns8</span><span class="r8">:AuthorizationStatusList</span><span class="r2">&gt;</span>
+    <span class="r2">&lt;</span><span class="r8">/</span><span class="r10">ns8</span><span class="r8">:GetAuthorizationStateResponse</span><span class="r2">&gt;</span>
+  <span class="r2">&lt;</span><span class="r8">/</span><span class="r10">env</span><span class="r8">:Body</span><span class="r2">&gt;</span>
+<span class="r2">&lt;</span><span class="r8">/</span><span class="r10">env</span><span class="r8">:Envelope</span><span class="r2">&gt;</span>
+
+<span class="r2">{</span>
+    <span class="r5">&#x27;Status&#x27;</span>: <span class="r2">{</span>
+        <span class="r5">&#x27;Result&#x27;</span>: <span class="r5">&#x27;OK&#x27;</span>,
+        <span class="r5">&#x27;Error&#x27;</span>: <span class="r6">None</span>
+    <span class="r2">}</span>,
+    <span class="r5">&#x27;AuthorizationStatusList&#x27;</span>: <span class="r2">{</span>
+        <span class="r5">&#x27;AuthorizedApplication&#x27;</span>: <span class="r2">[</span>
+            <span class="r2">{</span>
+                <span class="r5">&#x27;ApplicationName&#x27;</span>: <span class="r5">&#x27;ePA&#x27;</span>,
+                <span class="r5">&#x27;ValidTo&#x27;</span>: <span class="r3">datetime.date</span><span class="r2">(</span><span class="r11">2024</span>, <span class="r11">12</span>, <span class="r11">31</span><span class="r2">)</span>
+            <span class="r2">}</span>
+        <span class="r2">]</span>
+    <span class="r2">}</span>
+<span class="r2">}</span>
+</pre>
+    </code>
+</body>
+</html>

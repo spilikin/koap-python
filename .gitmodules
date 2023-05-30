@@ -1,3 +1,0 @@
-[submodule "koap/api-telematik"]
-	path = koap/api-telematik
-	url = https://github.com/gematik/api-telematik.git
