@@ -67,7 +67,7 @@ class ConnectorClient:
             session.verify = False
         self.service_directory = load_service_directory(config, session)
         self.soap_settings = Settings()
-        self.soap_settings.strict = False
+        # self.soap_settings.strict = False
         self.soap_settings.forbid_entities = False
         # TODO: support different auth mechanisms
         session.auth = HTTPBasicAuth(

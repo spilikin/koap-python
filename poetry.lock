@@ -389,23 +389,18 @@ six = "*"
 
 [[package]]
 name = "jwcrypto"
-version = "1.4.2"
+version = "1.5.0"
 description = "Implementation of JOSE Web standards"
 category = "main"
 optional = false
 python-versions = ">= 3.6"
-files = []
-develop = false
+files = [
+    {file = "jwcrypto-1.5.0.tar.gz", hash = "sha256:2c1dc51cf8e38ddf324795dfe9426dee9dd46caf47f535ccbc18781fba810b8d"},
+]
 
 [package.dependencies]
 cryptography = ">=3.4"
 deprecated = "*"
-
-[package.source]
-type = "git"
-url = "https://github.com/latchset/jwcrypto.git"
-reference = "main"
-resolved_reference = "9f2cd3abaaf80ebdbdd25f58131665f532b673e6"
 
 [[package]]
 name = "lxml"
@@ -962,4 +957,4 @@ testing = ["big-O", "flake8 (<5)", "jaraco.functools", "jaraco.itertools", "more
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.7,<4"
-content-hash = "fea031ab8aa65b01d0a4a5ae0cead35338a76a7575650580ec7dc7126f31e433"
+content-hash = "384f2d26940e21fa97787f209091259ed315abaada495e0396599d565724271e"

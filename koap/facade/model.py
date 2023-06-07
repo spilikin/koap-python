@@ -37,3 +37,15 @@ def obj_to_card(zeep_obj) -> Card:
     card = Card.parse_obj(card_dict)
     card.raw = card_dict
     return card
+
+
+class CryptEnum(str, Enum):
+    RSA = "RSA"
+    ECC = "ECC"
+
+
+class CertRefEnum(str, Enum):
+    C_AUT = "C.AUT"
+    C_ENC = "C.ENC"
+    C_SIG = "C.SIG"
+    C_QES = "C.QES"
