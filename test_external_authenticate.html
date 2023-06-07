@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<style>
+.r1 {font-weight: bold}
+.r2 {color: #697098; text-decoration-color: #697098; font-weight: bold}
+.r3 {color: #403f53; text-decoration-color: #403f53}
+.r4 {color: #daaa01; text-decoration-color: #daaa01}
+.r5 {color: #2aa298; text-decoration-color: #2aa298}
+.r6 {color: #49d0c5; text-decoration-color: #49d0c5; font-weight: bold}
+.r7 {color: #697098; text-decoration-color: #697098}
+.r8 {color: #08916a; text-decoration-color: #08916a; font-weight: bold}
+.r9 {color: #dac26b; text-decoration-color: #dac26b}
+body {
+    color: #403f53;
+    background-color: #ffffff;
+}
+</style>
+</head>
+<html>
+<body>
+    <code>
+        <pre style="font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Request:
+<span class="r1">&lt;</span><span class="r2">soap-env:Envelope</span><span class="r3"> xmlns:soap-</span><span class="r4">env</span><span class="r3">=</span><span class="r5">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span><span class="r1">&gt;</span>
+  <span class="r1">&lt;</span><span class="r2">soap-env:Body</span><span class="r1">&gt;</span>
+    <span class="r1">&lt;</span><span class="r2">ns0:GetCards</span><span class="r3"> xmlns:</span><span class="r4">ns0</span><span class="r3">=</span><span class="r5">&quot;http://ws.gematik.de/conn/EventService/v7.2&quot;</span><span class="r3"> </span>
+<span class="r3">mandant-</span><span class="r4">wide</span><span class="r3">=</span><span class="r5">&quot;false&quot;</span><span class="r1">&gt;</span>
+      <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">1:C</span><span class="r2">ontext</span><span class="r3"> xmlns:</span><span class="r4">ns1</span><span class="r3">=</span><span class="r5">&quot;http://ws.gematik.de/conn/ConnectorContext/v2.0&quot;</span><span class="r1">&gt;</span>
+        <span class="r1">&lt;</span><span class="r2">ns2:MandantId</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns2</span><span class="r3">=</span><span class="r5">&quot;http://ws.gematik.de/conn/ConnectorCommon/v5.0&quot;</span><span class="r1">&gt;</span>m1<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns2</span><span class="r3">:MandantId</span><span class="r1">&gt;</span>
+        <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">3:C</span><span class="r2">lientSystemId</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns3</span><span class="r3">=</span><span class="r5">&quot;http://ws.gematik.de/conn/ConnectorCommon/v5.0&quot;</span><span class="r1">&gt;</span>c1<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns3</span><span class="r3">:ClientSystemI</span>
+<span class="r3">d</span><span class="r1">&gt;</span>
+        <span class="r1">&lt;</span><span class="r2">ns4:WorkplaceId</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns4</span><span class="r3">=</span><span class="r5">&quot;http://ws.gematik.de/conn/ConnectorCommon/v5.0&quot;</span><span class="r1">&gt;</span>w1<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns4</span><span class="r3">:WorkplaceId</span><span class="r1">&gt;</span>
+        <span class="r1">&lt;</span><span class="r2">ns5:UserId</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns5</span><span class="r3">=</span><span class="r5">&quot;http://ws.gematik.de/conn/ConnectorCommon/v5.0&quot;</span><span class="r1">&gt;</span>user1<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:UserId</span><span class="r1">&gt;</span>
+      <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns1</span><span class="r3">:Context</span><span class="r1">&gt;</span>
+    <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns0</span><span class="r3">:GetCards</span><span class="r1">&gt;</span>
+  <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">soap-env</span><span class="r3">:Body</span><span class="r1">&gt;</span>
+<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">soap-env</span><span class="r3">:Envelope</span><span class="r1">&gt;</span>
+
+Response:
+<span class="r1">&lt;</span><span class="r2">SOAP-ENV:Envelope</span><span class="r3"> xmlns:SOAP-</span><span class="r4">ENV</span><span class="r3">=</span><span class="r5">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span><span class="r1">&gt;</span>
+  <span class="r1">&lt;</span><span class="r2">SOAP-ENV:Header</span><span class="r3">/</span><span class="r1">&gt;</span>
+  <span class="r1">&lt;</span><span class="r2">SOAP-ENV:Body</span><span class="r1">&gt;</span>
+    <span class="r1">&lt;</span><span class="r2">ns6:GetCardsResponse</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns2</span><span class="r3">=</span><span class="r5">&quot;http://ws.gematik.de/conn/ConnectorCommon/v5.0&quot;</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns3</span><span class="r3">=</span><span class="r5">&quot;http://ws.gematik.de/tel/error/v2.0&quot;</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns4</span><span class="r3">=</span><span class="r5">&quot;http://ws.gematik.de/conn/CardServiceCommon/v2.0&quot;</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns5</span><span class="r3">=</span><span class="r5">&quot;http://ws.gematik.de/conn/CardService/v8.1&quot;</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns6</span><span class="r3">=</span><span class="r5">&quot;http://ws.gematik.de/conn/EventService/v7.2&quot;</span><span class="r1">&gt;</span>
+      <span class="r1">&lt;</span><span class="r2">ns2:Status</span><span class="r1">&gt;</span>
+        <span class="r1">&lt;</span><span class="r2">ns2:Result</span><span class="r1">&gt;</span>OK<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns2</span><span class="r3">:Result</span><span class="r1">&gt;</span>
+      <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns2</span><span class="r3">:Status</span><span class="r1">&gt;</span>
+      <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">5:Ca</span><span class="r2">rds</span><span class="r1">&gt;</span>
+        <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">5:Ca</span><span class="r2">rd</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">2:Ca</span><span class="r2">rdHandle</span><span class="r1">&gt;</span>SMC-KT-<span class="r8">40</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns2</span><span class="r3">:CardHandle</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">4:Ca</span><span class="r2">rdType</span><span class="r1">&gt;</span>SMC-KT<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns4</span><span class="r3">:CardType</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">5:Ca</span><span class="r2">rdVersion</span><span class="r1">&gt;</span>
+            <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">5:C</span><span class="r2">OSVersion</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Major</span><span class="r1">&gt;</span><span class="r8">4</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Major</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Minor</span><span class="r1">&gt;</span><span class="r8">3</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Minor</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Revision</span><span class="r1">&gt;</span><span class="r8">2</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Revision</span><span class="r1">&gt;</span>
+            <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:COSVersion</span><span class="r1">&gt;</span>
+            <span class="r1">&lt;</span><span class="r2">ns5:ObjectSystemVersion</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Major</span><span class="r1">&gt;</span><span class="r8">4</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Major</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Minor</span><span class="r1">&gt;</span><span class="r8">7</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Minor</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Revision</span><span class="r1">&gt;</span><span class="r8">0</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Revision</span><span class="r1">&gt;</span>
+            <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:ObjectSystemVersion</span><span class="r1">&gt;</span>
+            <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">5:Ca</span><span class="r2">rdPTPersVersion</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Major</span><span class="r1">&gt;</span><span class="r8">4</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Major</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Minor</span><span class="r1">&gt;</span><span class="r8">2</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Minor</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Revision</span><span class="r1">&gt;</span><span class="r8">0</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Revision</span><span class="r1">&gt;</span>
+            <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:CardPTPersVersion</span><span class="r1">&gt;</span>
+            <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">5:A</span><span class="r2">TRVersion</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Major</span><span class="r1">&gt;</span><span class="r8">2</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Major</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Minor</span><span class="r1">&gt;</span><span class="r8">0</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Minor</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Revision</span><span class="r1">&gt;</span><span class="r8">0</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Revision</span><span class="r1">&gt;</span>
+            <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:ATRVersion</span><span class="r1">&gt;</span>
+            <span class="r1">&lt;</span><span class="r2">ns5:GDOVersion</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Major</span><span class="r1">&gt;</span><span class="r8">1</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Major</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Minor</span><span class="r1">&gt;</span><span class="r8">0</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Minor</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Revision</span><span class="r1">&gt;</span><span class="r8">0</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Revision</span><span class="r1">&gt;</span>
+            <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:GDOVersion</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:CardVersion</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r2">ns4:Iccsn</span><span class="r1">&gt;</span><span class="r8">80276001011699900339</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns4</span><span class="r3">:Iccsn</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">4:C</span><span class="r2">tId</span><span class="r1">&gt;</span><span class="r9">8c43211f-e953-4cf6-a2b1-c04c8a6ce506</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns4</span><span class="r3">:CtId</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r2">ns4:SlotId</span><span class="r1">&gt;</span><span class="r8">1</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns4</span><span class="r3">:SlotId</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r2">ns5:InsertTime</span><span class="r1">&gt;</span><span class="r8">2023</span>-<span class="r8">05</span>-02T<span class="r6">12:40:17</span>.490Z<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:InsertTime</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">5:Ca</span><span class="r2">rdHolderName</span><span class="r1">&gt;</span><span class="r8">80276001011699900339</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:CardHolderName</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">5:Ce</span><span class="r2">rtificateExpirationDate</span><span class="r1">&gt;</span><span class="r8">2027</span>-<span class="r8">04</span>-07Z<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:CertificateExpirationD</span>
+<span class="r3">ate</span><span class="r1">&gt;</span>
+        <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Card</span><span class="r1">&gt;</span>
+        <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">5:Ca</span><span class="r2">rd</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">2:Ca</span><span class="r2">rdHandle</span><span class="r1">&gt;</span>EGK-<span class="r8">41</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns2</span><span class="r3">:CardHandle</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">4:Ca</span><span class="r2">rdType</span><span class="r1">&gt;</span>EGK<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns4</span><span class="r3">:CardType</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">5:Ca</span><span class="r2">rdVersion</span><span class="r1">&gt;</span>
+            <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">5:C</span><span class="r2">OSVersion</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Major</span><span class="r1">&gt;</span><span class="r8">0</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Major</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Minor</span><span class="r1">&gt;</span><span class="r8">0</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Minor</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Revision</span><span class="r1">&gt;</span><span class="r8">0</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Revision</span><span class="r1">&gt;</span>
+            <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:COSVersion</span><span class="r1">&gt;</span>
+            <span class="r1">&lt;</span><span class="r2">ns5:ObjectSystemVersion</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Major</span><span class="r1">&gt;</span><span class="r8">4</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Major</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Minor</span><span class="r1">&gt;</span><span class="r8">4</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Minor</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Revision</span><span class="r1">&gt;</span><span class="r8">32</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Revision</span><span class="r1">&gt;</span>
+            <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:ObjectSystemVersion</span><span class="r1">&gt;</span>
+            <span class="r1">&lt;</span><span class="r2">ns5:LoggingVersion</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Major</span><span class="r1">&gt;</span><span class="r8">1</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Major</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Minor</span><span class="r1">&gt;</span><span class="r8">32</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Minor</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Revision</span><span class="r1">&gt;</span><span class="r8">32</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Revision</span><span class="r1">&gt;</span>
+            <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:LoggingVersion</span><span class="r1">&gt;</span>
+            <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">5:A</span><span class="r2">TRVersion</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Major</span><span class="r1">&gt;</span><span class="r8">2</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Major</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Minor</span><span class="r1">&gt;</span><span class="r8">32</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Minor</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Revision</span><span class="r1">&gt;</span><span class="r8">32</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Revision</span><span class="r1">&gt;</span>
+            <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:ATRVersion</span><span class="r1">&gt;</span>
+            <span class="r1">&lt;</span><span class="r2">ns5:GDOVersion</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Major</span><span class="r1">&gt;</span><span class="r8">1</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Major</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Minor</span><span class="r1">&gt;</span><span class="r8">32</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Minor</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Revision</span><span class="r1">&gt;</span><span class="r8">32</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Revision</span><span class="r1">&gt;</span>
+            <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:GDOVersion</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:CardVersion</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r2">ns4:Iccsn</span><span class="r1">&gt;</span><span class="r8">80276881042001575452</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns4</span><span class="r3">:Iccsn</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">4:C</span><span class="r2">tId</span><span class="r1">&gt;</span><span class="r9">8c43211f-e953-4cf6-a2b1-c04c8a6ce506</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns4</span><span class="r3">:CtId</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r2">ns4:SlotId</span><span class="r1">&gt;</span><span class="r8">2</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns4</span><span class="r3">:SlotId</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r2">ns5:InsertTime</span><span class="r1">&gt;</span><span class="r8">2023</span>-<span class="r8">05</span>-02T<span class="r6">12:40:17</span>.505Z<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:InsertTime</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">5:Ca</span><span class="r2">rdHolderName</span><span class="r1">&gt;</span>Daniel Mustermann<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:CardHolderName</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r2">ns5:Kvnr</span><span class="r1">&gt;</span>T026540286<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Kvnr</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">5:Ce</span><span class="r2">rtificateExpirationDate</span><span class="r1">&gt;</span><span class="r8">2028</span>-<span class="r8">02</span>-07Z<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:CertificateExpirationD</span>
+<span class="r3">ate</span><span class="r1">&gt;</span>
+        <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Card</span><span class="r1">&gt;</span>
+        <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">5:Ca</span><span class="r2">rd</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">2:Ca</span><span class="r2">rdHandle</span><span class="r1">&gt;</span>HBA-<span class="r8">42</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns2</span><span class="r3">:CardHandle</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">4:Ca</span><span class="r2">rdType</span><span class="r1">&gt;</span>HBA<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns4</span><span class="r3">:CardType</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">5:Ca</span><span class="r2">rdVersion</span><span class="r1">&gt;</span>
+            <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">5:C</span><span class="r2">OSVersion</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Major</span><span class="r1">&gt;</span><span class="r8">4</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Major</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Minor</span><span class="r1">&gt;</span><span class="r8">6</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Minor</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Revision</span><span class="r1">&gt;</span><span class="r8">0</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Revision</span><span class="r1">&gt;</span>
+            <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:COSVersion</span><span class="r1">&gt;</span>
+            <span class="r1">&lt;</span><span class="r2">ns5:ObjectSystemVersion</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Major</span><span class="r1">&gt;</span><span class="r8">4</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Major</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Minor</span><span class="r1">&gt;</span><span class="r8">7</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Minor</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Revision</span><span class="r1">&gt;</span><span class="r8">0</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Revision</span><span class="r1">&gt;</span>
+            <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:ObjectSystemVersion</span><span class="r1">&gt;</span>
+            <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">5:A</span><span class="r2">TRVersion</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Major</span><span class="r1">&gt;</span><span class="r8">2</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Major</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Minor</span><span class="r1">&gt;</span><span class="r8">0</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Minor</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Revision</span><span class="r1">&gt;</span><span class="r8">0</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Revision</span><span class="r1">&gt;</span>
+            <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:ATRVersion</span><span class="r1">&gt;</span>
+            <span class="r1">&lt;</span><span class="r2">ns5:GDOVersion</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Major</span><span class="r1">&gt;</span><span class="r8">1</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Major</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Minor</span><span class="r1">&gt;</span><span class="r8">0</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Minor</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Revision</span><span class="r1">&gt;</span><span class="r8">0</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Revision</span><span class="r1">&gt;</span>
+            <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:GDOVersion</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:CardVersion</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r2">ns4:Iccsn</span><span class="r1">&gt;</span><span class="r8">80276883110000129111</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns4</span><span class="r3">:Iccsn</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">4:C</span><span class="r2">tId</span><span class="r1">&gt;</span><span class="r9">8c43211f-e953-4cf6-a2b1-c04c8a6ce506</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns4</span><span class="r3">:CtId</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r2">ns4:SlotId</span><span class="r1">&gt;</span><span class="r8">3</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns4</span><span class="r3">:SlotId</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r2">ns5:InsertTime</span><span class="r1">&gt;</span><span class="r8">2023</span>-<span class="r8">05</span>-02T<span class="r6">12:40:17</span>.530Z<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:InsertTime</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">5:Ca</span><span class="r2">rdHolderName</span><span class="r1">&gt;</span>Arzt Bernadette Birkengrund 
+TEST-ONLY<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:CardHolderName</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">5:Ce</span><span class="r2">rtificateExpirationDate</span><span class="r1">&gt;</span><span class="r8">2028</span>-<span class="r8">01</span>-25Z<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:CertificateExpirationD</span>
+<span class="r3">ate</span><span class="r1">&gt;</span>
+        <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Card</span><span class="r1">&gt;</span>
+        <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">5:Ca</span><span class="r2">rd</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">2:Ca</span><span class="r2">rdHandle</span><span class="r1">&gt;</span>SMC-B-<span class="r8">48</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns2</span><span class="r3">:CardHandle</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">4:Ca</span><span class="r2">rdType</span><span class="r1">&gt;</span>SMC-B<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns4</span><span class="r3">:CardType</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">5:Ca</span><span class="r2">rdVersion</span><span class="r1">&gt;</span>
+            <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">5:C</span><span class="r2">OSVersion</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Major</span><span class="r1">&gt;</span><span class="r8">0</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Major</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Minor</span><span class="r1">&gt;</span><span class="r8">0</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Minor</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Revision</span><span class="r1">&gt;</span><span class="r8">0</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Revision</span><span class="r1">&gt;</span>
+            <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:COSVersion</span><span class="r1">&gt;</span>
+            <span class="r1">&lt;</span><span class="r2">ns5:ObjectSystemVersion</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Major</span><span class="r1">&gt;</span><span class="r8">4</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Major</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Minor</span><span class="r1">&gt;</span><span class="r8">3</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Minor</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Revision</span><span class="r1">&gt;</span><span class="r8">0</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Revision</span><span class="r1">&gt;</span>
+            <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:ObjectSystemVersion</span><span class="r1">&gt;</span>
+            <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">5:A</span><span class="r2">TRVersion</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Major</span><span class="r1">&gt;</span><span class="r8">2</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Major</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Minor</span><span class="r1">&gt;</span><span class="r8">0</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Minor</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Revision</span><span class="r1">&gt;</span><span class="r8">0</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Revision</span><span class="r1">&gt;</span>
+            <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:ATRVersion</span><span class="r1">&gt;</span>
+            <span class="r1">&lt;</span><span class="r2">ns5:GDOVersion</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Major</span><span class="r1">&gt;</span><span class="r8">1</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Major</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Minor</span><span class="r1">&gt;</span><span class="r8">0</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Minor</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Revision</span><span class="r1">&gt;</span><span class="r8">0</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Revision</span><span class="r1">&gt;</span>
+            <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:GDOVersion</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:CardVersion</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r2">ns4:Iccsn</span><span class="r1">&gt;</span><span class="r8">80276883110000129116</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns4</span><span class="r3">:Iccsn</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">4:C</span><span class="r2">tId</span><span class="r1">&gt;</span><span class="r9">8c43211f-e953-4cf6-a2b1-c04c8a6ce506</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns4</span><span class="r3">:CtId</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r2">ns4:SlotId</span><span class="r1">&gt;</span><span class="r8">4</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns4</span><span class="r3">:SlotId</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r2">ns5:InsertTime</span><span class="r1">&gt;</span><span class="r8">2023</span>-<span class="r8">05</span>-08T<span class="r6">11:13:03</span>.987Z<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:InsertTime</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">5:Ca</span><span class="r2">rdHolderName</span><span class="r1">&gt;</span>Apotheke Adelheid Ulmendorfer 
+TEST-ONLY<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:CardHolderName</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">5:Ce</span><span class="r2">rtificateExpirationDate</span><span class="r1">&gt;</span><span class="r8">2028</span>-<span class="r8">01</span>-23Z<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:CertificateExpirationD</span>
+<span class="r3">ate</span><span class="r1">&gt;</span>
+        <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Card</span><span class="r1">&gt;</span>
+        <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">5:Ca</span><span class="r2">rd</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">2:Ca</span><span class="r2">rdHandle</span><span class="r1">&gt;</span>SMC-B-<span class="r8">43</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns2</span><span class="r3">:CardHandle</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">4:Ca</span><span class="r2">rdType</span><span class="r1">&gt;</span>SMC-B<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns4</span><span class="r3">:CardType</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">5:Ca</span><span class="r2">rdVersion</span><span class="r1">&gt;</span>
+            <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">5:C</span><span class="r2">OSVersion</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Major</span><span class="r1">&gt;</span><span class="r8">4</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Major</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Minor</span><span class="r1">&gt;</span><span class="r8">6</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Minor</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Revision</span><span class="r1">&gt;</span><span class="r8">0</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Revision</span><span class="r1">&gt;</span>
+            <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:COSVersion</span><span class="r1">&gt;</span>
+            <span class="r1">&lt;</span><span class="r2">ns5:ObjectSystemVersion</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Major</span><span class="r1">&gt;</span><span class="r8">4</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Major</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Minor</span><span class="r1">&gt;</span><span class="r8">7</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Minor</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Revision</span><span class="r1">&gt;</span><span class="r8">0</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Revision</span><span class="r1">&gt;</span>
+            <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:ObjectSystemVersion</span><span class="r1">&gt;</span>
+            <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">5:A</span><span class="r2">TRVersion</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Major</span><span class="r1">&gt;</span><span class="r8">2</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Major</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Minor</span><span class="r1">&gt;</span><span class="r8">0</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Minor</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Revision</span><span class="r1">&gt;</span><span class="r8">0</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Revision</span><span class="r1">&gt;</span>
+            <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:ATRVersion</span><span class="r1">&gt;</span>
+            <span class="r1">&lt;</span><span class="r2">ns5:GDOVersion</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Major</span><span class="r1">&gt;</span><span class="r8">1</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Major</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Minor</span><span class="r1">&gt;</span><span class="r8">0</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Minor</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Revision</span><span class="r1">&gt;</span><span class="r8">0</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Revision</span><span class="r1">&gt;</span>
+            <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:GDOVersion</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:CardVersion</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r2">ns4:Iccsn</span><span class="r1">&gt;</span><span class="r8">80276883110000129116</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns4</span><span class="r3">:Iccsn</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">4:C</span><span class="r2">tId</span><span class="r1">&gt;</span><span class="r9">8c43211f-e953-4cf6-a2b1-c04c8a6ce506</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns4</span><span class="r3">:CtId</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r2">ns4:SlotId</span><span class="r1">&gt;</span><span class="r8">5</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns4</span><span class="r3">:SlotId</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r2">ns5:InsertTime</span><span class="r1">&gt;</span><span class="r8">2023</span>-<span class="r8">05</span>-02T<span class="r6">12:40:17</span>.564Z<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:InsertTime</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">5:Ca</span><span class="r2">rdHolderName</span><span class="r1">&gt;</span>Arztpraxis Bernadette Birkengrund 
+TEST-ONLY<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:CardHolderName</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">5:Ce</span><span class="r2">rtificateExpirationDate</span><span class="r1">&gt;</span><span class="r8">2028</span>-<span class="r8">01</span>-25Z<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:CertificateExpirationD</span>
+<span class="r3">ate</span><span class="r1">&gt;</span>
+        <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Card</span><span class="r1">&gt;</span>
+        <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">5:Ca</span><span class="r2">rd</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">2:Ca</span><span class="r2">rdHandle</span><span class="r1">&gt;</span>SMC-B-<span class="r8">46</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns2</span><span class="r3">:CardHandle</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">4:Ca</span><span class="r2">rdType</span><span class="r1">&gt;</span>SMC-B<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns4</span><span class="r3">:CardType</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">5:Ca</span><span class="r2">rdVersion</span><span class="r1">&gt;</span>
+            <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">5:C</span><span class="r2">OSVersion</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Major</span><span class="r1">&gt;</span><span class="r8">0</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Major</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Minor</span><span class="r1">&gt;</span><span class="r8">0</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Minor</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Revision</span><span class="r1">&gt;</span><span class="r8">0</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Revision</span><span class="r1">&gt;</span>
+            <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:COSVersion</span><span class="r1">&gt;</span>
+            <span class="r1">&lt;</span><span class="r2">ns5:ObjectSystemVersion</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Major</span><span class="r1">&gt;</span><span class="r8">4</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Major</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Minor</span><span class="r1">&gt;</span><span class="r8">3</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Minor</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Revision</span><span class="r1">&gt;</span><span class="r8">0</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Revision</span><span class="r1">&gt;</span>
+            <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:ObjectSystemVersion</span><span class="r1">&gt;</span>
+            <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">5:A</span><span class="r2">TRVersion</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Major</span><span class="r1">&gt;</span><span class="r8">2</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Major</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Minor</span><span class="r1">&gt;</span><span class="r8">0</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Minor</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Revision</span><span class="r1">&gt;</span><span class="r8">0</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Revision</span><span class="r1">&gt;</span>
+            <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:ATRVersion</span><span class="r1">&gt;</span>
+            <span class="r1">&lt;</span><span class="r2">ns5:GDOVersion</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Major</span><span class="r1">&gt;</span><span class="r8">1</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Major</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Minor</span><span class="r1">&gt;</span><span class="r8">0</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Minor</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns5:Revision</span><span class="r1">&gt;</span><span class="r8">0</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Revision</span><span class="r1">&gt;</span>
+            <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:GDOVersion</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:CardVersion</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r2">ns4:Iccsn</span><span class="r1">&gt;</span><span class="r8">80276883110000129116</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns4</span><span class="r3">:Iccsn</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">4:C</span><span class="r2">tId</span><span class="r1">&gt;</span><span class="r9">8c43211f-e953-4cf6-a2b1-c04c8a6ce506</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns4</span><span class="r3">:CtId</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r2">ns4:SlotId</span><span class="r1">&gt;</span><span class="r8">6</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns4</span><span class="r3">:SlotId</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r2">ns5:InsertTime</span><span class="r1">&gt;</span><span class="r8">2023</span>-<span class="r8">05</span>-08T<span class="r6">11:12:55</span>.670Z<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:InsertTime</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">5:Ca</span><span class="r2">rdHolderName</span><span class="r1">&gt;</span>Apotheke Adelheid Ulmendorfer 
+TEST-ONLY<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:CardHolderName</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">5:Ce</span><span class="r2">rtificateExpirationDate</span><span class="r1">&gt;</span><span class="r8">2028</span>-<span class="r8">01</span>-23Z<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:CertificateExpirationD</span>
+<span class="r3">ate</span><span class="r1">&gt;</span>
+        <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Card</span><span class="r1">&gt;</span>
+      <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:Cards</span><span class="r1">&gt;</span>
+    <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns6</span><span class="r3">:GetCardsResponse</span><span class="r1">&gt;</span>
+  <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">SOAP-ENV</span><span class="r3">:Body</span><span class="r1">&gt;</span>
+<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">SOAP-ENV</span><span class="r3">:Envelope</span><span class="r1">&gt;</span>
+
+Request:
+<span class="r1">&lt;</span><span class="r2">soap-env:Envelope</span><span class="r3"> xmlns:soap-</span><span class="r4">env</span><span class="r3">=</span><span class="r5">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span><span class="r1">&gt;</span>
+  <span class="r1">&lt;</span><span class="r2">soap-env:Body</span><span class="r1">&gt;</span>
+    <span class="r1">&lt;</span><span class="r2">ns0:ReadCardCertificate</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns0</span><span class="r3">=</span><span class="r5">&quot;http://ws.gematik.de/conn/CertificateService/v6.0&quot;</span><span class="r1">&gt;</span>
+      <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">1:Ca</span><span class="r2">rdHandle</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns1</span><span class="r3">=</span><span class="r5">&quot;http://ws.gematik.de/conn/ConnectorCommon/v5.0&quot;</span><span class="r1">&gt;</span>SMC-B-<span class="r8">48</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns1</span><span class="r3">:CardHan</span>
+<span class="r3">dle</span><span class="r1">&gt;</span>
+      <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">2:C</span><span class="r2">ontext</span><span class="r3"> xmlns:</span><span class="r4">ns2</span><span class="r3">=</span><span class="r5">&quot;http://ws.gematik.de/conn/ConnectorContext/v2.0&quot;</span><span class="r1">&gt;</span>
+        <span class="r1">&lt;</span><span class="r2">ns3:MandantId</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns3</span><span class="r3">=</span><span class="r5">&quot;http://ws.gematik.de/conn/ConnectorCommon/v5.0&quot;</span><span class="r1">&gt;</span>m1<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns3</span><span class="r3">:MandantId</span><span class="r1">&gt;</span>
+        <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">4:C</span><span class="r2">lientSystemId</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns4</span><span class="r3">=</span><span class="r5">&quot;http://ws.gematik.de/conn/ConnectorCommon/v5.0&quot;</span><span class="r1">&gt;</span>c1<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns4</span><span class="r3">:ClientSystemI</span>
+<span class="r3">d</span><span class="r1">&gt;</span>
+        <span class="r1">&lt;</span><span class="r2">ns5:WorkplaceId</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns5</span><span class="r3">=</span><span class="r5">&quot;http://ws.gematik.de/conn/ConnectorCommon/v5.0&quot;</span><span class="r1">&gt;</span>w1<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:WorkplaceId</span><span class="r1">&gt;</span>
+        <span class="r1">&lt;</span><span class="r2">ns6:UserId</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns6</span><span class="r3">=</span><span class="r5">&quot;http://ws.gematik.de/conn/ConnectorCommon/v5.0&quot;</span><span class="r1">&gt;</span>user1<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns6</span><span class="r3">:UserId</span><span class="r1">&gt;</span>
+      <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns2</span><span class="r3">:Context</span><span class="r1">&gt;</span>
+      <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">0:Ce</span><span class="r2">rtRefList</span><span class="r1">&gt;</span>
+        <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">0:Ce</span><span class="r2">rtRef</span><span class="r1">&gt;</span>C.AUT<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns0</span><span class="r3">:CertRef</span><span class="r1">&gt;</span>
+      <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns0</span><span class="r3">:CertRefList</span><span class="r1">&gt;</span>
+      <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">0:C</span><span class="r2">rypt</span><span class="r1">&gt;</span>RSA<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns0</span><span class="r3">:Crypt</span><span class="r1">&gt;</span>
+    <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns0</span><span class="r3">:ReadCardCertificate</span><span class="r1">&gt;</span>
+  <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">soap-env</span><span class="r3">:Body</span><span class="r1">&gt;</span>
+<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">soap-env</span><span class="r3">:Envelope</span><span class="r1">&gt;</span>
+
+Response:
+<span class="r1">&lt;</span><span class="r2">SOAP-ENV:Envelope</span><span class="r3"> xmlns:SOAP-</span><span class="r4">ENV</span><span class="r3">=</span><span class="r5">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span><span class="r1">&gt;</span>
+  <span class="r1">&lt;</span><span class="r2">SOAP-ENV:Header</span><span class="r3">/</span><span class="r1">&gt;</span>
+  <span class="r1">&lt;</span><span class="r2">SOAP-ENV:Body</span><span class="r1">&gt;</span>
+    <span class="r1">&lt;</span><span class="r2">ns5:ReadCardCertificateResponse</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns2</span><span class="r3">=</span><span class="r5">&quot;http://ws.gematik.de/conn/ConnectorCommon/v5.0&quot;</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns3</span><span class="r3">=</span><span class="r5">&quot;http://ws.gematik.de/tel/error/v2.0&quot;</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns4</span><span class="r3">=</span><span class="r5">&quot;http://ws.gematik.de/conn/CertificateServiceCommon/v2.0&quot;</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns5</span><span class="r3">=</span><span class="r5">&quot;http://ws.gematik.de/conn/CertificateService/v6.0&quot;</span><span class="r1">&gt;</span>
+      <span class="r1">&lt;</span><span class="r2">ns2:Status</span><span class="r1">&gt;</span>
+        <span class="r1">&lt;</span><span class="r2">ns2:Result</span><span class="r1">&gt;</span>OK<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns2</span><span class="r3">:Result</span><span class="r1">&gt;</span>
+      <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns2</span><span class="r3">:Status</span><span class="r1">&gt;</span>
+      <span class="r1">&lt;</span><span class="r2">ns4:X509DataInfoList</span><span class="r1">&gt;</span>
+        <span class="r1">&lt;</span><span class="r2">ns4:X509DataInfo</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">4:Ce</span><span class="r2">rtRef</span><span class="r1">&gt;</span>C.AUT<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns4</span><span class="r3">:CertRef</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r2">ns4:X509Data</span><span class="r1">&gt;</span>
+            <span class="r1">&lt;</span><span class="r2">ns4:X509IssuerSerial</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns4:X509IssuerName</span><span class="r1">&gt;</span><span class="r4">CN</span>=<span class="r3">GEM</span>.SMCB-CA41 TEST-ONLY,<span class="r4">OU</span>=<span class="r3">Institution</span> des 
+Gesundheitswesens-CA der Telematikinfrastruktur,<span class="r4">O</span>=<span class="r3">gematik</span> GmbH 
+NOT-VALID,<span class="r4">C</span>=<span class="r3">DE</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns4</span><span class="r3">:X509IssuerName</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns4:X509SerialNumber</span><span class="r1">&gt;</span><span class="r8">732768528753998</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns4</span><span class="r3">:X509SerialNumber</span><span class="r1">&gt;</span>
+            <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns4</span><span class="r3">:X509IssuerSerial</span><span class="r1">&gt;</span>
+            <span class="r1">&lt;</span><span class="r2">ns4:X509SubjectName</span><span class="r1">&gt;</span><span class="r4">CN</span>=<span class="r3">Apotheke</span> Adelheid Ulmendorfer 
+TEST-ONLY,<span class="r6">2.5.4.</span><span class="r6">42</span>=#0c084164656c68656964,<span class="r6">2.5.4.</span><span class="r6">4</span>=#0c0b556c6d656e646f72666572,<span class="r6">2.5</span>
+<span class="r6">.4.</span><span class="r6">5</span>=#<span class="r8">131731362e3830323736303031303131363939393032333031</span>,<span class="r4">O</span>=<span class="r8">3</span>-<span class="r8">2</span>-<span class="r8">20230124</span>-<span class="r8">1</span> 
+NOT-VALID,<span class="r4">STREET</span>=<span class="r3">Hauptstr</span>. 
+<span class="r8">11</span>,<span class="r6">2.5.4.</span><span class="r6">17</span>=#0c053132333436,<span class="r4">L</span>=<span class="r3">Ingolfstadt</span>,<span class="r4">ST</span>=<span class="r3">Ulm</span>,<span class="r4">C</span>=<span class="r3">DE</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns4</span><span class="r3">:X509SubjectName</span><span class="r1">&gt;</span>
+            <span class="r1">&lt;</span><span class="r2">ns4:X509Certificate</span><span class="r1">&gt;</span>MIIFMzCCBBugAwIBAgIHAppy99vlTjANBgkqhkiG9w0BAQs
+FADCBmjELMAkGA1UEBhMCREUxHzAdBgNVBAoMFmdlbWF0aWsgR21iSCBOT1QtVkFMSUQxSDBGBgNVBAs
+MP0luc3RpdHV0aW9uIGRlcyBHZXN1bmRoZWl0c3dlc2Vucy1DQSBkZXIgVGVsZW1hdGlraW5mcmFzdHJ
+1a3R1cjEgMB4GA1UEAwwXR0VNLlNNQ0ItQ0E0MSBURVNULU9OTFkwHhcNMjMwMTIzMjMwMDAwWhcNMjg
+wMTIzMjI1OTU5WjCB+DELMAkGA1UEBhMCREUxDDAKBgNVBAgMA1VsbTEUMBIGA1UEBwwLSW5nb2xmc3R
+hZHQxDjAMBgNVBBEMBTEyMzQ2MRUwEwYDVQQJDAxIYXVwdHN0ci4gMTExITAfBgNVBAoMGDMtMi0yMDI
+zMDEyNC<span class="r8">0x</span>IE5PVC1WQUxJRDEgMB4GA1UEBRMXMTYuODAyNzYwMDEwMTE2OTk5MDIzMDExFDASBgNVBAQ
+MC1VsbWVuZG9yZmVyMREwDwYDVQQqDAhBZGVsaGVpZDEwMC4GA1UEAwwnQXBvdGhla2UgQWRlbGhlaWQ
+gVWxtZW5kb3JmZXIgVEVTVC1PTkxZMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAyloncXF
+shwf9JDF5Wi26AmvCh26U7mlK8Ov/oyqjPsM21OmTi3CbxQr6nR34ZLZ2voy0DLAFlmDOR0njx5m6Tpd
+0vZUI+byhuGdGuUIZb4QzZdAJ9Z6a3ixKbz6AcAGqk2LND1TvDoDeUhHgeJ/mql7tOANo8AL8+nk5s+A
+MUbynJ0yM91MdpAS9YYdIGg4CrCT6KAIXnkc7K4og43<span class="r8">0x</span>NfJ4sK8LtKOfxksIkeWNnJbNLcUG0J271GQ
+/1WxWMKI1bN8ciEKduLF0G6L0bG0GKpjIDKVFjSR3tQ8op/CdlNS/kQMbvVFgr4Eg7I1EifUXX00beoB
+tORGuZeeTfsS3eQIDAQABo4IBHDCCARgwDAYDVR0TAQH/BAIwADATBgNVHSUEDDAKBggrBgEFBQcDAjB
+HBgUrJAgDAwQ+MDwwOjA4MDYwNDAXDBXDlmZmZW50bGljaGUgQXBvdGhla2UwCQYHKoIUAEwENhMOMy0
+yLTIwMjMwMTI0LTEwHQYDVR0OBBYEFA1MnVA3+u/<span class="r3">/eW43forzY3p3LxSJMB8GA1UdIwQYMBaAFLr4Olg</span>
+<span class="r3">R9obqBKJtxHrrubP6S2/CMDgGCCsGAQUFBwEBBCwwKjAoBggrBgEFBQcwAYYcaHR0cDovL2VoY2EuZ2V</span>
+<span class="r3">tYXRpay5kZS9vY3NwLzAgBgNVHSAEGTAXMAoGCCqCFABMBIEjMAkGByqCFABMBE0wDgYDVR0PAQH/BAQ</span>
+<span class="r3">DAgWgMA0GCSqGSIb3DQEBCwUAA4IBAQAyjo4VEkSyQDq5I8BMM9Y1SBR91YeF9aILkW0q92Ar5x1jDai</span>
+<span class="r3">dmXwqmv9Y+xJmIZUWyw3OgWbVIfMeRZ+Uqks3waE0IbeaJWOyruG2ESS2BHnpTzkLX2HNYwqvqyjHiJn</span>
+<span class="r3">al9aV6xqlKQfT4sUPtvrlox0IFo9CznrIPC3WXvsk1R9zAmLPtcv4Ov7IElqNzFkTkPIVlVBbvB1i3tN</span>
+<span class="r3">KY594mkBPw2sJamqd8j/iwxTMhgoCOVv32YcGopb9llUDj1B/9QaTEKSnAACNIq/</span><span class="r7">Oe5XyDAHpKiMELEe</span>
+<span class="r7">oxRNhbtam4RUcHKz7ZaADfTN75XUy8BXyCRRJvozRQq9SNU55AWkH</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns4</span><span class="r3">:X509Certificate</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns4</span><span class="r3">:X509Data</span><span class="r1">&gt;</span>
+        <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns4</span><span class="r3">:X509DataInfo</span><span class="r1">&gt;</span>
+      <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns4</span><span class="r3">:X509DataInfoList</span><span class="r1">&gt;</span>
+    <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:ReadCardCertificateResponse</span><span class="r1">&gt;</span>
+  <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">SOAP-ENV</span><span class="r3">:Body</span><span class="r1">&gt;</span>
+<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">SOAP-ENV</span><span class="r3">:Envelope</span><span class="r1">&gt;</span>
+
+Request:
+<span class="r1">&lt;</span><span class="r2">soap-env:Envelope</span><span class="r3"> xmlns:soap-</span><span class="r4">env</span><span class="r3">=</span><span class="r5">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span><span class="r1">&gt;</span>
+  <span class="r1">&lt;</span><span class="r2">soap-env:Body</span><span class="r1">&gt;</span>
+    <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">0:E</span><span class="r2">xternalAuthenticate</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns0</span><span class="r3">=</span><span class="r5">&quot;http://ws.gematik.de/conn/SignatureService/v7.4&quot;</span><span class="r1">&gt;</span>
+      <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">1:Ca</span><span class="r2">rdHandle</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns1</span><span class="r3">=</span><span class="r5">&quot;http://ws.gematik.de/conn/ConnectorCommon/v5.0&quot;</span><span class="r1">&gt;</span>SMC-B-<span class="r8">48</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns1</span><span class="r3">:CardHan</span>
+<span class="r3">dle</span><span class="r1">&gt;</span>
+      <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">2:C</span><span class="r2">ontext</span><span class="r3"> xmlns:</span><span class="r4">ns2</span><span class="r3">=</span><span class="r5">&quot;http://ws.gematik.de/conn/ConnectorContext/v2.0&quot;</span><span class="r1">&gt;</span>
+        <span class="r1">&lt;</span><span class="r2">ns3:MandantId</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns3</span><span class="r3">=</span><span class="r5">&quot;http://ws.gematik.de/conn/ConnectorCommon/v5.0&quot;</span><span class="r1">&gt;</span>m1<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns3</span><span class="r3">:MandantId</span><span class="r1">&gt;</span>
+        <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">4:C</span><span class="r2">lientSystemId</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns4</span><span class="r3">=</span><span class="r5">&quot;http://ws.gematik.de/conn/ConnectorCommon/v5.0&quot;</span><span class="r1">&gt;</span>c1<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns4</span><span class="r3">:ClientSystemI</span>
+<span class="r3">d</span><span class="r1">&gt;</span>
+        <span class="r1">&lt;</span><span class="r2">ns5:WorkplaceId</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns5</span><span class="r3">=</span><span class="r5">&quot;http://ws.gematik.de/conn/ConnectorCommon/v5.0&quot;</span><span class="r1">&gt;</span>w1<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:WorkplaceId</span><span class="r1">&gt;</span>
+        <span class="r1">&lt;</span><span class="r2">ns6:UserId</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns6</span><span class="r3">=</span><span class="r5">&quot;http://ws.gematik.de/conn/ConnectorCommon/v5.0&quot;</span><span class="r1">&gt;</span>user1<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns6</span><span class="r3">:UserId</span><span class="r1">&gt;</span>
+      <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns2</span><span class="r3">:Context</span><span class="r1">&gt;</span>
+      <span class="r1">&lt;</span><span class="r2">ns0:OptionalInputs</span><span class="r1">&gt;</span>
+        <span class="r1">&lt;</span><span class="r2">ns7:SignatureType</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns7</span><span class="r3">=</span><span class="r5">&quot;urn:oasis:names:tc:dss:1.0:core:schema&quot;</span><span class="r1">&gt;</span>urn:ietf:r<span class="r6">fc:3447</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns7</span><span class="r3">:Signat</span>
+<span class="r3">ureType</span><span class="r1">&gt;</span>
+        <span class="r1">&lt;</span><span class="r2">ns0:SignatureSchemes</span><span class="r1">&gt;</span>RSASSA-PSS<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns0</span><span class="r3">:SignatureSchemes</span><span class="r1">&gt;</span>
+      <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns0</span><span class="r3">:OptionalInputs</span><span class="r1">&gt;</span>
+      <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">0:B</span><span class="r2">inaryString</span><span class="r1">&gt;</span>
+        <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">8:Ba</span><span class="r2">se64Data</span><span class="r3"> xmlns:</span><span class="r4">ns8</span><span class="r3">=</span><span class="r5">&quot;urn:oasis:names:tc:dss:1.0:core:schema&quot;</span><span class="r3"> </span>
+<span class="r4">MimeType</span><span class="r3">=</span><span class="r5">&quot;application/octet-stream&quot;</span><span class="r1">&gt;</span><span class="r4">y8n6Y4GTS9ksiJ9zlavD6y8SEnMlywukQIsfyMzze8U</span>=
+<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns8</span><span class="r3">:Base64Data</span><span class="r1">&gt;</span>
+      <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns0</span><span class="r3">:BinaryString</span><span class="r1">&gt;</span>
+    <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns0</span><span class="r3">:ExternalAuthenticate</span><span class="r1">&gt;</span>
+  <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">soap-env</span><span class="r3">:Body</span><span class="r1">&gt;</span>
+<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">soap-env</span><span class="r3">:Envelope</span><span class="r1">&gt;</span>
+
+Response:
+<span class="r1">&lt;</span><span class="r2">SOAP-ENV:Envelope</span><span class="r3"> xmlns:SOAP-</span><span class="r4">ENV</span><span class="r3">=</span><span class="r5">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span><span class="r1">&gt;</span>
+  <span class="r1">&lt;</span><span class="r2">SOAP-ENV:Header</span><span class="r3">/</span><span class="r1">&gt;</span>
+  <span class="r1">&lt;</span><span class="r2">SOAP-ENV:Body</span><span class="r1">&gt;</span>
+    <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">9:E</span><span class="r2">xternalAuthenticateResponse</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns10</span><span class="r3">=</span><span class="r5">&quot;http://ws.gematik.de/conn/ConnectorCommon/v5.0&quot;</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns11</span><span class="r3">=</span><span class="r5">&quot;http://ws.gematik.de/conn/ConnectorContext/v2.0&quot;</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns12</span><span class="r3">=</span><span class="r5">&quot;urn:oasis:names:tc:dss-x:1.0:profiles:SignaturePolicy:schema#&quot;</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns2</span><span class="r3">=</span><span class="r5">&quot;http://ws.gematik.de/conn/nfds/NFDService/v1.0&quot;</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns3</span><span class="r3">=</span><span class="r5">&quot;http://ws.gematik.de/tel/error/v2.0&quot;</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns4</span><span class="r3">=</span><span class="r5">&quot;urn:oasis:names:tc:dss:1.0:core:schema&quot;</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns5</span><span class="r3">=</span><span class="r5">&quot;http://www.w3.org/2000/09/xmldsig#&quot;</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns6</span><span class="r3">=</span><span class="r5">&quot;urn:oasis:names:tc:dss-x:1.0:profiles:verificationreport:schema#&quot;</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns7</span><span class="r3">=</span><span class="r5">&quot;http://uri.etsi.org/01903/v1.3.2#&quot;</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns8</span><span class="r3">=</span><span class="r5">&quot;http://uri.etsi.org/02231/v2#&quot;</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns9</span><span class="r3">=</span><span class="r5">&quot;http://ws.gematik.de/conn/SignatureService/v7.4&quot;</span><span class="r1">&gt;</span>
+      <span class="r1">&lt;</span><span class="r2">ns10:Status</span><span class="r1">&gt;</span>
+        <span class="r1">&lt;</span><span class="r2">ns10:Result</span><span class="r1">&gt;</span>OK<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns10</span><span class="r3">:Result</span><span class="r1">&gt;</span>
+      <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns10</span><span class="r3">:Status</span><span class="r1">&gt;</span>
+      <span class="r1">&lt;</span><span class="r2">ns4:SignatureObject</span><span class="r1">&gt;</span>
+        <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">4:Ba</span><span class="r2">se64Signature</span><span class="r3"> </span>
+<span class="r4">Type</span><span class="r3">=</span><span class="r5">&quot;urn:ietf:rfc:3447&quot;</span><span class="r1">&gt;</span>hqXkWVzWFFNittTcz3Yw/chKsmn10vEm60vFDqmhcNaw4b41vmbFryR
+baDG6GtTGchmtZWt0HIEckWbLCxduhQ+teaxoB+ldtCsUfT7vBti5hXaaWnO0BANtl7OOrgemaqKMaHS
+1QWs7qhIkW3EUqu4wB2uyQO3qrRzKKXeCR8IoP/8HE4HzeBZ4Cr1t0AQOMkCGph1Xyss7g468Cf8DFE1
+Za5kegrjozQwOJvZPeNxzWbJmkMT5eO2c/i/4zY5rq8OxxyzapQdk1Q3FscMNjuGnG58qf1FYqJ1pYHe
+7UJLznb+tPdLaeE6XriXlImJji3L0n36X4zO1+<span class="r4">LSWLqxtXg</span>==<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns4</span><span class="r3">:Base64Signature</span><span class="r1">&gt;</span>
+      <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns4</span><span class="r3">:SignatureObject</span><span class="r1">&gt;</span>
+    <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns9</span><span class="r3">:ExternalAuthenticateResponse</span><span class="r1">&gt;</span>
+  <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">SOAP-ENV</span><span class="r3">:Body</span><span class="r1">&gt;</span>
+<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">SOAP-ENV</span><span class="r3">:Envelope</span><span class="r1">&gt;</span>
+
+RSA Signature:
+<span class="r5">b&#x27;\x86\xa5\xe4Y\\\xd6\x14Sb\xb6\xd4\xdc\xcfv0\xfd\xc8J\xb2i\xf5\xd2\xf1&amp;\xebK\xc</span>
+<span class="r5">5\x0e\xa9\xa1p\xd6\xb0\xe1\xbe5\xbef\xc5\xaf$[h1\xba\x1a\xd4\xc6r\x19\xadekt\x1c</span>
+<span class="r5">\x81\x1c\x91f\xcb\x0b\x17n\x85\x0f\xady\xach\x07\xe9]\xb4+\x14}&gt;\xef\x06\xd8\xb9</span>
+<span class="r5">\x85v\x9aZs\xb4\x04\x03m\x97\xb3\x8e\xae\x07\xa6j\xa2\x8cht\xb5Ak;\xaa\x12$[q\x1</span>
+<span class="r5">4\xaa\xee0\x07k\xb2@\xed\xea\xad\x1c\xca)w\x82G\xc2(?\xff\x07\x13\x81\xf3x\x16x\</span>
+<span class="r5">n\xbdm\xd0\x04\x0e2@\x86\xa6\x1dW\xca\xcb;\x83\x8e\xbc\t\xff\x03\x14MYk\x99\x1e\</span>
+<span class="r5">x82\xb8\xe8\xcd\x0c\x0e&amp;\xf6Ox\xdcsY\xb2f\x90\xc4\xf9x\xed\x9c\xfe/\xf8\xcd\x8ek</span>
+<span class="r5">\xab\xc3\xb1\xc7,\xda\xa5\x07d\xd5\r\xc5\xb1\xc3\r\x8e\xe1\xa7\x1b\x9f*\x7fQX\xa</span>
+<span class="r5">8\x9di`w\xbbP\x92\xf3\x9d\xbf\xad=\xd2\xdaxN\x97\xae%\xe5&quot;bc\x8br\xf4\x9f~\x97\x</span>
+<span class="r5">e33\xb5\xf8\xb4\x96.\xacm^&#x27;</span>
+Request:
+<span class="r1">&lt;</span><span class="r2">soap-env:Envelope</span><span class="r3"> xmlns:soap-</span><span class="r4">env</span><span class="r3">=</span><span class="r5">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span><span class="r1">&gt;</span>
+  <span class="r1">&lt;</span><span class="r2">soap-env:Body</span><span class="r1">&gt;</span>
+    <span class="r1">&lt;</span><span class="r2">ns0:ReadCardCertificate</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns0</span><span class="r3">=</span><span class="r5">&quot;http://ws.gematik.de/conn/CertificateService/v6.0&quot;</span><span class="r1">&gt;</span>
+      <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">1:Ca</span><span class="r2">rdHandle</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns1</span><span class="r3">=</span><span class="r5">&quot;http://ws.gematik.de/conn/ConnectorCommon/v5.0&quot;</span><span class="r1">&gt;</span>SMC-B-<span class="r8">48</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns1</span><span class="r3">:CardHan</span>
+<span class="r3">dle</span><span class="r1">&gt;</span>
+      <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">2:C</span><span class="r2">ontext</span><span class="r3"> xmlns:</span><span class="r4">ns2</span><span class="r3">=</span><span class="r5">&quot;http://ws.gematik.de/conn/ConnectorContext/v2.0&quot;</span><span class="r1">&gt;</span>
+        <span class="r1">&lt;</span><span class="r2">ns3:MandantId</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns3</span><span class="r3">=</span><span class="r5">&quot;http://ws.gematik.de/conn/ConnectorCommon/v5.0&quot;</span><span class="r1">&gt;</span>m1<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns3</span><span class="r3">:MandantId</span><span class="r1">&gt;</span>
+        <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">4:C</span><span class="r2">lientSystemId</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns4</span><span class="r3">=</span><span class="r5">&quot;http://ws.gematik.de/conn/ConnectorCommon/v5.0&quot;</span><span class="r1">&gt;</span>c1<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns4</span><span class="r3">:ClientSystemI</span>
+<span class="r3">d</span><span class="r1">&gt;</span>
+        <span class="r1">&lt;</span><span class="r2">ns5:WorkplaceId</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns5</span><span class="r3">=</span><span class="r5">&quot;http://ws.gematik.de/conn/ConnectorCommon/v5.0&quot;</span><span class="r1">&gt;</span>w1<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:WorkplaceId</span><span class="r1">&gt;</span>
+        <span class="r1">&lt;</span><span class="r2">ns6:UserId</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns6</span><span class="r3">=</span><span class="r5">&quot;http://ws.gematik.de/conn/ConnectorCommon/v5.0&quot;</span><span class="r1">&gt;</span>user1<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns6</span><span class="r3">:UserId</span><span class="r1">&gt;</span>
+      <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns2</span><span class="r3">:Context</span><span class="r1">&gt;</span>
+      <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">0:Ce</span><span class="r2">rtRefList</span><span class="r1">&gt;</span>
+        <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">0:Ce</span><span class="r2">rtRef</span><span class="r1">&gt;</span>C.AUT<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns0</span><span class="r3">:CertRef</span><span class="r1">&gt;</span>
+      <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns0</span><span class="r3">:CertRefList</span><span class="r1">&gt;</span>
+      <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">0:C</span><span class="r2">rypt</span><span class="r1">&gt;</span>ECC<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns0</span><span class="r3">:Crypt</span><span class="r1">&gt;</span>
+    <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns0</span><span class="r3">:ReadCardCertificate</span><span class="r1">&gt;</span>
+  <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">soap-env</span><span class="r3">:Body</span><span class="r1">&gt;</span>
+<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">soap-env</span><span class="r3">:Envelope</span><span class="r1">&gt;</span>
+
+Response:
+<span class="r1">&lt;</span><span class="r2">SOAP-ENV:Envelope</span><span class="r3"> xmlns:SOAP-</span><span class="r4">ENV</span><span class="r3">=</span><span class="r5">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span><span class="r1">&gt;</span>
+  <span class="r1">&lt;</span><span class="r2">SOAP-ENV:Header</span><span class="r3">/</span><span class="r1">&gt;</span>
+  <span class="r1">&lt;</span><span class="r2">SOAP-ENV:Body</span><span class="r1">&gt;</span>
+    <span class="r1">&lt;</span><span class="r2">ns5:ReadCardCertificateResponse</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns2</span><span class="r3">=</span><span class="r5">&quot;http://ws.gematik.de/conn/ConnectorCommon/v5.0&quot;</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns3</span><span class="r3">=</span><span class="r5">&quot;http://ws.gematik.de/tel/error/v2.0&quot;</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns4</span><span class="r3">=</span><span class="r5">&quot;http://ws.gematik.de/conn/CertificateServiceCommon/v2.0&quot;</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns5</span><span class="r3">=</span><span class="r5">&quot;http://ws.gematik.de/conn/CertificateService/v6.0&quot;</span><span class="r1">&gt;</span>
+      <span class="r1">&lt;</span><span class="r2">ns2:Status</span><span class="r1">&gt;</span>
+        <span class="r1">&lt;</span><span class="r2">ns2:Result</span><span class="r1">&gt;</span>OK<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns2</span><span class="r3">:Result</span><span class="r1">&gt;</span>
+      <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns2</span><span class="r3">:Status</span><span class="r1">&gt;</span>
+      <span class="r1">&lt;</span><span class="r2">ns4:X509DataInfoList</span><span class="r1">&gt;</span>
+        <span class="r1">&lt;</span><span class="r2">ns4:X509DataInfo</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">4:Ce</span><span class="r2">rtRef</span><span class="r1">&gt;</span>C.AUT<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns4</span><span class="r3">:CertRef</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r2">ns4:X509Data</span><span class="r1">&gt;</span>
+            <span class="r1">&lt;</span><span class="r2">ns4:X509IssuerSerial</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns4:X509IssuerName</span><span class="r1">&gt;</span><span class="r4">CN</span>=<span class="r3">GEM</span>.SMCB-CA51 TEST-ONLY,<span class="r4">OU</span>=<span class="r3">Institution</span> des 
+Gesundheitswesens-CA der Telematikinfrastruktur,<span class="r4">O</span>=<span class="r3">gematik</span> GmbH 
+NOT-VALID,<span class="r4">C</span>=<span class="r3">DE</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns4</span><span class="r3">:X509IssuerName</span><span class="r1">&gt;</span>
+              <span class="r1">&lt;</span><span class="r2">ns4:X509SerialNumber</span><span class="r1">&gt;</span><span class="r8">657735307672265</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns4</span><span class="r3">:X509SerialNumber</span><span class="r1">&gt;</span>
+            <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns4</span><span class="r3">:X509IssuerSerial</span><span class="r1">&gt;</span>
+            <span class="r1">&lt;</span><span class="r2">ns4:X509SubjectName</span><span class="r1">&gt;</span><span class="r4">CN</span>=<span class="r3">Apotheke</span> Adelheid Ulmendorfer 
+TEST-ONLY,<span class="r6">2.5.4.</span><span class="r6">42</span>=#0c084164656c68656964,<span class="r6">2.5.4.</span><span class="r6">4</span>=#0c0b556c6d656e646f72666572,<span class="r6">2.5</span>
+<span class="r6">.4.</span><span class="r6">5</span>=#<span class="r8">131731362e3830323736303031303131363939393032333031</span>,<span class="r4">O</span>=<span class="r8">3</span>-<span class="r8">2</span>-<span class="r8">20230124</span>-<span class="r8">1</span> 
+NOT-VALID,<span class="r4">STREET</span>=<span class="r3">Hauptstr</span>. 
+<span class="r8">11</span>,<span class="r6">2.5.4.</span><span class="r6">17</span>=#0c053132333436,<span class="r4">L</span>=<span class="r3">Ingolfstadt</span>,<span class="r4">ST</span>=<span class="r3">Ulm</span>,<span class="r4">C</span>=<span class="r3">DE</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns4</span><span class="r3">:X509SubjectName</span><span class="r1">&gt;</span>
+            <span class="r1">&lt;</span><span class="r2">ns4:X509Certificate</span><span class="r1">&gt;</span>MIIEBzCCA62gAwIBAgIHAlY07166yTAKBggqhkjOPQQDAjC
+BmjELMAkGA1UEBhMCREUxHzAdBgNVBAoMFmdlbWF0aWsgR21iSCBOT1QtVkFMSUQxSDBGBgNVBAsMP0l
+uc3RpdHV0aW9uIGRlcyBHZXN1bmRoZWl0c3dlc2Vucy1DQSBkZXIgVGVsZW1hdGlraW5mcmFzdHJ1a3R
+1cjEgMB4GA1UEAwwXR0VNLlNNQ0ItQ0E1MSBURVNULU9OTFkwHhcNMjMwMTIzMjMwMDAwWhcNMjgwMTI
+zMjI1OTU5WjCB+DELMAkGA1UEBhMCREUxDDAKBgNVBAgMA1VsbTEUMBIGA1UEBwwLSW5nb2xmc3RhZHQ
+xDjAMBgNVBBEMBTEyMzQ2MRUwEwYDVQQJDAxIYXVwdHN0ci4gMTExITAfBgNVBAoMGDMtMi0yMDIzMDE
+yNC<span class="r8">0x</span>IE5PVC1WQUxJRDEgMB4GA1UEBRMXMTYuODAyNzYwMDEwMTE2OTk5MDIzMDExFDASBgNVBAQMC1V
+sbWVuZG9yZmVyMREwDwYDVQQqDAhBZGVsaGVpZDEwMC4GA1UEAwwnQXBvdGhla2UgQWRlbGhlaWQgVWx
+tZW5kb3JmZXIgVEVTVC1PTkxZMFowFAYHKoZIzj0CAQYJKyQDAwIIAQEHA0IABBBJ0HQjCtbWETqfbCU
+HmgranMym3LUOBueD/aGiAYJQd+hiew0L9y9ynBMY+woynO8H9nR8brU9S/2C5LxogTqjggF7MIIBdzA
+4BggrBgEFBQcBAQQsMCowKAYIKwYBBQUHMAGGHGh0dHA6Ly9laGNhLmdlbWF0aWsuZGUvb2NzcC8wEwY
+DVR0lBAwwCgYIKwYBBQUHAwIwDgYDVR0PAQH/BAQDAgeAMB0GA1UdDgQWBBTOyRZYh8CbxcOlRWP9MNM
+bVnqMWzAhBgNVHREEGjAYoBYGA1UEA6APDA1PZXRrZXItR3J1cHBlMEcGBSskCAMDBD4wPDA6MDgwNjA
+0MBcMFcOWZmZlbnRsaWNoZSBBcG90aGVrZTAJBgcqghQATAQ2Ew4zLTItMjAyMzAxMjQtMTAfBgNVHSM
+EGDAWgBQGmOkCVf/Jn1yjZQ7xXeIg9YT7kzBcBgNVHSAEVTBTMDsGCCqCFABMBIEjMC8wLQYIKwYBBQU
+HAgEWIWh0dHA6Ly93d3cuZ2VtYXRpay5kZS9nby9wb2xpY2llczAJBgcqghQATARNMAkGByqCFABMBGU
+wDAYDVR0TAQH/BAIwADAKBggqhkjOPQQDAgNIADBFAiEAj2GH7nn3bXjwW6kXfRz/<span class="r3">/silTGdHPr/SfH8</span>
+<span class="r3">5rNKGX9YCIAs0IvF/OnfLr6ncZLN/</span><span class="r7">RO0Cpcqdx84locpEyl41QBTk</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns4</span><span class="r3">:X509Certificate</span><span class="r1">&gt;</span>
+          <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns4</span><span class="r3">:X509Data</span><span class="r1">&gt;</span>
+        <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns4</span><span class="r3">:X509DataInfo</span><span class="r1">&gt;</span>
+      <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns4</span><span class="r3">:X509DataInfoList</span><span class="r1">&gt;</span>
+    <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:ReadCardCertificateResponse</span><span class="r1">&gt;</span>
+  <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">SOAP-ENV</span><span class="r3">:Body</span><span class="r1">&gt;</span>
+<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">SOAP-ENV</span><span class="r3">:Envelope</span><span class="r1">&gt;</span>
+
+<span class="r1">[</span>
+    <span class="r1">{</span>
+    <span class="r5">&#x27;CertRef&#x27;</span>: <span class="r5">&#x27;C.AUT&#x27;</span>,
+    <span class="r5">&#x27;X509Data&#x27;</span>: <span class="r1">{</span>
+        <span class="r5">&#x27;X509IssuerSerial&#x27;</span>: <span class="r1">{</span>
+            <span class="r5">&#x27;X509IssuerName&#x27;</span>: <span class="r5">&#x27;CN=GEM.SMCB-CA51 TEST-ONLY,OU=Institution des </span>
+<span class="r5">Gesundheitswesens-CA der Telematikinfrastruktur,O=gematik GmbH NOT-VALID,C=DE&#x27;</span>,
+            <span class="r5">&#x27;X509SerialNumber&#x27;</span>: <span class="r5">&#x27;657735307672265&#x27;</span>
+        <span class="r1">}</span>,
+        <span class="r5">&#x27;X509SubjectName&#x27;</span>: <span class="r5">&#x27;CN=Apotheke Adelheid Ulmendorfer </span>
+<span class="r5">TEST-ONLY,2.5.4.42=#0c084164656c68656964,2.5.4.4=#0c0b556c6d656e646f72666572,2.5</span>
+<span class="r5">.4.5=#131731362e3830323736303031303131363939393032333031,O=3-2-20230124-1 </span>
+<span class="r5">NOT-VALID,STREET=Hauptstr. </span>
+<span class="r5">11,2.5.4.17=#0c053132333436,L=Ingolfstadt,ST=Ulm,C=DE&#x27;</span>,
+        <span class="r5">&#x27;X509Certificate&#x27;</span>: 
+<span class="r5">b&#x27;0\x82\x04\x070\x82\x03\xad\xa0\x03\x02\x01\x02\x02\x07\x02V4\xef^\xba\xc90\n\x</span>
+<span class="r5">06\x08*\x86H\xce=\x04\x03\x020\x81\x9a1\x0b0\t\x06\x03U\x04\x06\x13\x02DE1\x1f0\</span>
+<span class="r5">x1d\x06\x03U\x04\n\x0c\x16gematik GmbH </span>
+<span class="r5">NOT-VALID1H0F\x06\x03U\x04\x0b\x0c?Institution des Gesundheitswesens-CA der </span>
+<span class="r5">Telematikinfrastruktur1 0\x1e\x06\x03U\x04\x03\x0c\x17GEM.SMCB-CA51 </span>
+<span class="r5">TEST-ONLY0\x1e\x17\r230123230000Z\x17\r280123225959Z0\x81\xf81\x0b0\t\x06\x03U\x</span>
+<span class="r5">04\x06\x13\x02DE1\x0c0\n\x06\x03U\x04\x08\x0c\x03Ulm1\x140\x12\x06\x03U\x04\x07\</span>
+<span class="r5">x0c\x0bIngolfstadt1\x0e0\x0c\x06\x03U\x04\x11\x0c\x05123461\x150\x13\x06\x03U\x0</span>
+<span class="r5">4\t\x0c\x0cHauptstr. 111!0\x1f\x06\x03U\x04\n\x0c\x183-2-20230124-1 NOT-VALID1 </span>
+<span class="r5">0\x1e\x06\x03U\x04\x05\x13\x1716.802760010116999023011\x140\x12\x06\x03U\x04\x04</span>
+<span class="r5">\x0c\x0bUlmendorfer1\x110\x0f\x06\x03U\x04*\x0c\x08Adelheid100.\x06\x03U\x04\x03</span>
+<span class="r5">\x0c\&#x27;Apotheke Adelheid Ulmendorfer </span>
+<span class="r5">TEST-ONLY0Z0\x14\x06\x07*\x86H\xce=\x02\x01\x06\t+$\x03\x03\x02\x08\x01\x01\x07\</span>
+<span class="r5">x03B\x00\x04\x10I\xd0t#\n\xd6\xd6\x11:\x9fl%\x07\x9a\n\xda\x9c\xcc\xa6\xdc\xb5\x</span>
+<span class="r5">0e\x06\xe7\x83\xfd\xa1\xa2\x01\x82Pw\xe8b{\r\x0b\xf7/r\x9c\x13\x18\xfb\n2\x9c\xe</span>
+<span class="r5">f\x07\xf6t|n\xb5=K\xfd\x82\xe4\xbch\x81:\xa3\x82\x01{0\x82\x01w08\x06\x08+\x06\x</span>
+<span class="r5">01\x05\x05\x07\x01\x01\x04,0*0(\x06\x08+\x06\x01\x05\x05\x070\x01\x86\x1chttp://</span>
+<span class="r5">ehca.gematik.de/ocsp/0\x13\x06\x03U\x1d%\x04\x0c0\n\x06\x08+\x06\x01\x05\x05\x07</span>
+<span class="r5">\x03\x020\x0e\x06\x03U\x1d\x0f\x01\x01\xff\x04\x04\x03\x02\x07\x800\x1d\x06\x03U</span>
+<span class="r5">\x1d\x0e\x04\x16\x04\x14\xce\xc9\x16X\x87\xc0\x9b\xc5\xc3\xa5Ec\xfd0\xd3\x1bVz\x</span>
+<span class="r5">8c[0!\x06\x03U\x1d\x11\x04\x1a0\x18\xa0\x16\x06\x03U\x04\x03\xa0\x0f\x0c\rOetker</span>
+<span class="r5">-Gruppe0G\x06\x05+$\x08\x03\x03\x04&gt;0&lt;0:0806040\x17\x0c\x15\xc3\x96ffentliche </span>
+<span class="r5">Apotheke0\t\x06\x07*\x82\x14\x00L\x046\x13\x0e3-2-20230124-10\x1f\x06\x03U\x1d#\</span>
+<span class="r5">x04\x180\x16\x80\x14\x06\x98\xe9\x02U\xff\xc9\x9f\\\xa3e\x0e\xf1]\xe2 </span>
+<span class="r5">\xf5\x84\xfb\x930\\\x06\x03U\x1d </span>
+<span class="r5">\x04U0S0;\x06\x08*\x82\x14\x00L\x04\x81#0/0-\x06\x08+\x06\x01\x05\x05\x07\x02\x0</span>
+<span class="r5">1\x16!http://www.gematik.de/go/policies0\t\x06\x07*\x82\x14\x00L\x04M0\t\x06\x07</span>
+<span class="r5">*\x82\x14\x00L\x04e0\x0c\x06\x03U\x1d\x13\x01\x01\xff\x04\x020\x000\n\x06\x08*\x</span>
+<span class="r5">86H\xce=\x04\x03\x02\x03H\x000E\x02!\x00\x8fa\x87\xeey\xf7mx\xf0[\xa9\x17}\x1c\x</span>
+<span class="r5">ff\xfe\xc8\xa5LgG&gt;\xbf\xd2|\x7f9\xac\xd2\x86_\xd6\x02 </span>
+<span class="r5">\x0b4&quot;\xf1\x7f:w\xcb\xaf\xa9\xdcd\xb3\x7fD\xed\x02\xa5\xca\x9d\xc7\xce%\xa1\xcaD</span>
+<span class="r5">\xca^5@\x14\xe4&#x27;</span>
+    <span class="r1">}</span>
+<span class="r1">}</span>
+<span class="r1">]</span>
+Request:
+<span class="r1">&lt;</span><span class="r2">soap-env:Envelope</span><span class="r3"> xmlns:soap-</span><span class="r4">env</span><span class="r3">=</span><span class="r5">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span><span class="r1">&gt;</span>
+  <span class="r1">&lt;</span><span class="r2">soap-env:Body</span><span class="r1">&gt;</span>
+    <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">0:E</span><span class="r2">xternalAuthenticate</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns0</span><span class="r3">=</span><span class="r5">&quot;http://ws.gematik.de/conn/SignatureService/v7.4&quot;</span><span class="r1">&gt;</span>
+      <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">1:Ca</span><span class="r2">rdHandle</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns1</span><span class="r3">=</span><span class="r5">&quot;http://ws.gematik.de/conn/ConnectorCommon/v5.0&quot;</span><span class="r1">&gt;</span>SMC-B-<span class="r8">48</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns1</span><span class="r3">:CardHan</span>
+<span class="r3">dle</span><span class="r1">&gt;</span>
+      <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">2:C</span><span class="r2">ontext</span><span class="r3"> xmlns:</span><span class="r4">ns2</span><span class="r3">=</span><span class="r5">&quot;http://ws.gematik.de/conn/ConnectorContext/v2.0&quot;</span><span class="r1">&gt;</span>
+        <span class="r1">&lt;</span><span class="r2">ns3:MandantId</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns3</span><span class="r3">=</span><span class="r5">&quot;http://ws.gematik.de/conn/ConnectorCommon/v5.0&quot;</span><span class="r1">&gt;</span>m1<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns3</span><span class="r3">:MandantId</span><span class="r1">&gt;</span>
+        <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">4:C</span><span class="r2">lientSystemId</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns4</span><span class="r3">=</span><span class="r5">&quot;http://ws.gematik.de/conn/ConnectorCommon/v5.0&quot;</span><span class="r1">&gt;</span>c1<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns4</span><span class="r3">:ClientSystemI</span>
+<span class="r3">d</span><span class="r1">&gt;</span>
+        <span class="r1">&lt;</span><span class="r2">ns5:WorkplaceId</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns5</span><span class="r3">=</span><span class="r5">&quot;http://ws.gematik.de/conn/ConnectorCommon/v5.0&quot;</span><span class="r1">&gt;</span>w1<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns5</span><span class="r3">:WorkplaceId</span><span class="r1">&gt;</span>
+        <span class="r1">&lt;</span><span class="r2">ns6:UserId</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns6</span><span class="r3">=</span><span class="r5">&quot;http://ws.gematik.de/conn/ConnectorCommon/v5.0&quot;</span><span class="r1">&gt;</span>user1<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns6</span><span class="r3">:UserId</span><span class="r1">&gt;</span>
+      <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns2</span><span class="r3">:Context</span><span class="r1">&gt;</span>
+      <span class="r1">&lt;</span><span class="r2">ns0:OptionalInputs</span><span class="r1">&gt;</span>
+        <span class="r1">&lt;</span><span class="r2">ns7:SignatureType</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns7</span><span class="r3">=</span><span class="r5">&quot;urn:oasis:names:tc:dss:1.0:core:schema&quot;</span><span class="r1">&gt;</span>urn:ietf:r<span class="r6">fc:3447</span><span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns7</span><span class="r3">:Signat</span>
+<span class="r3">ureType</span><span class="r1">&gt;</span>
+        <span class="r1">&lt;</span><span class="r2">ns0:SignatureSchemes</span><span class="r1">&gt;</span>RSASSA-PSS<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns0</span><span class="r3">:SignatureSchemes</span><span class="r1">&gt;</span>
+      <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns0</span><span class="r3">:OptionalInputs</span><span class="r1">&gt;</span>
+      <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">0:B</span><span class="r2">inaryString</span><span class="r1">&gt;</span>
+        <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">8:Ba</span><span class="r2">se64Data</span><span class="r3"> xmlns:</span><span class="r4">ns8</span><span class="r3">=</span><span class="r5">&quot;urn:oasis:names:tc:dss:1.0:core:schema&quot;</span><span class="r3"> </span>
+<span class="r4">MimeType</span><span class="r3">=</span><span class="r5">&quot;application/octet-stream&quot;</span><span class="r1">&gt;</span><span class="r4">y8n6Y4GTS9ksiJ9zlavD6y8SEnMlywukQIsfyMzze8U</span>=
+<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns8</span><span class="r3">:Base64Data</span><span class="r1">&gt;</span>
+      <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns0</span><span class="r3">:BinaryString</span><span class="r1">&gt;</span>
+    <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns0</span><span class="r3">:ExternalAuthenticate</span><span class="r1">&gt;</span>
+  <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">soap-env</span><span class="r3">:Body</span><span class="r1">&gt;</span>
+<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">soap-env</span><span class="r3">:Envelope</span><span class="r1">&gt;</span>
+
+Response:
+<span class="r1">&lt;</span><span class="r2">SOAP-ENV:Envelope</span><span class="r3"> xmlns:SOAP-</span><span class="r4">ENV</span><span class="r3">=</span><span class="r5">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span><span class="r1">&gt;</span>
+  <span class="r1">&lt;</span><span class="r2">SOAP-ENV:Header</span><span class="r3">/</span><span class="r1">&gt;</span>
+  <span class="r1">&lt;</span><span class="r2">SOAP-ENV:Body</span><span class="r1">&gt;</span>
+    <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">9:E</span><span class="r2">xternalAuthenticateResponse</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns10</span><span class="r3">=</span><span class="r5">&quot;http://ws.gematik.de/conn/ConnectorCommon/v5.0&quot;</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns11</span><span class="r3">=</span><span class="r5">&quot;http://ws.gematik.de/conn/ConnectorContext/v2.0&quot;</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns12</span><span class="r3">=</span><span class="r5">&quot;urn:oasis:names:tc:dss-x:1.0:profiles:SignaturePolicy:schema#&quot;</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns2</span><span class="r3">=</span><span class="r5">&quot;http://ws.gematik.de/conn/nfds/NFDService/v1.0&quot;</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns3</span><span class="r3">=</span><span class="r5">&quot;http://ws.gematik.de/tel/error/v2.0&quot;</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns4</span><span class="r3">=</span><span class="r5">&quot;urn:oasis:names:tc:dss:1.0:core:schema&quot;</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns5</span><span class="r3">=</span><span class="r5">&quot;http://www.w3.org/2000/09/xmldsig#&quot;</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns6</span><span class="r3">=</span><span class="r5">&quot;urn:oasis:names:tc:dss-x:1.0:profiles:verificationreport:schema#&quot;</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns7</span><span class="r3">=</span><span class="r5">&quot;http://uri.etsi.org/01903/v1.3.2#&quot;</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns8</span><span class="r3">=</span><span class="r5">&quot;http://uri.etsi.org/02231/v2#&quot;</span><span class="r3"> </span>
+<span class="r3">xmlns:</span><span class="r4">ns9</span><span class="r3">=</span><span class="r5">&quot;http://ws.gematik.de/conn/SignatureService/v7.4&quot;</span><span class="r1">&gt;</span>
+      <span class="r1">&lt;</span><span class="r2">ns10:Status</span><span class="r1">&gt;</span>
+        <span class="r1">&lt;</span><span class="r2">ns10:Result</span><span class="r1">&gt;</span>OK<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns10</span><span class="r3">:Result</span><span class="r1">&gt;</span>
+      <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns10</span><span class="r3">:Status</span><span class="r1">&gt;</span>
+      <span class="r1">&lt;</span><span class="r2">ns4:SignatureObject</span><span class="r1">&gt;</span>
+        <span class="r1">&lt;</span><span class="r2">ns</span><span class="r6">4:Ba</span><span class="r2">se64Signature</span><span class="r3"> </span>
+<span class="r4">Type</span><span class="r3">=</span><span class="r5">&quot;urn:ietf:rfc:3447&quot;</span><span class="r1">&gt;</span>X2iTTSkfOVVXlLOMeEp4nxcVaYcLI+HLFTrDRG7d9JaWQLJ+jqpVGMQ
+6bkv0pREunc4brCsm3qcL5JRAczuLPP2dL1R0lIY9ftlFjJTPdwVRJB9XXBAxtR7xDm47LuHNljI64zg
+MeK3qJbjpcSv0SQNdoqoHHtQI+EerlimnR6rP7Cmzipy9SHPJlMuI8ZjukbV8mBfe7wVrb7foeq2Hiit
+fM8i+lX7yIHsSrUM2r+Io1iSblZkkCwumn5krIpBS4rflcDS7oOH6Xf3joRQCMJ5AS8yMUD/C2hyMppc
+x0HAm/xOgfC8AZPkfL7KDKm/<span class="r4">auhRFUtuHGChFcuunSOWmNg</span>==<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns4</span><span class="r3">:Base64Signature</span><span class="r1">&gt;</span>
+      <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns4</span><span class="r3">:SignatureObject</span><span class="r1">&gt;</span>
+    <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">ns9</span><span class="r3">:ExternalAuthenticateResponse</span><span class="r1">&gt;</span>
+  <span class="r1">&lt;</span><span class="r3">/</span><span class="r7">SOAP-ENV</span><span class="r3">:Body</span><span class="r1">&gt;</span>
+<span class="r1">&lt;</span><span class="r3">/</span><span class="r7">SOAP-ENV</span><span class="r3">:Envelope</span><span class="r1">&gt;</span>
+
+ECC Signature:
+<span class="r5">b&#x27;_h\x93M)\x1f9UW\x94\xb3\x8cxJx\x9f\x17\x15i\x87\x0b#\xe1\xcb\x15:\xc3Dn\xdd\xf</span>
+<span class="r5">4\x96\x96@\xb2~\x8e\xaaU\x18\xc4:nK\xf4\xa5\x11.\x9d\xce\x1b\xac+&amp;\xde\xa7\x0b\x</span>
+<span class="r5">e4\x94@s;\x8b&lt;\xfd\x9d/Tt\x94\x86=~\xd9E\x8c\x94\xcfw\x05Q$\x1fW\\\x101\xb5\x1e\</span>
+<span class="r5">xf1\x0en;.\xe1\xcd\x962:\xe38\x0cx\xad\xea%\xb8\xe9q+\xf4I\x03]\xa2\xaa\x07\x1e\</span>
+<span class="r5">xd4\x08\xf8G\xab\x96)\xa7G\xaa\xcf\xec)\xb3\x8a\x9c\xbdHs\xc9\x94\xcb\x88\xf1\x9</span>
+<span class="r5">8\xee\x91\xb5|\x98\x17\xde\xef\x05ko\xb7\xe8z\xad\x87\x8a+_3\xc8\xbe\x95~\xf2 </span>
+<span class="r5">{\x12\xadC6\xaf\xe2(\xd6$\x9b\x95\x99$\x0b\x0b\xa6\x9f\x99+&quot;\x90R\xe2\xb7\xe5p4\</span>
+<span class="r5">xbb\xa0\xe1\xfa]\xfd\xe3\xa1\x14\x020\x9e@K\xcc\x8cP?\xc2\xda\x1c\x8c\xa6\x971\x</span>
+<span class="r5">d0p&amp;\xff\x13\xa0|/\x00d\xf9\x1f/\xb2\x83*o\xda\xba\x14ER\xdb\x87\x18(Er\xeb\xa7H</span>
+<span class="r5">\xe5\xa66&#x27;</span>
+</pre>
+    </code>
+</body>
+</html>
