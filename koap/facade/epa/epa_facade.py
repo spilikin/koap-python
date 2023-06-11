@@ -5,6 +5,24 @@ from koap.facade.model import obj_to_card, Card, CARD_TYPES_SMCB
 from typing import Tuple, List
 import datetime
 from zeep import xsd
+from zeep.helpers import serialize_object
+from lxml import etree
+import xmltodict
+
+
+# very quick and dirty hack to remove the namespace prefix and convert to dict
+def etree_to_dict(el: etree.ElementBase):
+    for el2 in el.findall('.//*'):
+        # if element namespace is urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0, remove the ns prefix
+        if el2.tag.startswith('{urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0}'):
+            el2.tag = el2.tag.split('}', 1)[1]
+
+    as_dist = xmltodict.parse(etree.tostring(el, encoding='utf8', method='xml', pretty_print=True))
+
+    # get the value of the fist entry in dict
+    as_dist = as_dist[list(as_dist.keys())[0]]
+
+    return as_dist
 
 
 class InsurantId(BaseModel):
@@ -91,6 +109,71 @@ class EPARecordFacade:
         self.epa_facade = epa_facade
         self.record_id = record_id
 
+    def provide_and_register_document_set(self, document_set: List[str]):
+        response = self.epa_facade.phr_service['DocumentRepository_ProvideAndRegisterDocumentSet-b'](
+            SubmitObjectsRequest={
+                'RequestSlotList': {
+                    'Slot': {
+                        'name': 'homeCommunityId',
+                        'ValueList': {
+                            '_value_1': [
+                               {'Value': self.record_id.HomeCommunityId}
+                            ]
+                        }
+                    }
+                },
+                'RegistryObjectList': {
+                    'ExtrinsicObject': {
+                        'id': '2',
+                        'mimeType': 'text/plain'
+                    }
+                }
+            },
+            Document={
+                'id': '1234',
+                '_value_1': "Hello World!"
+            },
+            _soapheaders=self.soap_headers()
+        )
+        return response
+
+    def get_folder_and_contents(self, uuid: str):
+        response = self.epa_facade.phr_service.DocumentRegistry_RegistryStoredQuery(
+            federated=False,
+            startIndex=0,
+            maxResults=-1,
+            ResponseOption={
+                'returnType': 'LeafClass',
+                'returnComposedObjects': False
+            },
+            AdhocQuery={
+                'id': 'urn:uuid:b909a503-523d-4517-8acf-8e5834dfc4c7',
+                'home': self.record_id.HomeCommunityId,
+                'Slot': [
+                    {
+                        'name': '$XDSFolderEntryUUID',
+                        "ValueList": {
+                            "_value_1": [
+                                {
+                                    'Value': f"'{uuid}'"
+                                }
+                            ]
+                        }
+                    },
+                ]
+            },
+            _soapheaders=self.soap_headers()
+        )
+
+        response = serialize_object(response)
+
+        if response.get('RegistryObjectList') is not None:
+            object_list = list(map(etree_to_dict, response.get('RegistryObjectList').get('_value_1', [])))
+        else:
+            object_list = []
+
+        return object_list
+
     def get_folders(self):
         response = self.epa_facade.phr_service.DocumentRegistry_RegistryStoredQuery(
             federated=False,
@@ -129,14 +212,11 @@ class EPARecordFacade:
             _soapheaders=self.soap_headers()
         )
 
-        from koap.util import element_to_obj
+        # object_list = list(map(etree_to_dict, response['RegistryObjectList']['_value_1']))
+        object_list = response
 
-        def folder_to_obj(folder):
-            return element_to_obj(folder, single_elements=['LocalizedString'])
+        return object_list
 
-        folders = map(folder_to_obj, response['RegistryObjectList']['_raw_elements'])
-        return list(folders)
-    
     def soap_headers(self) -> List:
         header = xsd.Element(
             '{http://ws.gematik.de/conn/phrs/PHRService/v2.0}ContextHeader',

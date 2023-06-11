@@ -13,7 +13,7 @@ def test_read_vsd():
     try:
         debug_plugin = RichSoapDebugPlugin(debug_console)
         client = ConnectorClient(ConnectorConfig(), soap_plugins=[debug_plugin])
-        
+
         print(client.service_directory)
 
         vsdm = VSDMFacade(client)
