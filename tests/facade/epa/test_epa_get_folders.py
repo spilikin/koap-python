@@ -22,16 +22,10 @@ def test_epa_get_folders():
 
         epa_record = EPARecordFacade(epa, record_id)
 
-        # folders = epa_record.get_folders()
+        folders = epa_record.get_folders()
 
-        # print(folders)
-
-        #docs = epa_record.get_folder_and_contents('urn:uuid:0acc992e-29f5-4284-a25a-ca698f21d672')
-
-        #print(docs)
-
-        epa_record.provide_and_register_document_set([])
-
+        print(folders)
+ 
     finally:
         base_file_name = os.path.basename(__file__)  # get base file name, might include .py
         debug_plugin.save_html(os.path.splitext(base_file_name)[0]+'.html')

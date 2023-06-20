@@ -1,4 +1,4 @@
-from koap.facade.vsdm.vsdm import VSDMFacade
+from koap.facade.vsdm.vsdm_facade import VSDMFacade
 from koap.facade.model import CardTypeEnum
 from koap.client import ConnectorClient, ConnectorConfig
 from koap.debug import RichSoapDebugPlugin
