@@ -15,7 +15,7 @@ async def async_test_subscribe():
     config = ConnectorConfig()
     conn = ConnectorClient(config)
 
-    cetp = CETP(lambda event: print(event))
+    cetp = CETP(config, lambda event: print(event))
     server = await cetp.start_server()
 
     event_service = conn.create_service_client(ConnectorServiceName.EventService, '7.2.0')
