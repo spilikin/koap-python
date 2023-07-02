@@ -6,6 +6,8 @@ from requests import Session
 from requests.auth import HTTPBasicAuth
 from enum import Enum
 from importlib import resources
+from requests_pkcs12 import Pkcs12Adapter
+import ssl
 
 
 def reduce_version(version):
@@ -69,11 +71,18 @@ class ConnectorClient:
         self.soap_settings = Settings()
         # self.soap_settings.strict = False
         self.soap_settings.forbid_entities = False
-        # TODO: support different auth mechanisms
-        session.auth = HTTPBasicAuth(
-            self.config.auth_basic_username,
-            self.config.auth_basic_password.get_secret_value()
-        )
+        if config.auth_method == 'basic':
+            session.auth = HTTPBasicAuth(
+                self.config.auth_basic_username,
+                self.config.auth_basic_password.get_secret_value()
+            )
+        elif config.auth_method == 'cert':
+            adapter = Pkcs12Adapter(
+                pkcs12_filename=self.config.auth_cert_p12_filename,
+                pkcs12_password=self.config.auth_cert_p12_password.get_secret_value(),
+                ssl_protocol=ssl.PROTOCOL_TLS_CLIENT
+            )
+            session.mount('https://', adapter)
         self.transport = Transport(session=session)
 
     def create_service_client(

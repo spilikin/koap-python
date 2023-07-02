@@ -1,6 +1,12 @@
 from typing import Optional
 from urllib.parse import urljoin
 from pydantic import BaseSettings, SecretStr
+from enum import Enum
+
+
+class AuthMethod(str, Enum):
+    basic = 'basic'
+    cert = 'cert'
 
 
 class ConnectorConfig(BaseSettings):
@@ -10,9 +16,15 @@ class ConnectorConfig(BaseSettings):
     workplace_id: str
     user_id: str
     trustchain: Optional[str] = None
+
+    auth_method: AuthMethod | str = 'basic'
+    
     auth_basic_username: Optional[str] = None
     auth_basic_password: Optional[SecretStr] = None
-    # TODO p12 mututual TLS
+
+    auth_cert_p12_filename: Optional[str] = None
+    auth_cert_p12_password: Optional[SecretStr] = None
+
     # Danger zone
     danger_verify_tls: bool = True
 
