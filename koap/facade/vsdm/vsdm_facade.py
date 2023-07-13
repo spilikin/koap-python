@@ -6,7 +6,7 @@ from koap.facade.model import (
     CryptEnum,
     CertRefEnum,
 )
-from typing import List
+from typing import List, Optional
 from pydantic import BaseModel
 import gzip
 import xmltodict
@@ -17,8 +17,8 @@ class VSD(BaseModel):
     PersoenlicheVersichertendaten: dict
     AllgemeineVersicherungsdaten: dict
     GeschuetzteVersichertendaten: dict
-    Pruefungsnachweis: dict
-    VSD_Status: dict
+    Pruefungsnachweis: Optional[dict]
+    VSD_Status: Optional[dict]
 
 
 class VSDMFacade:
@@ -65,6 +65,8 @@ class VSDMFacade:
 
     def vsd_data_to_dict(self, response: dict, field_name: str) -> dict:
         compressed_data = response[field_name]
+        if compressed_data is None:
+            return None
         # gunzip comnpresed data
         data = gzip.decompress(compressed_data)
         xml_as_dict = xmltodict.parse(data)
