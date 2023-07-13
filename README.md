@@ -1,4 +1,4 @@
-# KOAP: Modern Konnektor SOAP Library
+# KOAP: Lightweight Konnektor Client Library
 
 ## Configuration using environment variables
 
@@ -10,10 +10,13 @@
 | `KONNEKTOR_WORKPLACE_ID` | Context Workplace ID|
 | `KONNEKTOR_USER_ID` | Context UserID (optional)|
 | *Basic Auth* |
+| `KONNEKTOR_AUTH_METHOD` | `basic`|
 | `KONNEKTOR_AUTH_BASIC_USERNAME` | Username for Basic authentication| 
 | `KONNEKTOR_AUTH_BASIC_PASSWORD`| Password for Basic authentication| 
 | *Mutual TLS Auth* |
-| Not implemented yet | 
+| `KONNEKTOR_AUTH_METHOD` | `cert`|
+| `KONNEKTOR_AUTH_CERT_P12_FILENAME` | Path to the PKCS#12 file with client credentials| 
+| `KONNEKTOR_AUTH_CERT_P12_PASSWORD`| Password for PKCS#12 file | 
 
 ```bash
 export KONNEKTOR_BASE_URL=https://.../
@@ -56,6 +59,7 @@ config = ConnectorConfig(
     workplace_id='w1',
     user_id='user1',
     # Basic Auth
+    auth_method='basic',
     auth_basic_username='user1',
     auth_basic_password='use secure passwords in production',
 )
@@ -67,6 +71,40 @@ event_service = client.create_service_client('EventService', '7.2.0')
 cards = event_service.GetCards(client.context())
 
 print(cards)
+```
+
+## VSDM Facade
+
+
+```python
+from koap.facade.vsdm.vsdm_facade import VSDMFacade
+from koap.facade.model import CardTypeEnum
+from koap.client import ConnectorClient, ConnectorConfig
+
+config = ConnectorConfig()
+client = ConnectorClient(config)
+
+vsdm = VSDMFacade(client)
+
+egks = vsdm.get_cards([CardTypeEnum.EGK])
+egk_1 = egks[0]
+
+print(egk_1)
+
+smcbs = vsdm.get_cards([CardTypeEnum.SMC_B])
+smcb_1 = smcbs[0]
+
+print(smcb_1)
+
+vsd = vsdm.read_vsd(
+    EhcHandle=egk_1.CardHandle,
+    HpcHandle=smcb_1.CardHandle,
+    PerformOnlineCheck=False,
+    ReadOnlineReceipt=False,
+)
+
+print(vsd)
+
 ```
 
 ## Development
