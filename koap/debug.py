@@ -28,7 +28,7 @@ class RichSoapDebugPlugin(Plugin):
 
     def egress(self, envelope, http_headers, operation, binding_options):
         self.last_request_timestamp = datetime.datetime.now()
-        self.debug_console.print(f"Request {operation}")
+        self.debug_console.print(f"SOAP Operation {operation.name}")
         self.debug_console.print("Headers:")
         for key, value in http_headers.items():
             self.debug_console.print(f"{key}: {value}")
