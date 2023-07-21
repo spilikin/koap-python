@@ -21,14 +21,18 @@ def test_read_vsd():
         egks = vsdm.get_cards([CardTypeEnum.EGK])
         egk_1 = egks[0]
 
+        print(egk_1)
+
         smcbs = vsdm.get_cards([CardTypeEnum.SMC_B])
         smcb_1 = smcbs[0]
+
+        print(smcb_1)
 
         vsd = vsdm.read_vsd(
             EhcHandle=egk_1.CardHandle,
             HpcHandle=smcb_1.CardHandle,
-            PerformOnlineCheck=True,
-            ReadOnlineReceipt=True,
+            PerformOnlineCheck=False,
+            ReadOnlineReceipt=False,
         )
 
         print(vsd)
