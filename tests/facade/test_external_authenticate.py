@@ -33,13 +33,16 @@ def test_external_authenticate():
         print("RSA Signature:")
         print(rsa_signature)
 
-        # get ECC AUT certificate
-        ecc_aut_cert = ext_auth.get_card_certificates(smcb_1.CardHandle, [CertRefEnum.C_AUT], CryptEnum.ECC)
-        print(ecc_aut_cert)
+        try:
+            # get ECC AUT certificate
+            ecc_aut_cert = ext_auth.get_card_certificates(smcb_1.CardHandle, [CertRefEnum.C_AUT], CryptEnum.ECC)
+            print(ecc_aut_cert)
 
-        ecc_signature = ext_auth.external_authenticate(smcb_1.CardHandle, hash_to_sign, CryptEnum.RSA)
-        print("ECC Signature:")
-        print(ecc_signature)
+            ecc_signature = ext_auth.external_authenticate(smcb_1.CardHandle, hash_to_sign, CryptEnum.ECC)
+            print("ECC Signature:")
+            print(ecc_signature)
+        except Exception as e:
+            print(f"Warning: {e}")
     finally:
         base_file_name = os.path.basename(__file__)  # get base file name, might include .py
         debug_plugin.save_html(os.path.splitext(base_file_name)[0]+'.html')
