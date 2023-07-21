@@ -13,17 +13,16 @@ def test_epa_get_folders():
     try:
         client = ConnectorClient(ConnectorConfig(), soap_plugins=[debug_plugin])
         epa = EPAFacade(client)
-
-        # TODO: determine kvnr
+  
+        # TODO: determine kvnr from local database or from card
         kvnr = 'X110476138'
         home_community_id = 'urn:oid:1.2.276.0.76.3.1.315.3.3.1.1'
 
-        record_id = RecordId(home_community_id, kvnr)
+        record_id = RecordId(HomeCommunityId=home_community_id, InsurantId=kvnr)
 
         epa_record = EPARecordFacade(epa, record_id)
 
         folders = epa_record.get_folders()
-
         print(folders)
  
     finally:

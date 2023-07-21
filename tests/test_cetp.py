@@ -2,6 +2,7 @@ from koap.client import ConnectorClient, ConnectorServiceName, ConnectorConfig
 from rich.console import Console
 from koap.cetp import CETP
 import asyncio
+import socket
 
 c = Console()
 print = c.print
@@ -20,11 +21,15 @@ async def async_test_subscribe():
 
     event_service = conn.create_service_client(ConnectorServiceName.EventService, '7.2.0')
 
+    # determine local ip address
+    hostname = socket.gethostname()
+    ip = socket.gethostbyname(hostname)
+
     response = event_service.Subscribe(
         Context=conn.context(),
         Subscription={
             'Topic': "CARD",
-            'EventTo': 'cetp://192.168.1.158:12201'
+            'EventTo': f'cetp://{ip}:12201'
         }
     )
     print(response)

@@ -29,6 +29,7 @@ class Card(BaseModel):
     CardType: CardTypeEnum | str
     CardHandle: str
     CardHolderName: str
+    Kvnr: Optional[str]
     raw: Optional[Mapping[str, Any]]
 
 
