@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<style>
+.r1 {color: #daaa01; text-decoration-color: #daaa01}
+.r2 {color: #403f53; text-decoration-color: #403f53}
+.r3 {color: #08916a; text-decoration-color: #08916a; font-weight: bold}
+.r4 {color: #2aa298; text-decoration-color: #2aa298}
+.r5 {font-weight: bold}
+.r6 {color: #697098; text-decoration-color: #697098; font-weight: bold}
+.r7 {color: #49d0c5; text-decoration-color: #49d0c5; font-weight: bold}
+.r8 {color: #697098; text-decoration-color: #697098}
+.r9 {color: #dac26b; text-decoration-color: #dac26b}
+.r10 {color: #5ca7e4; text-decoration-color: #5ca7e4; text-decoration: underline}
+.r11 {font-style: italic}
+body {
+    color: #403f53;
+    background-color: #ffffff;
+}
+</style>
+</head>
+<html>
+<body>
+    <code>
+        <pre style="font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">SOAP Operation DocumentRegistry_RegistryStoredQuery
+Headers:
+Content-Type: application/soap+xml; <span class="r1">charset</span>=<span class="r2">utf</span>-<span class="r3">8</span>; 
+<span class="r1">action</span>=<span class="r4">&quot;urn:ihe:iti:2007:RegistryStoredQuery&quot;</span>
+Body:
+<span class="r5">&lt;</span><span class="r6">soap</span><span class="r7">12:E</span><span class="r6">nvelope</span><span class="r2"> xmlns:</span><span class="r1">soap12</span><span class="r2">=</span><span class="r4">&quot;http://www.w3.org/2003/05/soap-envelope&quot;</span><span class="r5">&gt;</span>
+  <span class="r5">&lt;</span><span class="r6">soap12:Header</span><span class="r5">&gt;</span>
+    <span class="r5">&lt;</span><span class="r6">phrs:ContextHeader</span><span class="r2"> </span>
+<span class="r2">xmlns:</span><span class="r1">phrs</span><span class="r2">=</span><span class="r4">&quot;http://ws.gematik.de/conn/phrs/PHRService/v1.3&quot;</span><span class="r5">&gt;</span>
+      <span class="r5">&lt;</span><span class="r6">conn:Context</span><span class="r2"> </span>
+<span class="r2">xmlns:</span><span class="r1">conn</span><span class="r2">=</span><span class="r4">&quot;http://ws.gematik.de/conn/ConnectorContext/v2.0&quot;</span><span class="r5">&gt;</span>
+        <span class="r5">&lt;</span><span class="r6">com:MandantId</span><span class="r2"> </span>
+<span class="r2">xmlns:</span><span class="r1">com</span><span class="r2">=</span><span class="r4">&quot;http://ws.gematik.de/conn/ConnectorCommon/v5.0&quot;</span><span class="r5">&gt;</span>M1<span class="r5">&lt;</span><span class="r2">/</span><span class="r8">com</span><span class="r2">:MandantId</span><span class="r5">&gt;</span>
+        <span class="r5">&lt;</span><span class="r6">com:ClientSystemId</span><span class="r2"> </span>
+<span class="r2">xmlns:</span><span class="r1">com</span><span class="r2">=</span><span class="r4">&quot;http://ws.gematik.de/conn/ConnectorCommon/v5.0&quot;</span><span class="r5">&gt;</span>C1<span class="r5">&lt;</span><span class="r2">/</span><span class="r8">com</span><span class="r2">:ClientSystemI</span>
+<span class="r2">d</span><span class="r5">&gt;</span>
+        <span class="r5">&lt;</span><span class="r6">com:WorkplaceId</span><span class="r2"> </span>
+<span class="r2">xmlns:</span><span class="r1">com</span><span class="r2">=</span><span class="r4">&quot;http://ws.gematik.de/conn/ConnectorCommon/v5.0&quot;</span><span class="r5">&gt;</span>A1<span class="r5">&lt;</span><span class="r2">/</span><span class="r8">com</span><span class="r2">:WorkplaceId</span><span class="r5">&gt;</span>
+      <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">conn</span><span class="r2">:Context</span><span class="r5">&gt;</span>
+      <span class="r5">&lt;</span><span class="r6">phrs:RecordIdentifier</span><span class="r5">&gt;</span>
+        <span class="r5">&lt;</span><span class="r6">phr:InsurantId</span><span class="r2"> xmlns:</span><span class="r1">phr</span><span class="r2">=</span><span class="r4">&quot;http://ws.gematik.de/fa/phr/v1.1&quot;</span><span class="r2"> </span>
+<span class="r1">root</span><span class="r2">=</span><span class="r4">&quot;1.2.276.0.76.4.8&quot;</span><span class="r2"> </span><span class="r1">extension</span><span class="r2">=</span><span class="r4">&quot;X110476138&quot;</span><span class="r2">/</span><span class="r5">&gt;</span>
+        <span class="r5">&lt;</span><span class="r6">phr:HomeCommunityId</span><span class="r2"> </span>
+<span class="r2">xmlns:</span><span class="r1">phr</span><span class="r2">=</span><span class="r4">&quot;http://ws.gematik.de/fa/phr/v1.1&quot;</span><span class="r5">&gt;</span>urn:oi<span class="r7">d:1</span>.<span class="r7">2.276.0.76</span>.<span class="r7">3.1.315.3</span>.<span class="r3">3.1</span>.
+<span class="r3">1</span><span class="r5">&lt;</span><span class="r2">/</span><span class="r8">phr</span><span class="r2">:HomeCommunityId</span><span class="r5">&gt;</span>
+      <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">phrs</span><span class="r2">:RecordIdentifier</span><span class="r5">&gt;</span>
+    <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">phrs</span><span class="r2">:ContextHeader</span><span class="r5">&gt;</span>
+    <span class="r5">&lt;</span><span class="r6">w</span><span class="r7">a:Ac</span><span class="r6">tion</span><span class="r2"> </span>
+<span class="r2">xmlns:</span><span class="r1">wa</span><span class="r2">=</span><span class="r4">&quot;http://www.w3.org/2005/08/addressing&quot;</span><span class="r5">&gt;</span>urn:ihe:iti:<span class="r3">2007</span>:RegistryStoredQ
+uery<span class="r5">&lt;</span><span class="r2">/</span><span class="r8">wa</span><span class="r2">:Action</span><span class="r5">&gt;</span>
+    <span class="r5">&lt;</span><span class="r6">wa:MessageID</span><span class="r2"> </span>
+<span class="r2">xmlns:</span><span class="r1">wa</span><span class="r2">=</span><span class="r4">&quot;http://www.w3.org/2005/08/addressing&quot;</span><span class="r5">&gt;</span><span class="r9">39c75145-94cb-458f-ade2-44fc60df</span>
+<span class="r9">1127</span><span class="r5">&lt;</span><span class="r2">/</span><span class="r8">wa</span><span class="r2">:MessageID</span><span class="r5">&gt;</span>
+    <span class="r5">&lt;</span><span class="r6">wa:To</span><span class="r2"> </span>
+<span class="r2">xmlns:</span><span class="r1">wa</span><span class="r2">=</span><span class="r4">&quot;http://www.w3.org/2005/08/addressing&quot;</span><span class="r5">&gt;</span><span class="r10">https://192.168.1.194:443/ws/PHR</span>
+<span class="r10">Service</span><span class="r5">&lt;</span><span class="r2">/</span><span class="r8">wa</span><span class="r2">:To</span><span class="r5">&gt;</span>
+    <span class="r5">&lt;</span><span class="r6">wa:ReplyTo</span><span class="r2"> xmlns:</span><span class="r1">wa</span><span class="r2">=</span><span class="r4">&quot;http://www.w3.org/2005/08/addressing&quot;</span><span class="r5">&gt;</span>
+      <span class="r5">&lt;</span><span class="r6">w</span><span class="r7">a:Add</span><span class="r6">ress</span><span class="r5">&gt;</span><span class="r10">http://www.w3.org/2005/08/addressing/anonymous</span><span class="r5">&lt;</span><span class="r2">/</span><span class="r8">wa</span><span class="r2">:Address</span><span class="r5">&gt;</span>
+    <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">wa</span><span class="r2">:ReplyTo</span><span class="r5">&gt;</span>
+    <span class="r5">&lt;</span><span class="r6">xdr:homeCommunityBlock</span><span class="r2"> xmlns:</span><span class="r1">xdr</span><span class="r2">=</span><span class="r4">&quot;urn:ihe:iti:xdr:2014&quot;</span><span class="r5">&gt;</span>
+      <span class="r5">&lt;</span><span class="r6">xdr:homeCommunityId</span><span class="r5">&gt;</span>urn:oi<span class="r7">d:1</span>.<span class="r7">2.276.0.76</span>.<span class="r7">3.1.315.3</span>.<span class="r3">3.1</span>.<span class="r3">1</span><span class="r5">&lt;</span><span class="r2">/</span><span class="r8">xdr</span><span class="r2">:homeCommuni</span>
+<span class="r2">tyId</span><span class="r5">&gt;</span>
+    <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">xdr</span><span class="r2">:homeCommunityBlock</span><span class="r5">&gt;</span>
+  <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">soap12</span><span class="r2">:Header</span><span class="r5">&gt;</span>
+  <span class="r5">&lt;</span><span class="r6">soap</span><span class="r7">12:B</span><span class="r6">ody</span><span class="r5">&gt;</span>
+    <span class="r5">&lt;</span><span class="r6">query:AdhocQueryRequest</span><span class="r2"> </span>
+<span class="r2">xmlns:</span><span class="r1">query</span><span class="r2">=</span><span class="r4">&quot;urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0&quot;</span><span class="r2"> </span><span class="r1">federated</span><span class="r2">=</span><span class="r4">&quot;false&quot;</span><span class="r2"> </span>
+<span class="r1">startIndex</span><span class="r2">=</span><span class="r4">&quot;0&quot;</span><span class="r2"> </span><span class="r1">maxResults</span><span class="r2">=</span><span class="r4">&quot;-1&quot;</span><span class="r5">&gt;</span>
+      <span class="r5">&lt;</span><span class="r6">query:ResponseOption</span><span class="r2"> </span><span class="r1">returnType</span><span class="r2">=</span><span class="r4">&quot;LeafClass&quot;</span><span class="r2"> </span>
+<span class="r1">returnComposedObjects</span><span class="r2">=</span><span class="r4">&quot;true&quot;</span><span class="r2">/</span><span class="r5">&gt;</span>
+      <span class="r5">&lt;</span><span class="r6">rim:AdhocQuery</span><span class="r2"> xmlns:</span><span class="r1">rim</span><span class="r2">=</span><span class="r4">&quot;urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0&quot;</span><span class="r2"> </span>
+<span class="r1">id</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:14d4debf-8f97-4251-9a74-a90016b0af0d&quot;</span><span class="r2"> </span>
+<span class="r1">home</span><span class="r2">=</span><span class="r4">&quot;urn:oid:1.2.276.0.76.3.1.315.3.3.1.1&quot;</span><span class="r5">&gt;</span>
+        <span class="r5">&lt;</span><span class="r6">rim:Slot</span><span class="r2"> </span><span class="r1">name</span><span class="r2">=</span><span class="r4">&quot;$XDSDocumentEntryStatus&quot;</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">rim:ValueList</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">rim:Value</span><span class="r5">&gt;(</span><span class="r4">&#x27;urn:oasis:names:tc:ebxml-regrep:StatusType:Approved&#x27;</span><span class="r5">)&lt;</span><span class="r2">/</span>
+<span class="r8">rim</span><span class="r2">:Value</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">rim</span><span class="r2">:ValueList</span><span class="r5">&gt;</span>
+        <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">rim</span><span class="r2">:Slot</span><span class="r5">&gt;</span>
+        <span class="r5">&lt;</span><span class="r6">rim:Slot</span><span class="r2"> </span><span class="r1">name</span><span class="r2">=</span><span class="r4">&quot;$XDSDocumentEntryPatientId&quot;</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">rim:ValueList</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">rim:Value</span><span class="r5">&gt;(</span><span class="r4">&#x27;X110476138^^^&amp;amp;amp;1.2.276.0.76.4.8&amp;amp;amp;ISO&#x27;</span><span class="r5">)&lt;</span><span class="r2">/</span><span class="r8">r</span>
+<span class="r8">im</span><span class="r2">:Value</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">rim</span><span class="r2">:ValueList</span><span class="r5">&gt;</span>
+        <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">rim</span><span class="r2">:Slot</span><span class="r5">&gt;</span>
+      <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">rim</span><span class="r2">:AdhocQuery</span><span class="r5">&gt;</span>
+    <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">query</span><span class="r2">:AdhocQueryRequest</span><span class="r5">&gt;</span>
+  <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">soap12</span><span class="r2">:Body</span><span class="r5">&gt;</span>
+<span class="r5">&lt;</span><span class="r2">/</span><span class="r8">soap12</span><span class="r2">:Envelope</span><span class="r5">&gt;</span>
+
+Response <span class="r5">(</span><span class="r7">0:00:01</span>.<span class="r3">316732</span><span class="r5">)</span>:
+Headers:
+Content-Type: application/soap+xml; <span class="r1">charset</span>=<span class="r2">utf</span>-<span class="r3">8</span>; 
+<span class="r1">action</span>=<span class="r4">&quot;urn:ihe:iti:2007:RegistryStoredQuery&quot;</span>
+Body:
+<span class="r5">&lt;</span><span class="r6">env:Envelope</span><span class="r2"> xmlns:</span><span class="r1">env</span><span class="r2">=</span><span class="r4">&quot;http://www.w3.org/2003/05/soap-envelope&quot;</span><span class="r5">&gt;</span>
+  <span class="r5">&lt;</span><span class="r6">env:Header</span><span class="r2"> xmlns:</span><span class="r1">wsa</span><span class="r2">=</span><span class="r4">&quot;http://www.w3.org/2005/08/addressing&quot;</span><span class="r5">&gt;</span>
+    <span class="r5">&lt;</span><span class="r6">wsa:To</span><span class="r2"> </span>
+<span class="r2">env:</span><span class="r1">mustUnderstand</span><span class="r2">=</span><span class="r4">&quot;true&quot;</span><span class="r5">&gt;</span><span class="r10">http://www.w3.org/2005/08/addressing/anonymous</span><span class="r5">&lt;</span><span class="r2">/</span><span class="r8">wsa</span><span class="r2">:To</span>
+<span class="r5">&gt;</span>
+    <span class="r5">&lt;</span><span class="r6">ws</span><span class="r7">a:Ac</span><span class="r6">tion</span><span class="r5">&gt;</span>urn:ihe:iti:<span class="r3">2007</span>:RegistryStoredQueryResponse<span class="r5">&lt;</span><span class="r2">/</span><span class="r8">wsa</span><span class="r2">:Action</span><span class="r5">&gt;</span>
+    <span class="r5">&lt;</span><span class="r6">wsa:MessageID</span><span class="r5">&gt;</span>urn:uui<span class="r7">d:b0af</span>2483-ad06-4a41-b26a-b92048ac9262<span class="r5">&lt;</span><span class="r2">/</span><span class="r8">wsa</span><span class="r2">:MessageID</span><span class="r5">&gt;</span>
+    <span class="r5">&lt;</span><span class="r6">wsa:RelatesTo</span><span class="r5">&gt;</span><span class="r9">39c75145-94cb-458f-ade2-44fc60df1127</span><span class="r5">&lt;</span><span class="r2">/</span><span class="r8">wsa</span><span class="r2">:RelatesTo</span><span class="r5">&gt;</span>
+  <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">env</span><span class="r2">:Header</span><span class="r5">&gt;</span>
+  <span class="r5">&lt;</span><span class="r6">env:Body</span><span class="r5">&gt;</span>
+    <span class="r5">&lt;</span><span class="r6">ns</span><span class="r7">13:Ad</span><span class="r6">hocQueryResponse</span><span class="r2"> </span>
+<span class="r2">xmlns:</span><span class="r1">ns10</span><span class="r2">=</span><span class="r4">&quot;urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0&quot;</span><span class="r2"> </span>
+<span class="r2">xmlns:</span><span class="r1">ns11</span><span class="r2">=</span><span class="r4">&quot;urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0&quot;</span><span class="r2"> </span>
+<span class="r2">xmlns:</span><span class="r1">ns12</span><span class="r2">=</span><span class="r4">&quot;urn:ihe:iti:xds-b:2007&quot;</span><span class="r2"> </span>
+<span class="r2">xmlns:</span><span class="r1">ns13</span><span class="r2">=</span><span class="r4">&quot;urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0&quot;</span><span class="r2"> </span>
+<span class="r2">xmlns:</span><span class="r1">ns14</span><span class="r2">=</span><span class="r4">&quot;urn:oasis:names:tc:ebxml-regrep:xsd:lcm:3.0&quot;</span><span class="r2"> </span>
+<span class="r2">xmlns:</span><span class="r1">ns2</span><span class="r2">=</span><span class="r4">&quot;http://ws.gematik.de/conn/ConnectorCommon/v5.0&quot;</span><span class="r2"> </span>
+<span class="r2">xmlns:</span><span class="r1">ns3</span><span class="r2">=</span><span class="r4">&quot;http://ws.gematik.de/conn/ConnectorContext/v2.0&quot;</span><span class="r2"> </span>
+<span class="r2">xmlns:</span><span class="r1">ns4</span><span class="r2">=</span><span class="r4">&quot;http://ws.gematik.de/conn/phrs/PHRManagementService/v1.3&quot;</span><span class="r2"> </span>
+<span class="r2">xmlns:</span><span class="r1">ns5</span><span class="r2">=</span><span class="r4">&quot;http://ws.gematik.de/fa/phr/v1.1&quot;</span><span class="r2"> </span>
+<span class="r2">xmlns:</span><span class="r1">ns6</span><span class="r2">=</span><span class="r4">&quot;http://ws.gematik.de/tel/error/v2.0&quot;</span><span class="r2"> </span>
+<span class="r2">xmlns:</span><span class="r1">ns7</span><span class="r2">=</span><span class="r4">&quot;http://ws.gematik.de/conn/phrs/PHRService/v1.3&quot;</span><span class="r2"> </span>
+<span class="r2">xmlns:</span><span class="r1">ns8</span><span class="r2">=</span><span class="r4">&quot;http://ws.gematik.de/conn/phrs/PHRManagementService/v2.0&quot;</span><span class="r2"> </span>
+<span class="r2">xmlns:</span><span class="r1">ns9</span><span class="r2">=</span><span class="r4">&quot;http://ws.gematik.de/conn/phrs/PHRService/v2.0&quot;</span><span class="r2"> </span>
+<span class="r1">status</span><span class="r2">=</span><span class="r4">&quot;urn:oasis:names:tc:ebxml-regrep:ResponseStatusType:Success&quot;</span><span class="r2"> </span>
+<span class="r1">totalResultCount</span><span class="r2">=</span><span class="r4">&quot;4&quot;</span><span class="r5">&gt;</span>
+      <span class="r5">&lt;</span><span class="r6">ns10:RegistryObjectList</span><span class="r5">&gt;</span>
+        <span class="r5">&lt;</span><span class="r6">ns</span><span class="r7">10:E</span><span class="r6">xtrinsicObject</span><span class="r2"> </span><span class="r1">home</span><span class="r2">=</span><span class="r4">&quot;urn:oid:1.2.276.0.76.3.1.315.3.3.1.1&quot;</span><span class="r2"> </span>
+<span class="r1">id</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:b35cfc32-1d32-4cd3-ace7-9cafe0a6cfcb&quot;</span><span class="r2"> </span><span class="r1">mimeType</span><span class="r2">=</span><span class="r4">&quot;application/xml&quot;</span><span class="r2"> </span>
+<span class="r1">objectType</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:7edca82f-054d-47f2-a032-9b2a5b5186c1&quot;</span><span class="r2"> </span>
+<span class="r1">status</span><span class="r2">=</span><span class="r4">&quot;urn:oasis:names:tc:ebxml-regrep:StatusType:Approved&quot;</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns10:Slot</span><span class="r2"> </span><span class="r1">name</span><span class="r2">=</span><span class="r4">&quot;creationTime&quot;</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:ValueList</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:Value</span><span class="r5">&gt;</span><span class="r3">20191209124919</span><span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Value</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ValueList</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Slot</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns10:Slot</span><span class="r2"> </span><span class="r1">name</span><span class="r2">=</span><span class="r4">&quot;languageCode&quot;</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:ValueList</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:Value</span><span class="r5">&gt;</span>de-DE<span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Value</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ValueList</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Slot</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns10:Slot</span><span class="r2"> </span><span class="r1">name</span><span class="r2">=</span><span class="r4">&quot;repositoryUniqueId&quot;</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:ValueList</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:Value</span><span class="r5">&gt;</span><span class="r7">1.2.276.0</span>.<span class="r7">76.3.1.315</span>.<span class="r7">3.3.1.1</span><span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Value</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ValueList</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Slot</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns10:Slot</span><span class="r2"> </span><span class="r1">name</span><span class="r2">=</span><span class="r4">&quot;size&quot;</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:ValueList</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:Value</span><span class="r5">&gt;</span><span class="r3">1703</span><span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Value</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ValueList</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Slot</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns10:Slot</span><span class="r2"> </span><span class="r1">name</span><span class="r2">=</span><span class="r4">&quot;URI&quot;</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:ValueList</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:Value</span><span class="r5">&gt;</span>pssim_emp.xml<span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Value</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ValueList</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Slot</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns10:Name</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:LocalizedString</span><span class="r2"> </span><span class="r1">value</span><span class="r2">=</span><span class="r4">&quot;PsSim: Medikationsplan&quot;</span><span class="r2">/</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Name</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns</span><span class="r7">10:C</span><span class="r6">lassification</span><span class="r2"> </span>
+<span class="r1">classificationScheme</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:93606bcf-9494-43ec-9b4e-a7748d1a838d&quot;</span><span class="r2"> </span>
+<span class="r1">classifiedObject</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:b35cfc32-1d32-4cd3-ace7-9cafe0a6cfcb&quot;</span><span class="r2"> </span>
+<span class="r1">id</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:09404f7a-6a27-48e6-9885-6c101d5ec3b9&quot;</span><span class="r2"> </span>
+<span class="r1">objectType</span><span class="r2">=</span><span class="r4">&quot;urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classifica</span>
+<span class="r4">tion&quot;</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Slot</span><span class="r2"> </span><span class="r1">name</span><span class="r2">=</span><span class="r4">&quot;authorPerson&quot;</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:ValueList</span><span class="r5">&gt;</span>
+                <span class="r5">&lt;</span><span class="r6">ns10:Value</span><span class="r5">&gt;</span>^M&amp;#<span class="r3">252</span>;ller-Holzscheit^Marcello-Bernhardino^^^Dr.<span class="r5">&lt;</span><span class="r2">/</span>
+<span class="r8">ns10</span><span class="r2">:Value</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ValueList</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Slot</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Slot</span><span class="r2"> </span><span class="r1">name</span><span class="r2">=</span><span class="r4">&quot;authorRole&quot;</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:ValueList</span><span class="r5">&gt;</span>
+                <span class="r5">&lt;</span><span class="r6">ns10:Value</span><span class="r5">&gt;</span><span class="r3">11</span>^^^&amp;amp;<span class="r7">1.3.6.1</span>.<span class="r3">4.1</span>.<span class="r3">19376.3</span>.<span class="r7">276.1.5.13</span>&amp;amp;ISO<span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns</span>
+<span class="r8">10</span><span class="r2">:Value</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ValueList</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Slot</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Classification</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns</span><span class="r7">10:C</span><span class="r6">lassification</span><span class="r2"> </span>
+<span class="r1">classificationScheme</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:41a5887f-8865-4c09-adf7-e362475b143a&quot;</span><span class="r2"> </span>
+<span class="r1">classifiedObject</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:b35cfc32-1d32-4cd3-ace7-9cafe0a6cfcb&quot;</span><span class="r2"> </span>
+<span class="r1">id</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:a7b91455-d891-4049-874e-88f931bb1d55&quot;</span><span class="r2"> </span><span class="r1">nodeRepresentation</span><span class="r2">=</span><span class="r4">&quot;PLA&quot;</span><span class="r2"> </span>
+<span class="r1">objectType</span><span class="r2">=</span><span class="r4">&quot;urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classifica</span>
+<span class="r4">tion&quot;</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Slot</span><span class="r2"> </span><span class="r1">name</span><span class="r2">=</span><span class="r4">&quot;codingScheme&quot;</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:ValueList</span><span class="r5">&gt;</span>
+                <span class="r5">&lt;</span><span class="r6">ns10:Value</span><span class="r5">&gt;</span><span class="r7">1.3.6.1</span>.<span class="r3">4.1</span>.<span class="r3">19376.3</span>.<span class="r7">276.1.5.8</span><span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Value</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ValueList</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Slot</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Name</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:LocalizedString</span><span class="r2"> </span><span class="r1">value</span><span class="r2">=</span><span class="r4">&quot;Planungsdokument&quot;</span><span class="r2">/</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Name</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Classification</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns</span><span class="r7">10:C</span><span class="r6">lassification</span><span class="r2"> </span>
+<span class="r1">classificationScheme</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:f4f85eac-e6cb-4883-b524-f2705394840f&quot;</span><span class="r2"> </span>
+<span class="r1">classifiedObject</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:b35cfc32-1d32-4cd3-ace7-9cafe0a6cfcb&quot;</span><span class="r2"> </span>
+<span class="r1">id</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:5e65311d-4acc-40b8-9441-88b7dce7ba6a&quot;</span><span class="r2"> </span><span class="r1">nodeRepresentation</span><span class="r2">=</span><span class="r4">&quot;LEI&quot;</span><span class="r2"> </span>
+<span class="r1">objectType</span><span class="r2">=</span><span class="r4">&quot;urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classifica</span>
+<span class="r4">tion&quot;</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Slot</span><span class="r2"> </span><span class="r1">name</span><span class="r2">=</span><span class="r4">&quot;codingScheme&quot;</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:ValueList</span><span class="r5">&gt;</span>
+                <span class="r5">&lt;</span><span class="r6">ns10:Value</span><span class="r5">&gt;</span><span class="r7">1.2.276.0</span>.<span class="r3">76.5</span>.<span class="r3">491</span><span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Value</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ValueList</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Slot</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Name</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:LocalizedString</span><span class="r2"> </span><span class="r1">value</span><span class="r2">=</span><span class="r4">&quot;Dokument einer </span>
+<span class="r4">Leistungserbringerinstitution&quot;</span><span class="r2">/</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Name</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Classification</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns</span><span class="r7">10:C</span><span class="r6">lassification</span><span class="r2"> </span>
+<span class="r1">classificationScheme</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:f4f85eac-e6cb-4883-b524-f2705394840f&quot;</span><span class="r2"> </span>
+<span class="r1">classifiedObject</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:b35cfc32-1d32-4cd3-ace7-9cafe0a6cfcb&quot;</span><span class="r2"> </span>
+<span class="r1">id</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:06d79d01-8827-4afb-8636-f2a9869134ff&quot;</span><span class="r2"> </span><span class="r1">nodeRepresentation</span><span class="r2">=</span><span class="r4">&quot;N&quot;</span><span class="r2"> </span>
+<span class="r1">objectType</span><span class="r2">=</span><span class="r4">&quot;urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classifica</span>
+<span class="r4">tion&quot;</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Slot</span><span class="r2"> </span><span class="r1">name</span><span class="r2">=</span><span class="r4">&quot;codingScheme&quot;</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:ValueList</span><span class="r5">&gt;</span>
+                <span class="r5">&lt;</span><span class="r6">ns10:Value</span><span class="r5">&gt;</span><span class="r7">2.16.840.1</span>.<span class="r3">113883.5</span>.<span class="r3">25</span><span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Value</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ValueList</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Slot</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Name</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:LocalizedString</span><span class="r2"> </span><span class="r1">value</span><span class="r2">=</span><span class="r4">&quot;normal&quot;</span><span class="r2">/</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Name</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Classification</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns</span><span class="r7">10:C</span><span class="r6">lassification</span><span class="r2"> </span>
+<span class="r1">classificationScheme</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:a09d5840-386c-46f2-b5ad-9c3699a4309d&quot;</span><span class="r2"> </span>
+<span class="r1">classifiedObject</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:b35cfc32-1d32-4cd3-ace7-9cafe0a6cfcb&quot;</span><span class="r2"> </span>
+<span class="r1">id</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:6653854c-9970-4836-b019-47f90be93cbb&quot;</span><span class="r2"> </span>
+<span class="r1">nodeRepresentation</span><span class="r2">=</span><span class="r4">&quot;urn:gematik:ig:Medikationsplan:r3.1&quot;</span><span class="r2"> </span>
+<span class="r1">objectType</span><span class="r2">=</span><span class="r4">&quot;urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classifica</span>
+<span class="r4">tion&quot;</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Slot</span><span class="r2"> </span><span class="r1">name</span><span class="r2">=</span><span class="r4">&quot;codingScheme&quot;</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:ValueList</span><span class="r5">&gt;</span>
+                <span class="r5">&lt;</span><span class="r6">ns10:Value</span><span class="r5">&gt;</span><span class="r7">1.3.6.1</span>.<span class="r3">4.1</span>.<span class="r3">19376.3</span>.<span class="r7">276.1.5.6</span><span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Value</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ValueList</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Slot</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Name</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:LocalizedString</span><span class="r2"> </span><span class="r1">value</span><span class="r2">=</span><span class="r4">&quot;Medikationsplan (gematik)&quot;</span><span class="r2">/</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Name</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Classification</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns</span><span class="r7">10:C</span><span class="r6">lassification</span><span class="r2"> </span>
+<span class="r1">classificationScheme</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:f33fb8ac-18af-42cc-ae0e-ed0b0bdb91e1&quot;</span><span class="r2"> </span>
+<span class="r1">classifiedObject</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:b35cfc32-1d32-4cd3-ace7-9cafe0a6cfcb&quot;</span><span class="r2"> </span>
+<span class="r1">id</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:1e79ef1d-7abc-480e-bdc6-df215c0f6ded&quot;</span><span class="r2"> </span><span class="r1">nodeRepresentation</span><span class="r2">=</span><span class="r4">&quot;PRA&quot;</span><span class="r2"> </span>
+<span class="r1">objectType</span><span class="r2">=</span><span class="r4">&quot;urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classifica</span>
+<span class="r4">tion&quot;</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Slot</span><span class="r2"> </span><span class="r1">name</span><span class="r2">=</span><span class="r4">&quot;codingScheme&quot;</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:ValueList</span><span class="r5">&gt;</span>
+                <span class="r5">&lt;</span><span class="r6">ns10:Value</span><span class="r5">&gt;</span><span class="r7">1.3.6.1</span>.<span class="r3">4.1</span>.<span class="r3">19376.3</span>.<span class="r7">276.1.5.2</span><span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Value</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ValueList</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Slot</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Name</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:LocalizedString</span><span class="r2"> </span><span class="r1">value</span><span class="r2">=</span><span class="r4">&quot;Arztpraxis&quot;</span><span class="r2">/</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Name</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Classification</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns</span><span class="r7">10:C</span><span class="r6">lassification</span><span class="r2"> </span>
+<span class="r1">classificationScheme</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:cccf5598-8b07-4b77-a05e-ae952c785ead&quot;</span><span class="r2"> </span>
+<span class="r1">classifiedObject</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:b35cfc32-1d32-4cd3-ace7-9cafe0a6cfcb&quot;</span><span class="r2"> </span>
+<span class="r1">id</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:346c4d07-d820-4c48-8f3a-2d0c58c880f4&quot;</span><span class="r2"> </span><span class="r1">nodeRepresentation</span><span class="r2">=</span><span class="r4">&quot;ALLG&quot;</span><span class="r2"> </span>
+<span class="r1">objectType</span><span class="r2">=</span><span class="r4">&quot;urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classifica</span>
+<span class="r4">tion&quot;</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Slot</span><span class="r2"> </span><span class="r1">name</span><span class="r2">=</span><span class="r4">&quot;codingScheme&quot;</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:ValueList</span><span class="r5">&gt;</span>
+                <span class="r5">&lt;</span><span class="r6">ns10:Value</span><span class="r5">&gt;</span><span class="r7">1.3.6.1</span>.<span class="r3">4.1</span>.<span class="r3">19376.3</span>.<span class="r7">276.1.5.4</span><span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Value</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ValueList</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Slot</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Name</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:LocalizedString</span><span class="r2"> </span><span class="r1">value</span><span class="r2">=</span><span class="r4">&quot;Allgemeinmedizin&quot;</span><span class="r2">/</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Name</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Classification</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns</span><span class="r7">10:C</span><span class="r6">lassification</span><span class="r2"> </span>
+<span class="r1">classificationScheme</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:f0306f51-975f-434e-a61c-c59651d33983&quot;</span><span class="r2"> </span>
+<span class="r1">classifiedObject</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:b35cfc32-1d32-4cd3-ace7-9cafe0a6cfcb&quot;</span><span class="r2"> </span>
+<span class="r1">id</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:3696440c-5926-470a-8142-2c3323c9fb00&quot;</span><span class="r2"> </span><span class="r1">nodeRepresentation</span><span class="r2">=</span><span class="r4">&quot;MEDI&quot;</span><span class="r2"> </span>
+<span class="r1">objectType</span><span class="r2">=</span><span class="r4">&quot;urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classifica</span>
+<span class="r4">tion&quot;</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Slot</span><span class="r2"> </span><span class="r1">name</span><span class="r2">=</span><span class="r4">&quot;codingScheme&quot;</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:ValueList</span><span class="r5">&gt;</span>
+                <span class="r5">&lt;</span><span class="r6">ns10:Value</span><span class="r5">&gt;</span><span class="r7">1.3.6.1</span>.<span class="r3">4.1</span>.<span class="r3">19376.3</span>.<span class="r7">276.1.5.9</span><span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Value</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ValueList</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Slot</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Name</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:LocalizedString</span><span class="r2"> </span><span class="r1">value</span><span class="r2">=</span><span class="r4">&quot;Medikament&amp;#246;se Therapien&quot;</span><span class="r2">/</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Name</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Classification</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns</span><span class="r7">10:E</span><span class="r6">xternalIdentifier</span><span class="r2"> </span>
+<span class="r1">id</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:4aefab68-aea9-47a2-aabb-3eb58759a5a9&quot;</span><span class="r2"> </span>
+<span class="r1">identificationScheme</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:2e82c1f6-a085-4c72-9da3-8640a32e42ab&quot;</span><span class="r2"> </span>
+<span class="r1">objectType</span><span class="r2">=</span><span class="r4">&quot;urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:ExternalId</span>
+<span class="r4">entifier&quot;</span><span class="r2"> </span><span class="r1">registryObject</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:b35cfc32-1d32-4cd3-ace7-9cafe0a6cfcb&quot;</span><span class="r2"> </span>
+<span class="r1">value</span><span class="r2">=</span><span class="r4">&quot;1.2.840.113556.1.8000.2554.17930.51373.54354.20040.33122.16728266.1216868</span>
+<span class="r4">8&quot;</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Name</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:LocalizedString</span><span class="r2"> </span><span class="r1">value</span><span class="r2">=</span><span class="r4">&quot;XDSDocumentEntry.uniqueId&quot;</span><span class="r2">/</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Name</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ExternalIdentifier</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns</span><span class="r7">10:E</span><span class="r6">xternalIdentifier</span><span class="r2"> </span>
+<span class="r1">id</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:006c5f6e-927e-4f9f-bf1a-7cb3fb70a603&quot;</span><span class="r2"> </span>
+<span class="r1">identificationScheme</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:58a6f841-87b3-4a3e-92fd-a8ffeff98427&quot;</span><span class="r2"> </span>
+<span class="r1">objectType</span><span class="r2">=</span><span class="r4">&quot;urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:ExternalId</span>
+<span class="r4">entifier&quot;</span><span class="r2"> </span><span class="r1">registryObject</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:b35cfc32-1d32-4cd3-ace7-9cafe0a6cfcb&quot;</span><span class="r2"> </span>
+<span class="r1">value</span><span class="r2">=</span><span class="r4">&quot;X110476138^^^&amp;amp;1.2.276.0.76.4.8&amp;amp;ISO&quot;</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Name</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:LocalizedString</span><span class="r2"> </span><span class="r1">value</span><span class="r2">=</span><span class="r4">&quot;XDSDocumentEntry.patientId&quot;</span><span class="r2">/</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Name</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ExternalIdentifier</span><span class="r5">&gt;</span>
+        <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ExtrinsicObject</span><span class="r5">&gt;</span>
+        <span class="r5">&lt;</span><span class="r6">ns</span><span class="r7">10:E</span><span class="r6">xtrinsicObject</span><span class="r2"> </span><span class="r1">home</span><span class="r2">=</span><span class="r4">&quot;urn:oid:1.2.276.0.76.3.1.315.3.3.1.1&quot;</span><span class="r2"> </span>
+<span class="r1">id</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:bfe89bb4-2a76-4763-aecf-084d328870a5&quot;</span><span class="r2"> </span><span class="r1">mimeType</span><span class="r2">=</span><span class="r4">&quot;application/xml&quot;</span><span class="r2"> </span>
+<span class="r1">objectType</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:7edca82f-054d-47f2-a032-9b2a5b5186c1&quot;</span><span class="r2"> </span>
+<span class="r1">status</span><span class="r2">=</span><span class="r4">&quot;urn:oasis:names:tc:ebxml-regrep:StatusType:Approved&quot;</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns10:Slot</span><span class="r2"> </span><span class="r1">name</span><span class="r2">=</span><span class="r4">&quot;creationTime&quot;</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:ValueList</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:Value</span><span class="r5">&gt;</span><span class="r3">20191209124919</span><span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Value</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ValueList</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Slot</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns10:Slot</span><span class="r2"> </span><span class="r1">name</span><span class="r2">=</span><span class="r4">&quot;languageCode&quot;</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:ValueList</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:Value</span><span class="r5">&gt;</span>de-DE<span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Value</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ValueList</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Slot</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns10:Slot</span><span class="r2"> </span><span class="r1">name</span><span class="r2">=</span><span class="r4">&quot;repositoryUniqueId&quot;</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:ValueList</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:Value</span><span class="r5">&gt;</span><span class="r7">1.2.276.0</span>.<span class="r7">76.3.1.315</span>.<span class="r7">3.3.1.1</span><span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Value</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ValueList</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Slot</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns10:Slot</span><span class="r2"> </span><span class="r1">name</span><span class="r2">=</span><span class="r4">&quot;size&quot;</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:ValueList</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:Value</span><span class="r5">&gt;</span><span class="r3">1703</span><span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Value</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ValueList</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Slot</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns10:Slot</span><span class="r2"> </span><span class="r1">name</span><span class="r2">=</span><span class="r4">&quot;URI&quot;</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:ValueList</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:Value</span><span class="r5">&gt;</span>pssim_emp.xml<span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Value</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ValueList</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Slot</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns10:Name</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:LocalizedString</span><span class="r2"> </span><span class="r1">value</span><span class="r2">=</span><span class="r4">&quot;PsSim: Medikationsplan&quot;</span><span class="r2">/</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Name</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns</span><span class="r7">10:C</span><span class="r6">lassification</span><span class="r2"> </span>
+<span class="r1">classificationScheme</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:93606bcf-9494-43ec-9b4e-a7748d1a838d&quot;</span><span class="r2"> </span>
+<span class="r1">classifiedObject</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:bfe89bb4-2a76-4763-aecf-084d328870a5&quot;</span><span class="r2"> </span>
+<span class="r1">id</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:0dd61d09-9472-4d70-9dbc-64bed3346441&quot;</span><span class="r2"> </span>
+<span class="r1">objectType</span><span class="r2">=</span><span class="r4">&quot;urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classifica</span>
+<span class="r4">tion&quot;</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Slot</span><span class="r2"> </span><span class="r1">name</span><span class="r2">=</span><span class="r4">&quot;authorPerson&quot;</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:ValueList</span><span class="r5">&gt;</span>
+                <span class="r5">&lt;</span><span class="r6">ns10:Value</span><span class="r5">&gt;</span>^M&amp;#<span class="r3">252</span>;ller-Holzscheit^Marcello-Bernhardino^^^Dr.<span class="r5">&lt;</span><span class="r2">/</span>
+<span class="r8">ns10</span><span class="r2">:Value</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ValueList</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Slot</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Slot</span><span class="r2"> </span><span class="r1">name</span><span class="r2">=</span><span class="r4">&quot;authorRole&quot;</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:ValueList</span><span class="r5">&gt;</span>
+                <span class="r5">&lt;</span><span class="r6">ns10:Value</span><span class="r5">&gt;</span><span class="r3">11</span>^^^&amp;amp;<span class="r7">1.3.6.1</span>.<span class="r3">4.1</span>.<span class="r3">19376.3</span>.<span class="r7">276.1.5.13</span>&amp;amp;ISO<span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns</span>
+<span class="r8">10</span><span class="r2">:Value</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ValueList</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Slot</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Classification</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns</span><span class="r7">10:C</span><span class="r6">lassification</span><span class="r2"> </span>
+<span class="r1">classificationScheme</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:41a5887f-8865-4c09-adf7-e362475b143a&quot;</span><span class="r2"> </span>
+<span class="r1">classifiedObject</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:bfe89bb4-2a76-4763-aecf-084d328870a5&quot;</span><span class="r2"> </span>
+<span class="r1">id</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:23628810-57e9-4f62-9af9-1a89019acdd1&quot;</span><span class="r2"> </span><span class="r1">nodeRepresentation</span><span class="r2">=</span><span class="r4">&quot;PLA&quot;</span><span class="r2"> </span>
+<span class="r1">objectType</span><span class="r2">=</span><span class="r4">&quot;urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classifica</span>
+<span class="r4">tion&quot;</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Slot</span><span class="r2"> </span><span class="r1">name</span><span class="r2">=</span><span class="r4">&quot;codingScheme&quot;</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:ValueList</span><span class="r5">&gt;</span>
+                <span class="r5">&lt;</span><span class="r6">ns10:Value</span><span class="r5">&gt;</span><span class="r7">1.3.6.1</span>.<span class="r3">4.1</span>.<span class="r3">19376.3</span>.<span class="r7">276.1.5.8</span><span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Value</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ValueList</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Slot</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Name</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:LocalizedString</span><span class="r2"> </span><span class="r1">value</span><span class="r2">=</span><span class="r4">&quot;Planungsdokument&quot;</span><span class="r2">/</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Name</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Classification</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns</span><span class="r7">10:C</span><span class="r6">lassification</span><span class="r2"> </span>
+<span class="r1">classificationScheme</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:f4f85eac-e6cb-4883-b524-f2705394840f&quot;</span><span class="r2"> </span>
+<span class="r1">classifiedObject</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:bfe89bb4-2a76-4763-aecf-084d328870a5&quot;</span><span class="r2"> </span>
+<span class="r1">id</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:f8da6a9b-7b13-41cc-a7c4-e1d033eeb6c7&quot;</span><span class="r2"> </span><span class="r1">nodeRepresentation</span><span class="r2">=</span><span class="r4">&quot;LEI&quot;</span><span class="r2"> </span>
+<span class="r1">objectType</span><span class="r2">=</span><span class="r4">&quot;urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classifica</span>
+<span class="r4">tion&quot;</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Slot</span><span class="r2"> </span><span class="r1">name</span><span class="r2">=</span><span class="r4">&quot;codingScheme&quot;</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:ValueList</span><span class="r5">&gt;</span>
+                <span class="r5">&lt;</span><span class="r6">ns10:Value</span><span class="r5">&gt;</span><span class="r7">1.2.276.0</span>.<span class="r3">76.5</span>.<span class="r3">491</span><span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Value</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ValueList</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Slot</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Name</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:LocalizedString</span><span class="r2"> </span><span class="r1">value</span><span class="r2">=</span><span class="r4">&quot;Dokument einer </span>
+<span class="r4">Leistungserbringerinstitution&quot;</span><span class="r2">/</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Name</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Classification</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns</span><span class="r7">10:C</span><span class="r6">lassification</span><span class="r2"> </span>
+<span class="r1">classificationScheme</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:f4f85eac-e6cb-4883-b524-f2705394840f&quot;</span><span class="r2"> </span>
+<span class="r1">classifiedObject</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:bfe89bb4-2a76-4763-aecf-084d328870a5&quot;</span><span class="r2"> </span>
+<span class="r1">id</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:ec5bfbf7-6205-4da1-87cc-8e62ae1accff&quot;</span><span class="r2"> </span><span class="r1">nodeRepresentation</span><span class="r2">=</span><span class="r4">&quot;N&quot;</span><span class="r2"> </span>
+<span class="r1">objectType</span><span class="r2">=</span><span class="r4">&quot;urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classifica</span>
+<span class="r4">tion&quot;</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Slot</span><span class="r2"> </span><span class="r1">name</span><span class="r2">=</span><span class="r4">&quot;codingScheme&quot;</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:ValueList</span><span class="r5">&gt;</span>
+                <span class="r5">&lt;</span><span class="r6">ns10:Value</span><span class="r5">&gt;</span><span class="r7">2.16.840.1</span>.<span class="r3">113883.5</span>.<span class="r3">25</span><span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Value</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ValueList</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Slot</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Name</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:LocalizedString</span><span class="r2"> </span><span class="r1">value</span><span class="r2">=</span><span class="r4">&quot;normal&quot;</span><span class="r2">/</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Name</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Classification</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns</span><span class="r7">10:C</span><span class="r6">lassification</span><span class="r2"> </span>
+<span class="r1">classificationScheme</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:a09d5840-386c-46f2-b5ad-9c3699a4309d&quot;</span><span class="r2"> </span>
+<span class="r1">classifiedObject</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:bfe89bb4-2a76-4763-aecf-084d328870a5&quot;</span><span class="r2"> </span>
+<span class="r1">id</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:2f05f667-b49a-420c-b1f2-c5b897cced8c&quot;</span><span class="r2"> </span>
+<span class="r1">nodeRepresentation</span><span class="r2">=</span><span class="r4">&quot;urn:gematik:ig:Medikationsplan:r3.1&quot;</span><span class="r2"> </span>
+<span class="r1">objectType</span><span class="r2">=</span><span class="r4">&quot;urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classifica</span>
+<span class="r4">tion&quot;</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Slot</span><span class="r2"> </span><span class="r1">name</span><span class="r2">=</span><span class="r4">&quot;codingScheme&quot;</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:ValueList</span><span class="r5">&gt;</span>
+                <span class="r5">&lt;</span><span class="r6">ns10:Value</span><span class="r5">&gt;</span><span class="r7">1.3.6.1</span>.<span class="r3">4.1</span>.<span class="r3">19376.3</span>.<span class="r7">276.1.5.6</span><span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Value</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ValueList</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Slot</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Name</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:LocalizedString</span><span class="r2"> </span><span class="r1">value</span><span class="r2">=</span><span class="r4">&quot;Medikationsplan (gematik)&quot;</span><span class="r2">/</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Name</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Classification</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns</span><span class="r7">10:C</span><span class="r6">lassification</span><span class="r2"> </span>
+<span class="r1">classificationScheme</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:f33fb8ac-18af-42cc-ae0e-ed0b0bdb91e1&quot;</span><span class="r2"> </span>
+<span class="r1">classifiedObject</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:bfe89bb4-2a76-4763-aecf-084d328870a5&quot;</span><span class="r2"> </span>
+<span class="r1">id</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:9f2c2b66-b353-466a-8bc2-d9b2c62cb7a2&quot;</span><span class="r2"> </span><span class="r1">nodeRepresentation</span><span class="r2">=</span><span class="r4">&quot;PRA&quot;</span><span class="r2"> </span>
+<span class="r1">objectType</span><span class="r2">=</span><span class="r4">&quot;urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classifica</span>
+<span class="r4">tion&quot;</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Slot</span><span class="r2"> </span><span class="r1">name</span><span class="r2">=</span><span class="r4">&quot;codingScheme&quot;</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:ValueList</span><span class="r5">&gt;</span>
+                <span class="r5">&lt;</span><span class="r6">ns10:Value</span><span class="r5">&gt;</span><span class="r7">1.3.6.1</span>.<span class="r3">4.1</span>.<span class="r3">19376.3</span>.<span class="r7">276.1.5.2</span><span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Value</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ValueList</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Slot</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Name</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:LocalizedString</span><span class="r2"> </span><span class="r1">value</span><span class="r2">=</span><span class="r4">&quot;Arztpraxis&quot;</span><span class="r2">/</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Name</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Classification</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns</span><span class="r7">10:C</span><span class="r6">lassification</span><span class="r2"> </span>
+<span class="r1">classificationScheme</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:cccf5598-8b07-4b77-a05e-ae952c785ead&quot;</span><span class="r2"> </span>
+<span class="r1">classifiedObject</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:bfe89bb4-2a76-4763-aecf-084d328870a5&quot;</span><span class="r2"> </span>
+<span class="r1">id</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:a3b7aa80-2ccd-4508-8a31-36b7c0dddb8d&quot;</span><span class="r2"> </span><span class="r1">nodeRepresentation</span><span class="r2">=</span><span class="r4">&quot;ALLG&quot;</span><span class="r2"> </span>
+<span class="r1">objectType</span><span class="r2">=</span><span class="r4">&quot;urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classifica</span>
+<span class="r4">tion&quot;</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Slot</span><span class="r2"> </span><span class="r1">name</span><span class="r2">=</span><span class="r4">&quot;codingScheme&quot;</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:ValueList</span><span class="r5">&gt;</span>
+                <span class="r5">&lt;</span><span class="r6">ns10:Value</span><span class="r5">&gt;</span><span class="r7">1.3.6.1</span>.<span class="r3">4.1</span>.<span class="r3">19376.3</span>.<span class="r7">276.1.5.4</span><span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Value</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ValueList</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Slot</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Name</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:LocalizedString</span><span class="r2"> </span><span class="r1">value</span><span class="r2">=</span><span class="r4">&quot;Allgemeinmedizin&quot;</span><span class="r2">/</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Name</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Classification</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns</span><span class="r7">10:C</span><span class="r6">lassification</span><span class="r2"> </span>
+<span class="r1">classificationScheme</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:f0306f51-975f-434e-a61c-c59651d33983&quot;</span><span class="r2"> </span>
+<span class="r1">classifiedObject</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:bfe89bb4-2a76-4763-aecf-084d328870a5&quot;</span><span class="r2"> </span>
+<span class="r1">id</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:75dcd8c9-1b86-416c-8799-d986eba42fce&quot;</span><span class="r2"> </span><span class="r1">nodeRepresentation</span><span class="r2">=</span><span class="r4">&quot;MEDI&quot;</span><span class="r2"> </span>
+<span class="r1">objectType</span><span class="r2">=</span><span class="r4">&quot;urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classifica</span>
+<span class="r4">tion&quot;</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Slot</span><span class="r2"> </span><span class="r1">name</span><span class="r2">=</span><span class="r4">&quot;codingScheme&quot;</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:ValueList</span><span class="r5">&gt;</span>
+                <span class="r5">&lt;</span><span class="r6">ns10:Value</span><span class="r5">&gt;</span><span class="r7">1.3.6.1</span>.<span class="r3">4.1</span>.<span class="r3">19376.3</span>.<span class="r7">276.1.5.9</span><span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Value</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ValueList</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Slot</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Name</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:LocalizedString</span><span class="r2"> </span><span class="r1">value</span><span class="r2">=</span><span class="r4">&quot;Medikament&amp;#246;se Therapien&quot;</span><span class="r2">/</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Name</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Classification</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns</span><span class="r7">10:E</span><span class="r6">xternalIdentifier</span><span class="r2"> </span>
+<span class="r1">id</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:c5bab021-648f-4826-a9cf-4179d4664c5a&quot;</span><span class="r2"> </span>
+<span class="r1">identificationScheme</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:2e82c1f6-a085-4c72-9da3-8640a32e42ab&quot;</span><span class="r2"> </span>
+<span class="r1">objectType</span><span class="r2">=</span><span class="r4">&quot;urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:ExternalId</span>
+<span class="r4">entifier&quot;</span><span class="r2"> </span><span class="r1">registryObject</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:bfe89bb4-2a76-4763-aecf-084d328870a5&quot;</span><span class="r2"> </span>
+<span class="r1">value</span><span class="r2">=</span><span class="r4">&quot;1.2.840.113556.1.8000.2554.17930.51373.54354.20040.33122.16728266.1216868</span>
+<span class="r4">7&quot;</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Name</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:LocalizedString</span><span class="r2"> </span><span class="r1">value</span><span class="r2">=</span><span class="r4">&quot;XDSDocumentEntry.uniqueId&quot;</span><span class="r2">/</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Name</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ExternalIdentifier</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns</span><span class="r7">10:E</span><span class="r6">xternalIdentifier</span><span class="r2"> </span>
+<span class="r1">id</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:b75d8ffd-42f1-47eb-a278-153961e41e82&quot;</span><span class="r2"> </span>
+<span class="r1">identificationScheme</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:58a6f841-87b3-4a3e-92fd-a8ffeff98427&quot;</span><span class="r2"> </span>
+<span class="r1">objectType</span><span class="r2">=</span><span class="r4">&quot;urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:ExternalId</span>
+<span class="r4">entifier&quot;</span><span class="r2"> </span><span class="r1">registryObject</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:bfe89bb4-2a76-4763-aecf-084d328870a5&quot;</span><span class="r2"> </span>
+<span class="r1">value</span><span class="r2">=</span><span class="r4">&quot;X110476138^^^&amp;amp;1.2.276.0.76.4.8&amp;amp;ISO&quot;</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Name</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:LocalizedString</span><span class="r2"> </span><span class="r1">value</span><span class="r2">=</span><span class="r4">&quot;XDSDocumentEntry.patientId&quot;</span><span class="r2">/</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Name</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ExternalIdentifier</span><span class="r5">&gt;</span>
+        <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ExtrinsicObject</span><span class="r5">&gt;</span>
+        <span class="r5">&lt;</span><span class="r6">ns</span><span class="r7">10:E</span><span class="r6">xtrinsicObject</span><span class="r2"> </span><span class="r1">home</span><span class="r2">=</span><span class="r4">&quot;urn:oid:1.2.276.0.76.3.1.315.3.3.1.1&quot;</span><span class="r2"> </span>
+<span class="r1">id</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:53e5b319-d11a-4d79-ac25-cbc3fba7f28a&quot;</span><span class="r2"> </span><span class="r1">mimeType</span><span class="r2">=</span><span class="r4">&quot;application/xml&quot;</span><span class="r2"> </span>
+<span class="r1">objectType</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:7edca82f-054d-47f2-a032-9b2a5b5186c1&quot;</span><span class="r2"> </span>
+<span class="r1">status</span><span class="r2">=</span><span class="r4">&quot;urn:oasis:names:tc:ebxml-regrep:StatusType:Approved&quot;</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns10:Slot</span><span class="r2"> </span><span class="r1">name</span><span class="r2">=</span><span class="r4">&quot;creationTime&quot;</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:ValueList</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:Value</span><span class="r5">&gt;</span><span class="r3">20191209124919</span><span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Value</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ValueList</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Slot</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns10:Slot</span><span class="r2"> </span><span class="r1">name</span><span class="r2">=</span><span class="r4">&quot;languageCode&quot;</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:ValueList</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:Value</span><span class="r5">&gt;</span>de-DE<span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Value</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ValueList</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Slot</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns10:Slot</span><span class="r2"> </span><span class="r1">name</span><span class="r2">=</span><span class="r4">&quot;repositoryUniqueId&quot;</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:ValueList</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:Value</span><span class="r5">&gt;</span><span class="r7">1.2.276.0</span>.<span class="r7">76.3.1.315</span>.<span class="r7">3.3.1.1</span><span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Value</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ValueList</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Slot</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns10:Slot</span><span class="r2"> </span><span class="r1">name</span><span class="r2">=</span><span class="r4">&quot;size&quot;</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:ValueList</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:Value</span><span class="r5">&gt;</span><span class="r3">1703</span><span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Value</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ValueList</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Slot</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns10:Slot</span><span class="r2"> </span><span class="r1">name</span><span class="r2">=</span><span class="r4">&quot;URI&quot;</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:ValueList</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:Value</span><span class="r5">&gt;</span>pssim_emp.xml<span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Value</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ValueList</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Slot</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns10:Name</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:LocalizedString</span><span class="r2"> </span><span class="r1">value</span><span class="r2">=</span><span class="r4">&quot;PsSim: Medikationsplan&quot;</span><span class="r2">/</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Name</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns</span><span class="r7">10:C</span><span class="r6">lassification</span><span class="r2"> </span>
+<span class="r1">classificationScheme</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:93606bcf-9494-43ec-9b4e-a7748d1a838d&quot;</span><span class="r2"> </span>
+<span class="r1">classifiedObject</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:53e5b319-d11a-4d79-ac25-cbc3fba7f28a&quot;</span><span class="r2"> </span>
+<span class="r1">id</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:2e332fd1-ebaa-421d-a307-d7a112466a33&quot;</span><span class="r2"> </span>
+<span class="r1">objectType</span><span class="r2">=</span><span class="r4">&quot;urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classifica</span>
+<span class="r4">tion&quot;</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Slot</span><span class="r2"> </span><span class="r1">name</span><span class="r2">=</span><span class="r4">&quot;authorPerson&quot;</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:ValueList</span><span class="r5">&gt;</span>
+                <span class="r5">&lt;</span><span class="r6">ns10:Value</span><span class="r5">&gt;</span>^M&amp;#<span class="r3">252</span>;ller-Holzscheit^Marcello-Bernhardino^^^Dr.<span class="r5">&lt;</span><span class="r2">/</span>
+<span class="r8">ns10</span><span class="r2">:Value</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ValueList</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Slot</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Slot</span><span class="r2"> </span><span class="r1">name</span><span class="r2">=</span><span class="r4">&quot;authorRole&quot;</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:ValueList</span><span class="r5">&gt;</span>
+                <span class="r5">&lt;</span><span class="r6">ns10:Value</span><span class="r5">&gt;</span><span class="r3">11</span>^^^&amp;amp;<span class="r7">1.3.6.1</span>.<span class="r3">4.1</span>.<span class="r3">19376.3</span>.<span class="r7">276.1.5.13</span>&amp;amp;ISO<span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns</span>
+<span class="r8">10</span><span class="r2">:Value</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ValueList</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Slot</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Classification</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns</span><span class="r7">10:C</span><span class="r6">lassification</span><span class="r2"> </span>
+<span class="r1">classificationScheme</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:41a5887f-8865-4c09-adf7-e362475b143a&quot;</span><span class="r2"> </span>
+<span class="r1">classifiedObject</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:53e5b319-d11a-4d79-ac25-cbc3fba7f28a&quot;</span><span class="r2"> </span>
+<span class="r1">id</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:e5525d92-6a30-4463-82ee-bc349e113c53&quot;</span><span class="r2"> </span><span class="r1">nodeRepresentation</span><span class="r2">=</span><span class="r4">&quot;PLA&quot;</span><span class="r2"> </span>
+<span class="r1">objectType</span><span class="r2">=</span><span class="r4">&quot;urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classifica</span>
+<span class="r4">tion&quot;</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Slot</span><span class="r2"> </span><span class="r1">name</span><span class="r2">=</span><span class="r4">&quot;codingScheme&quot;</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:ValueList</span><span class="r5">&gt;</span>
+                <span class="r5">&lt;</span><span class="r6">ns10:Value</span><span class="r5">&gt;</span><span class="r7">1.3.6.1</span>.<span class="r3">4.1</span>.<span class="r3">19376.3</span>.<span class="r7">276.1.5.8</span><span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Value</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ValueList</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Slot</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Name</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:LocalizedString</span><span class="r2"> </span><span class="r1">value</span><span class="r2">=</span><span class="r4">&quot;Planungsdokument&quot;</span><span class="r2">/</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Name</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Classification</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns</span><span class="r7">10:C</span><span class="r6">lassification</span><span class="r2"> </span>
+<span class="r1">classificationScheme</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:f4f85eac-e6cb-4883-b524-f2705394840f&quot;</span><span class="r2"> </span>
+<span class="r1">classifiedObject</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:53e5b319-d11a-4d79-ac25-cbc3fba7f28a&quot;</span><span class="r2"> </span>
+<span class="r1">id</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:1a7d9e35-6f06-44b6-b433-ddaf1b60d054&quot;</span><span class="r2"> </span><span class="r1">nodeRepresentation</span><span class="r2">=</span><span class="r4">&quot;LEI&quot;</span><span class="r2"> </span>
+<span class="r1">objectType</span><span class="r2">=</span><span class="r4">&quot;urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classifica</span>
+<span class="r4">tion&quot;</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Slot</span><span class="r2"> </span><span class="r1">name</span><span class="r2">=</span><span class="r4">&quot;codingScheme&quot;</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:ValueList</span><span class="r5">&gt;</span>
+                <span class="r5">&lt;</span><span class="r6">ns10:Value</span><span class="r5">&gt;</span><span class="r7">1.2.276.0</span>.<span class="r3">76.5</span>.<span class="r3">491</span><span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Value</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ValueList</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Slot</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Name</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:LocalizedString</span><span class="r2"> </span><span class="r1">value</span><span class="r2">=</span><span class="r4">&quot;Dokument einer </span>
+<span class="r4">Leistungserbringerinstitution&quot;</span><span class="r2">/</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Name</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Classification</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns</span><span class="r7">10:C</span><span class="r6">lassification</span><span class="r2"> </span>
+<span class="r1">classificationScheme</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:f4f85eac-e6cb-4883-b524-f2705394840f&quot;</span><span class="r2"> </span>
+<span class="r1">classifiedObject</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:53e5b319-d11a-4d79-ac25-cbc3fba7f28a&quot;</span><span class="r2"> </span>
+<span class="r1">id</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:934cd76d-4900-4380-b112-d8e3140f8fc6&quot;</span><span class="r2"> </span><span class="r1">nodeRepresentation</span><span class="r2">=</span><span class="r4">&quot;N&quot;</span><span class="r2"> </span>
+<span class="r1">objectType</span><span class="r2">=</span><span class="r4">&quot;urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classifica</span>
+<span class="r4">tion&quot;</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Slot</span><span class="r2"> </span><span class="r1">name</span><span class="r2">=</span><span class="r4">&quot;codingScheme&quot;</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:ValueList</span><span class="r5">&gt;</span>
+                <span class="r5">&lt;</span><span class="r6">ns10:Value</span><span class="r5">&gt;</span><span class="r7">2.16.840.1</span>.<span class="r3">113883.5</span>.<span class="r3">25</span><span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Value</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ValueList</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Slot</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Name</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:LocalizedString</span><span class="r2"> </span><span class="r1">value</span><span class="r2">=</span><span class="r4">&quot;normal&quot;</span><span class="r2">/</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Name</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Classification</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns</span><span class="r7">10:C</span><span class="r6">lassification</span><span class="r2"> </span>
+<span class="r1">classificationScheme</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:a09d5840-386c-46f2-b5ad-9c3699a4309d&quot;</span><span class="r2"> </span>
+<span class="r1">classifiedObject</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:53e5b319-d11a-4d79-ac25-cbc3fba7f28a&quot;</span><span class="r2"> </span>
+<span class="r1">id</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:f18f42ab-9ad9-45d7-8be3-6791d7e760c4&quot;</span><span class="r2"> </span>
+<span class="r1">nodeRepresentation</span><span class="r2">=</span><span class="r4">&quot;urn:gematik:ig:Medikationsplan:r3.1&quot;</span><span class="r2"> </span>
+<span class="r1">objectType</span><span class="r2">=</span><span class="r4">&quot;urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classifica</span>
+<span class="r4">tion&quot;</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Slot</span><span class="r2"> </span><span class="r1">name</span><span class="r2">=</span><span class="r4">&quot;codingScheme&quot;</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:ValueList</span><span class="r5">&gt;</span>
+                <span class="r5">&lt;</span><span class="r6">ns10:Value</span><span class="r5">&gt;</span><span class="r7">1.3.6.1</span>.<span class="r3">4.1</span>.<span class="r3">19376.3</span>.<span class="r7">276.1.5.6</span><span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Value</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ValueList</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Slot</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Name</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:LocalizedString</span><span class="r2"> </span><span class="r1">value</span><span class="r2">=</span><span class="r4">&quot;Medikationsplan (gematik)&quot;</span><span class="r2">/</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Name</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Classification</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns</span><span class="r7">10:C</span><span class="r6">lassification</span><span class="r2"> </span>
+<span class="r1">classificationScheme</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:f33fb8ac-18af-42cc-ae0e-ed0b0bdb91e1&quot;</span><span class="r2"> </span>
+<span class="r1">classifiedObject</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:53e5b319-d11a-4d79-ac25-cbc3fba7f28a&quot;</span><span class="r2"> </span>
+<span class="r1">id</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:e6e4dfd9-2dba-48cb-9381-609657265de6&quot;</span><span class="r2"> </span><span class="r1">nodeRepresentation</span><span class="r2">=</span><span class="r4">&quot;PRA&quot;</span><span class="r2"> </span>
+<span class="r1">objectType</span><span class="r2">=</span><span class="r4">&quot;urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classifica</span>
+<span class="r4">tion&quot;</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Slot</span><span class="r2"> </span><span class="r1">name</span><span class="r2">=</span><span class="r4">&quot;codingScheme&quot;</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:ValueList</span><span class="r5">&gt;</span>
+                <span class="r5">&lt;</span><span class="r6">ns10:Value</span><span class="r5">&gt;</span><span class="r7">1.3.6.1</span>.<span class="r3">4.1</span>.<span class="r3">19376.3</span>.<span class="r7">276.1.5.2</span><span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Value</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ValueList</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Slot</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Name</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:LocalizedString</span><span class="r2"> </span><span class="r1">value</span><span class="r2">=</span><span class="r4">&quot;Arztpraxis&quot;</span><span class="r2">/</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Name</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Classification</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns</span><span class="r7">10:C</span><span class="r6">lassification</span><span class="r2"> </span>
+<span class="r1">classificationScheme</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:cccf5598-8b07-4b77-a05e-ae952c785ead&quot;</span><span class="r2"> </span>
+<span class="r1">classifiedObject</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:53e5b319-d11a-4d79-ac25-cbc3fba7f28a&quot;</span><span class="r2"> </span>
+<span class="r1">id</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:0f6484b3-69e5-4f39-acc2-5cf4539e072c&quot;</span><span class="r2"> </span><span class="r1">nodeRepresentation</span><span class="r2">=</span><span class="r4">&quot;ALLG&quot;</span><span class="r2"> </span>
+<span class="r1">objectType</span><span class="r2">=</span><span class="r4">&quot;urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classifica</span>
+<span class="r4">tion&quot;</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Slot</span><span class="r2"> </span><span class="r1">name</span><span class="r2">=</span><span class="r4">&quot;codingScheme&quot;</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:ValueList</span><span class="r5">&gt;</span>
+                <span class="r5">&lt;</span><span class="r6">ns10:Value</span><span class="r5">&gt;</span><span class="r7">1.3.6.1</span>.<span class="r3">4.1</span>.<span class="r3">19376.3</span>.<span class="r7">276.1.5.4</span><span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Value</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ValueList</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Slot</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Name</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:LocalizedString</span><span class="r2"> </span><span class="r1">value</span><span class="r2">=</span><span class="r4">&quot;Allgemeinmedizin&quot;</span><span class="r2">/</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Name</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Classification</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns</span><span class="r7">10:C</span><span class="r6">lassification</span><span class="r2"> </span>
+<span class="r1">classificationScheme</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:f0306f51-975f-434e-a61c-c59651d33983&quot;</span><span class="r2"> </span>
+<span class="r1">classifiedObject</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:53e5b319-d11a-4d79-ac25-cbc3fba7f28a&quot;</span><span class="r2"> </span>
+<span class="r1">id</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:4bbfa187-9955-478d-a746-c074c5a14af4&quot;</span><span class="r2"> </span><span class="r1">nodeRepresentation</span><span class="r2">=</span><span class="r4">&quot;MEDI&quot;</span><span class="r2"> </span>
+<span class="r1">objectType</span><span class="r2">=</span><span class="r4">&quot;urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classifica</span>
+<span class="r4">tion&quot;</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Slot</span><span class="r2"> </span><span class="r1">name</span><span class="r2">=</span><span class="r4">&quot;codingScheme&quot;</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:ValueList</span><span class="r5">&gt;</span>
+                <span class="r5">&lt;</span><span class="r6">ns10:Value</span><span class="r5">&gt;</span><span class="r7">1.3.6.1</span>.<span class="r3">4.1</span>.<span class="r3">19376.3</span>.<span class="r7">276.1.5.9</span><span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Value</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ValueList</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Slot</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Name</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:LocalizedString</span><span class="r2"> </span><span class="r1">value</span><span class="r2">=</span><span class="r4">&quot;Medikament&amp;#246;se Therapien&quot;</span><span class="r2">/</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Name</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Classification</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns</span><span class="r7">10:E</span><span class="r6">xternalIdentifier</span><span class="r2"> </span>
+<span class="r1">id</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:e1423981-7ff3-489e-9909-4781a90bae1e&quot;</span><span class="r2"> </span>
+<span class="r1">identificationScheme</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:2e82c1f6-a085-4c72-9da3-8640a32e42ab&quot;</span><span class="r2"> </span>
+<span class="r1">objectType</span><span class="r2">=</span><span class="r4">&quot;urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:ExternalId</span>
+<span class="r4">entifier&quot;</span><span class="r2"> </span><span class="r1">registryObject</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:53e5b319-d11a-4d79-ac25-cbc3fba7f28a&quot;</span><span class="r2"> </span>
+<span class="r1">value</span><span class="r2">=</span><span class="r4">&quot;2.2.840.113556.1.8000.2554.17930.51373.54354.20040.33122.16728266.1216868</span>
+<span class="r4">7&quot;</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Name</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:LocalizedString</span><span class="r2"> </span><span class="r1">value</span><span class="r2">=</span><span class="r4">&quot;XDSDocumentEntry.uniqueId&quot;</span><span class="r2">/</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Name</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ExternalIdentifier</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns</span><span class="r7">10:E</span><span class="r6">xternalIdentifier</span><span class="r2"> </span>
+<span class="r1">id</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:dd456d3b-dcf8-410d-8855-50f9ea5f16ed&quot;</span><span class="r2"> </span>
+<span class="r1">identificationScheme</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:58a6f841-87b3-4a3e-92fd-a8ffeff98427&quot;</span><span class="r2"> </span>
+<span class="r1">objectType</span><span class="r2">=</span><span class="r4">&quot;urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:ExternalId</span>
+<span class="r4">entifier&quot;</span><span class="r2"> </span><span class="r1">registryObject</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:53e5b319-d11a-4d79-ac25-cbc3fba7f28a&quot;</span><span class="r2"> </span>
+<span class="r1">value</span><span class="r2">=</span><span class="r4">&quot;X110476138^^^&amp;amp;1.2.276.0.76.4.8&amp;amp;ISO&quot;</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Name</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:LocalizedString</span><span class="r2"> </span><span class="r1">value</span><span class="r2">=</span><span class="r4">&quot;XDSDocumentEntry.patientId&quot;</span><span class="r2">/</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Name</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ExternalIdentifier</span><span class="r5">&gt;</span>
+        <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ExtrinsicObject</span><span class="r5">&gt;</span>
+        <span class="r5">&lt;</span><span class="r6">ns</span><span class="r7">10:E</span><span class="r6">xtrinsicObject</span><span class="r2"> </span><span class="r1">home</span><span class="r2">=</span><span class="r4">&quot;urn:oid:1.2.276.0.76.3.1.315.3.3.1.1&quot;</span><span class="r2"> </span>
+<span class="r1">id</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:779f91fa-45b4-4784-9170-1245272bf329&quot;</span><span class="r2"> </span><span class="r1">mimeType</span><span class="r2">=</span><span class="r4">&quot;application/xml&quot;</span><span class="r2"> </span>
+<span class="r1">objectType</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:7edca82f-054d-47f2-a032-9b2a5b5186c1&quot;</span><span class="r2"> </span>
+<span class="r1">status</span><span class="r2">=</span><span class="r4">&quot;urn:oasis:names:tc:ebxml-regrep:StatusType:Approved&quot;</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns10:Slot</span><span class="r2"> </span><span class="r1">name</span><span class="r2">=</span><span class="r4">&quot;creationTime&quot;</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:ValueList</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:Value</span><span class="r5">&gt;</span><span class="r3">20230623082553</span><span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Value</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ValueList</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Slot</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns10:Slot</span><span class="r2"> </span><span class="r1">name</span><span class="r2">=</span><span class="r4">&quot;languageCode&quot;</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:ValueList</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:Value</span><span class="r5">&gt;</span>de-DE<span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Value</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ValueList</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Slot</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns10:Slot</span><span class="r2"> </span><span class="r1">name</span><span class="r2">=</span><span class="r4">&quot;repositoryUniqueId&quot;</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:ValueList</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:Value</span><span class="r5">&gt;</span><span class="r7">1.2.276.0</span>.<span class="r7">76.3.1.315</span>.<span class="r7">3.3.1.1</span><span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Value</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ValueList</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Slot</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns10:Slot</span><span class="r2"> </span><span class="r1">name</span><span class="r2">=</span><span class="r4">&quot;size&quot;</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:ValueList</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:Value</span><span class="r5">&gt;</span><span class="r3">1703</span><span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Value</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ValueList</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Slot</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns10:Slot</span><span class="r2"> </span><span class="r1">name</span><span class="r2">=</span><span class="r4">&quot;URI&quot;</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:ValueList</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:Value</span><span class="r5">&gt;</span>hello.txt<span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Value</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ValueList</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Slot</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns10:Name</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:LocalizedString</span><span class="r2"> </span><span class="r1">value</span><span class="r2">=</span><span class="r4">&quot;PsSim: Medikationsplan&quot;</span><span class="r2">/</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Name</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns</span><span class="r7">10:C</span><span class="r6">lassification</span><span class="r2"> </span>
+<span class="r1">classificationScheme</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:93606bcf-9494-43ec-9b4e-a7748d1a838d&quot;</span><span class="r2"> </span>
+<span class="r1">classifiedObject</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:779f91fa-45b4-4784-9170-1245272bf329&quot;</span><span class="r2"> </span>
+<span class="r1">id</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:6ba93e19-9556-43c5-a8bf-ac73fe3fab93&quot;</span><span class="r2"> </span>
+<span class="r1">objectType</span><span class="r2">=</span><span class="r4">&quot;urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classifica</span>
+<span class="r4">tion&quot;</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Slot</span><span class="r2"> </span><span class="r1">name</span><span class="r2">=</span><span class="r4">&quot;authorPerson&quot;</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:ValueList</span><span class="r5">&gt;</span>
+                <span class="r5">&lt;</span><span class="r6">ns10:Value</span><span class="r5">&gt;</span>^&amp;#<span class="r3">214</span>;zdemir^Simon^^^Freiherr<span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Value</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ValueList</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Slot</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Slot</span><span class="r2"> </span><span class="r1">name</span><span class="r2">=</span><span class="r4">&quot;authorRole&quot;</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:ValueList</span><span class="r5">&gt;</span>
+                <span class="r5">&lt;</span><span class="r6">ns10:Value</span><span class="r5">&gt;</span><span class="r3">11</span>^^^&amp;amp;<span class="r7">1.3.6.1</span>.<span class="r3">4.1</span>.<span class="r3">19376.3</span>.<span class="r7">276.1.5.13</span>&amp;amp;ISO<span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns</span>
+<span class="r8">10</span><span class="r2">:Value</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ValueList</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Slot</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Classification</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns</span><span class="r7">10:C</span><span class="r6">lassification</span><span class="r2"> </span>
+<span class="r1">classificationScheme</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:41a5887f-8865-4c09-adf7-e362475b143a&quot;</span><span class="r2"> </span>
+<span class="r1">classifiedObject</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:779f91fa-45b4-4784-9170-1245272bf329&quot;</span><span class="r2"> </span>
+<span class="r1">id</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:233ca039-8e33-44c5-baa2-12bea6a5ae89&quot;</span><span class="r2"> </span><span class="r1">nodeRepresentation</span><span class="r2">=</span><span class="r4">&quot;PLA&quot;</span><span class="r2"> </span>
+<span class="r1">objectType</span><span class="r2">=</span><span class="r4">&quot;urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classifica</span>
+<span class="r4">tion&quot;</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Slot</span><span class="r2"> </span><span class="r1">name</span><span class="r2">=</span><span class="r4">&quot;codingScheme&quot;</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:ValueList</span><span class="r5">&gt;</span>
+                <span class="r5">&lt;</span><span class="r6">ns10:Value</span><span class="r5">&gt;</span><span class="r7">1.3.6.1</span>.<span class="r3">4.1</span>.<span class="r3">19376.3</span>.<span class="r7">276.1.5.8</span><span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Value</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ValueList</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Slot</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Name</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:LocalizedString</span><span class="r2"> </span><span class="r1">value</span><span class="r2">=</span><span class="r4">&quot;Planungsdokument&quot;</span><span class="r2">/</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Name</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Classification</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns</span><span class="r7">10:C</span><span class="r6">lassification</span><span class="r2"> </span>
+<span class="r1">classificationScheme</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:f4f85eac-e6cb-4883-b524-f2705394840f&quot;</span><span class="r2"> </span>
+<span class="r1">classifiedObject</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:779f91fa-45b4-4784-9170-1245272bf329&quot;</span><span class="r2"> </span>
+<span class="r1">id</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:128c6ff7-0887-4a81-8384-77ae3ec08d28&quot;</span><span class="r2"> </span><span class="r1">nodeRepresentation</span><span class="r2">=</span><span class="r4">&quot;LEI&quot;</span><span class="r2"> </span>
+<span class="r1">objectType</span><span class="r2">=</span><span class="r4">&quot;urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classifica</span>
+<span class="r4">tion&quot;</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Slot</span><span class="r2"> </span><span class="r1">name</span><span class="r2">=</span><span class="r4">&quot;codingScheme&quot;</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:ValueList</span><span class="r5">&gt;</span>
+                <span class="r5">&lt;</span><span class="r6">ns10:Value</span><span class="r5">&gt;</span><span class="r7">1.2.276.0</span>.<span class="r3">76.5</span>.<span class="r3">491</span><span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Value</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ValueList</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Slot</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Name</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:LocalizedString</span><span class="r2"> </span><span class="r1">value</span><span class="r2">=</span><span class="r4">&quot;Dokument einer </span>
+<span class="r4">Leistungserbringerinstitution&quot;</span><span class="r2">/</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Name</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Classification</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns</span><span class="r7">10:C</span><span class="r6">lassification</span><span class="r2"> </span>
+<span class="r1">classificationScheme</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:f4f85eac-e6cb-4883-b524-f2705394840f&quot;</span><span class="r2"> </span>
+<span class="r1">classifiedObject</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:779f91fa-45b4-4784-9170-1245272bf329&quot;</span><span class="r2"> </span>
+<span class="r1">id</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:920acecb-c09b-400b-aeda-e3befe861f28&quot;</span><span class="r2"> </span><span class="r1">nodeRepresentation</span><span class="r2">=</span><span class="r4">&quot;N&quot;</span><span class="r2"> </span>
+<span class="r1">objectType</span><span class="r2">=</span><span class="r4">&quot;urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classifica</span>
+<span class="r4">tion&quot;</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Slot</span><span class="r2"> </span><span class="r1">name</span><span class="r2">=</span><span class="r4">&quot;codingScheme&quot;</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:ValueList</span><span class="r5">&gt;</span>
+                <span class="r5">&lt;</span><span class="r6">ns10:Value</span><span class="r5">&gt;</span><span class="r7">2.16.840.1</span>.<span class="r3">113883.5</span>.<span class="r3">25</span><span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Value</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ValueList</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Slot</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Name</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:LocalizedString</span><span class="r2"> </span><span class="r1">value</span><span class="r2">=</span><span class="r4">&quot;normal&quot;</span><span class="r2">/</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Name</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Classification</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns</span><span class="r7">10:C</span><span class="r6">lassification</span><span class="r2"> </span>
+<span class="r1">classificationScheme</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:a09d5840-386c-46f2-b5ad-9c3699a4309d&quot;</span><span class="r2"> </span>
+<span class="r1">classifiedObject</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:779f91fa-45b4-4784-9170-1245272bf329&quot;</span><span class="r2"> </span>
+<span class="r1">id</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:cf70373c-03b7-4273-92b1-e998f1a6f59c&quot;</span><span class="r2"> </span>
+<span class="r1">nodeRepresentation</span><span class="r2">=</span><span class="r4">&quot;urn:gematik:ig:Medikationsplan:r3.1&quot;</span><span class="r2"> </span>
+<span class="r1">objectType</span><span class="r2">=</span><span class="r4">&quot;urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classifica</span>
+<span class="r4">tion&quot;</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Slot</span><span class="r2"> </span><span class="r1">name</span><span class="r2">=</span><span class="r4">&quot;codingScheme&quot;</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:ValueList</span><span class="r5">&gt;</span>
+                <span class="r5">&lt;</span><span class="r6">ns10:Value</span><span class="r5">&gt;</span><span class="r7">1.3.6.1</span>.<span class="r3">4.1</span>.<span class="r3">19376.3</span>.<span class="r7">276.1.5.6</span><span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Value</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ValueList</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Slot</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Name</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:LocalizedString</span><span class="r2"> </span><span class="r1">value</span><span class="r2">=</span><span class="r4">&quot;Medikationsplan (gematik)&quot;</span><span class="r2">/</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Name</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Classification</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns</span><span class="r7">10:C</span><span class="r6">lassification</span><span class="r2"> </span>
+<span class="r1">classificationScheme</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:f33fb8ac-18af-42cc-ae0e-ed0b0bdb91e1&quot;</span><span class="r2"> </span>
+<span class="r1">classifiedObject</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:779f91fa-45b4-4784-9170-1245272bf329&quot;</span><span class="r2"> </span>
+<span class="r1">id</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:9ce10bbe-6231-4a0f-bf05-b295da25f4f0&quot;</span><span class="r2"> </span><span class="r1">nodeRepresentation</span><span class="r2">=</span><span class="r4">&quot;PRA&quot;</span><span class="r2"> </span>
+<span class="r1">objectType</span><span class="r2">=</span><span class="r4">&quot;urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classifica</span>
+<span class="r4">tion&quot;</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Slot</span><span class="r2"> </span><span class="r1">name</span><span class="r2">=</span><span class="r4">&quot;codingScheme&quot;</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:ValueList</span><span class="r5">&gt;</span>
+                <span class="r5">&lt;</span><span class="r6">ns10:Value</span><span class="r5">&gt;</span><span class="r7">1.3.6.1</span>.<span class="r3">4.1</span>.<span class="r3">19376.3</span>.<span class="r7">276.1.5.2</span><span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Value</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ValueList</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Slot</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Name</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:LocalizedString</span><span class="r2"> </span><span class="r1">value</span><span class="r2">=</span><span class="r4">&quot;Arztpraxis&quot;</span><span class="r2">/</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Name</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Classification</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns</span><span class="r7">10:C</span><span class="r6">lassification</span><span class="r2"> </span>
+<span class="r1">classificationScheme</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:cccf5598-8b07-4b77-a05e-ae952c785ead&quot;</span><span class="r2"> </span>
+<span class="r1">classifiedObject</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:779f91fa-45b4-4784-9170-1245272bf329&quot;</span><span class="r2"> </span>
+<span class="r1">id</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:a79670eb-153d-4e27-9c4d-483e06208b24&quot;</span><span class="r2"> </span><span class="r1">nodeRepresentation</span><span class="r2">=</span><span class="r4">&quot;ALLG&quot;</span><span class="r2"> </span>
+<span class="r1">objectType</span><span class="r2">=</span><span class="r4">&quot;urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classifica</span>
+<span class="r4">tion&quot;</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Slot</span><span class="r2"> </span><span class="r1">name</span><span class="r2">=</span><span class="r4">&quot;codingScheme&quot;</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:ValueList</span><span class="r5">&gt;</span>
+                <span class="r5">&lt;</span><span class="r6">ns10:Value</span><span class="r5">&gt;</span><span class="r7">1.3.6.1</span>.<span class="r3">4.1</span>.<span class="r3">19376.3</span>.<span class="r7">276.1.5.4</span><span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Value</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ValueList</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Slot</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Name</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:LocalizedString</span><span class="r2"> </span><span class="r1">value</span><span class="r2">=</span><span class="r4">&quot;Allgemeinmedizin&quot;</span><span class="r2">/</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Name</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Classification</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns</span><span class="r7">10:C</span><span class="r6">lassification</span><span class="r2"> </span>
+<span class="r1">classificationScheme</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:f0306f51-975f-434e-a61c-c59651d33983&quot;</span><span class="r2"> </span>
+<span class="r1">classifiedObject</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:779f91fa-45b4-4784-9170-1245272bf329&quot;</span><span class="r2"> </span>
+<span class="r1">id</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:8b52eab5-213d-4f75-96f4-c72f17ab425f&quot;</span><span class="r2"> </span><span class="r1">nodeRepresentation</span><span class="r2">=</span><span class="r4">&quot;MEDI&quot;</span><span class="r2"> </span>
+<span class="r1">objectType</span><span class="r2">=</span><span class="r4">&quot;urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classifica</span>
+<span class="r4">tion&quot;</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Slot</span><span class="r2"> </span><span class="r1">name</span><span class="r2">=</span><span class="r4">&quot;codingScheme&quot;</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:ValueList</span><span class="r5">&gt;</span>
+                <span class="r5">&lt;</span><span class="r6">ns10:Value</span><span class="r5">&gt;</span><span class="r7">1.3.6.1</span>.<span class="r3">4.1</span>.<span class="r3">19376.3</span>.<span class="r7">276.1.5.9</span><span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Value</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ValueList</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Slot</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Name</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:LocalizedString</span><span class="r2"> </span><span class="r1">value</span><span class="r2">=</span><span class="r4">&quot;Medikament&amp;#246;se Therapien&quot;</span><span class="r2">/</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Name</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Classification</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns</span><span class="r7">10:E</span><span class="r6">xternalIdentifier</span><span class="r2"> </span>
+<span class="r1">id</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:084566ee-c46b-4892-b753-174ad60d1c66&quot;</span><span class="r2"> </span>
+<span class="r1">identificationScheme</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:2e82c1f6-a085-4c72-9da3-8640a32e42ab&quot;</span><span class="r2"> </span>
+<span class="r1">objectType</span><span class="r2">=</span><span class="r4">&quot;urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:ExternalId</span>
+<span class="r4">entifier&quot;</span><span class="r2"> </span><span class="r1">registryObject</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:779f91fa-45b4-4784-9170-1245272bf329&quot;</span><span class="r2"> </span>
+<span class="r1">value</span><span class="r2">=</span><span class="r4">&quot;2.25.36356123757438015446549040629505132582&quot;</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Name</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:LocalizedString</span><span class="r2"> </span><span class="r1">value</span><span class="r2">=</span><span class="r4">&quot;XDSDocumentEntry.uniqueId&quot;</span><span class="r2">/</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Name</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ExternalIdentifier</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r6">ns</span><span class="r7">10:E</span><span class="r6">xternalIdentifier</span><span class="r2"> </span>
+<span class="r1">id</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:f377d4d6-5989-4e66-88c5-efc88196cafb&quot;</span><span class="r2"> </span>
+<span class="r1">identificationScheme</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:58a6f841-87b3-4a3e-92fd-a8ffeff98427&quot;</span><span class="r2"> </span>
+<span class="r1">objectType</span><span class="r2">=</span><span class="r4">&quot;urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:ExternalId</span>
+<span class="r4">entifier&quot;</span><span class="r2"> </span><span class="r1">registryObject</span><span class="r2">=</span><span class="r4">&quot;urn:uuid:779f91fa-45b4-4784-9170-1245272bf329&quot;</span><span class="r2"> </span>
+<span class="r1">value</span><span class="r2">=</span><span class="r4">&quot;X110476138^^^&amp;amp;1.2.276.0.76.4.8&amp;amp;ISO&quot;</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r6">ns10:Name</span><span class="r5">&gt;</span>
+              <span class="r5">&lt;</span><span class="r6">ns10:LocalizedString</span><span class="r2"> </span><span class="r1">value</span><span class="r2">=</span><span class="r4">&quot;XDSDocumentEntry.patientId&quot;</span><span class="r2">/</span><span class="r5">&gt;</span>
+            <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:Name</span><span class="r5">&gt;</span>
+          <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ExternalIdentifier</span><span class="r5">&gt;</span>
+        <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:ExtrinsicObject</span><span class="r5">&gt;</span>
+      <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns10</span><span class="r2">:RegistryObjectList</span><span class="r5">&gt;</span>
+    <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">ns13</span><span class="r2">:AdhocQueryResponse</span><span class="r5">&gt;</span>
+  <span class="r5">&lt;</span><span class="r2">/</span><span class="r8">env</span><span class="r2">:Body</span><span class="r5">&gt;</span>
+<span class="r5">&lt;</span><span class="r2">/</span><span class="r8">env</span><span class="r2">:Envelope</span><span class="r5">&gt;</span>
+
+<span class="r11">                                Documents                                 </span>
+┏━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃<span class="r5"> Name                   </span>┃<span class="r5"> Author                                        </span>┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ PsSim: Medikationsplan │ ^Müller-Holzscheit^Marcello-Bernhardino^^^Dr. │
+│ PsSim: Medikationsplan │ ^Müller-Holzscheit^Marcello-Bernhardino^^^Dr. │
+│ PsSim: Medikationsplan │ ^Müller-Holzscheit^Marcello-Bernhardino^^^Dr. │
+│ PsSim: Medikationsplan │ ^Özdemir^Simon^^^Freiherr                     │
+└────────────────────────┴───────────────────────────────────────────────┘
+</pre>
+    </code>
+</body>
+</html>
