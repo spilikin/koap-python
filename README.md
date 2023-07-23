@@ -1,5 +1,8 @@
 # KOAP: Lightweight Konnektor Client Library
 
+## Messages Logs
+Sample Message Logs can be found here: [https://spilikin.dev/koap-python/](https://spilikin.dev/koap-python/)
+
 ## Configuration using environment variables
 
 | Environment variable | Comment |
