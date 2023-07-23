@@ -1,19 +1,24 @@
 from lxml.builder import E
 from lxml import etree
 
+namespaces = {
+    'soap12': 'http://www.w3.org/2003/05/soap-envelope',
+    'phrs': 'http://ws.gematik.de/conn/phrs/PHRService/v1.3',
+    'phr': 'http://ws.gematik.de/fa/phr/v1.1',
+    'conn': 'http://ws.gematik.de/conn/ConnectorContext/v2.0',
+    'com': 'http://ws.gematik.de/conn/ConnectorCommon/v5.0',
+    'wa': 'http://www.w3.org/2005/08/addressing',
+    'xdr': 'urn:ihe:iti:xdr:2014',
+    'xdsb': 'urn:ihe:iti:xds-b:2007',
+    'lcm': 'urn:oasis:names:tc:ebxml-regrep:xsd:lcm:3.0',
+    'rs': 'urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0',
+    'rim': 'urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0',
+    'query': 'urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0',
+}
+
 # define namespace prefixes for better readability
-etree.register_namespace('soap12', 'http://www.w3.org/2003/05/soap-envelope')
-etree.register_namespace('phrs', 'http://ws.gematik.de/conn/phrs/PHRService/v1.3')
-etree.register_namespace('phr', 'http://ws.gematik.de/fa/phr/v1.1')
-etree.register_namespace('conn', 'http://ws.gematik.de/conn/ConnectorContext/v2.0')
-etree.register_namespace('com', 'http://ws.gematik.de/conn/ConnectorCommon/v5.0')
-etree.register_namespace('wa', 'http://www.w3.org/2005/08/addressing')
-etree.register_namespace('xdr', 'urn:ihe:iti:xdr:2014')
-etree.register_namespace('xdsb', 'urn:ihe:iti:xds-b:2007')
-etree.register_namespace('lcm', 'urn:oasis:names:tc:ebxml-regrep:xsd:lcm:3.0')
-etree.register_namespace('rs', 'urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0')
-etree.register_namespace('rim', 'urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0')
-etree.register_namespace('query', 'urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0')
+for prefix, uri in namespaces.items():
+    etree.register_namespace(prefix, uri)
 
 
 def Soap12Envelope(*children, **attrib):
