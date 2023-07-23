@@ -16,7 +16,7 @@ namespaces = {
     'query': 'urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0',
 }
 
-# define namespace prefixes for better readability
+# define namespace prefixes at library level for better readability
 for prefix, uri in namespaces.items():
     etree.register_namespace(prefix, uri)
 

@@ -85,6 +85,36 @@ class EPARecordFacade:
 
         return query_response['AdhocQueryResponse']['RegistryObjectList']
 
+    def find_documents(self) -> Any:
+        soap_body = builder.Soap12Body(
+            builder.AdhocQueryRequest(
+                builder.ResponseOption(returnType="LeafClass", returnComposedObjects="true"),
+                builder.AdhocQuery(
+                    builder.Slot(
+                        builder.ValueList(
+                            builder.Value("('urn:oasis:names:tc:ebxml-regrep:StatusType:Approved')")
+                        ),
+                        name="$XDSDocumentEntryStatus"
+                    ),
+                    builder.Slot(
+                        builder.ValueList(
+                            builder.Value(f"('{self.record_id.InsurantId.extension}^^^&amp;1.2.276.0.76.4.8&amp;ISO')")
+                        ),
+                        name="$XDSDocumentEntryPatientId"
+                    ),
+                    id="urn:uuid:14d4debf-8f97-4251-9a74-a90016b0af0d",
+                    home=self.record_id.HomeCommunityId,
+                ),
+                federated="false",
+                startIndex="0",
+                maxResults="-1",
+            )
+        )
+
+        query_response = self.soap12_call('DocumentRegistry_RegistryStoredQuery', soap_body)
+
+        return query_response['AdhocQueryResponse']['RegistryObjectList']['ExtrinsicObject']
+
     def soap_http_headers(self, soap_action: str) -> Mapping[str, str]:
         return {
             'Content-Type': f'application/soap+xml; charset=utf-8; action="{soap_action}"',
@@ -162,3 +192,18 @@ class EPARecordFacade:
             raise Fault(','.join(errors))
 
         return etree_to_dict(response_envelope.xpath('/soap12:Envelope/soap12:Body', namespaces=builder.namespaces)[0])
+
+
+def slot_by_name(obj: dict, name: str):
+    for slot in obj.get('Slot', []):
+        if slot['@name'] == name:
+            return slot
+    raise KeyError(f"Slot with name '{name}' not found")
+
+
+def classification_slot_by_name(obj: dict, name: str):
+    for classification in obj.get('Classification', []):
+        for slot in classification.get('Slot', []):
+            if slot['@name'] == name:
+                return slot
+    raise KeyError(f"Slot with name '{name}' not found")

@@ -1,10 +1,11 @@
 from koap.facade.epa.epa_facade import EPAFacade, RecordId, InsurantId
-from koap.facade.epa.epa_record_facade import EPARecordFacade
+from koap.facade.epa.epa_record_facade import EPARecordFacade, classification_slot_by_name
 from koap.client import ConnectorClient, ConnectorConfig
 from koap.debug import RichSoapDebugPlugin
 from rich.console import Console
-import os
 from rich.table import Table
+
+import os
 
 
 def test_epa_find_folders():
@@ -24,14 +25,16 @@ def test_epa_find_folders():
 
         epa_record = EPARecordFacade(epa, record_id)
 
-        folders = epa_record.find_folders()
+        documents = epa_record.find_documents()
 
-        table = Table(title="Folders")
+        table = Table(title="Documents")
         table.add_column("Name")
-
-        for folder in folders:
+        table.add_column("Author")
+        for document in documents:
             table.add_row(
-                folder['Name']['LocalizedString']['@value'],
+                document['Name']['LocalizedString']['@value'],
+                classification_slot_by_name(document, 'authorPerson')['ValueList']['Value'],
+                
             )
 
         print(table)
