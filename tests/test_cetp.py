@@ -25,20 +25,29 @@ async def async_test_subscribe():
     hostname = socket.gethostname()
     ip = socket.gethostbyname(hostname)
 
-    response = event_service.Subscribe(
-        Context=conn.context(),
-        Subscription={
-            'Topic': "CARD",
-            'EventTo': f'cetp://{ip}:12201'
-        }
-    )
-    print(response)
+    event_endpoint = f'cetp://{ip}:12201'
 
-    response = event_service.GetSubscription(
+    subscriptions_response = event_service.GetSubscription(
         Context=conn.context(),
     )
 
-    print(response)
+    subscriptions = subscriptions_response['Subscriptions']['Subscription']
+
+    # see if this host already has a subscription
+    existing_subscription = next(filter(lambda s: s['EventTo'] == event_endpoint, subscriptions), None)
+
+    if existing_subscription is None:
+        response = event_service.Subscribe(
+            Context=conn.context(),
+            Subscription={
+                'Topic': "CARD",
+                'EventTo': f'cetp://{ip}:12201'
+            }
+        )
+        print(response)
+    else:
+        print("Subscription already exists")
+        print(existing_subscription)
 
     async def stop():
         await asyncio.sleep(10)
