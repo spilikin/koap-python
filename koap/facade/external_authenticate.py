@@ -16,6 +16,7 @@ class ExternalAuthenticateFacade:
     def __init__(self, client: ConnectorClient):
         self.client = client
         self.event_service = client.create_service_client('EventService', '7.2.0')
+        self.card_service = client.create_service_client('CardService', '8.1.2')
         self.certificate_service = client.create_service_client('CertificateService', '6.0.1')
         self.auth_signature_service = client.create_service_client('AuthSignatureService', '7.4.1')
 
@@ -35,6 +36,17 @@ class ExternalAuthenticateFacade:
         )
 
         return response.X509DataInfoList.X509DataInfo
+
+    def verify_pin(self, card_type: CardTypeEnum, card_handle: str) -> any:
+        if card_type == CardTypeEnum.SMC_B:
+            pin_type = "PIN.SMC"
+        else:
+            pin_type = "PIN.CH"
+        return self.card_service.VerifyPin(
+            self.client.context(),
+            card_handle,
+            pin_type
+        )
 
     def external_authenticate(self, card_handle: str, hash: bytes, crypt: CertRefEnum) -> bytes:
         if crypt == "RSA":
