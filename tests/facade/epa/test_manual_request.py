@@ -2,7 +2,7 @@ import requests
 from rich import print
 
 
-def test_manual_request():
+def test_manual_request():    
     # read http body from provide.xop to string
     with open('tests/facade/epa/provide.xop', 'rb') as f:
         body = f.read()
@@ -21,4 +21,3 @@ def test_manual_request():
         verify=False)
 
     print(response.text)
-  

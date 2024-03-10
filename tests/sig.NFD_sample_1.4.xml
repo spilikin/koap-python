@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="ISO-8859-15" standalone="no"?><ns2:NFD_Document xmlns="http://ws.gematik.de/fa/nfds/common/NFDM_Common/v1.1" xmlns:ns2="http://ws.gematik.de/fa/nfds/NFD_Document/v1.4" xmlns:ns3="http://www.w3.org/2000/09/xmldsig#" NFD_Version="1.4.0">
+    <ns2:Notfalldaten ID="ID1" ID_NFD="1.2.276.0.76.7.8" NFD_letzte_Aktualisierung_date="2018-12-19" NFD_letzte_Aktualisierung_time="11:41:00.221">
+        <ns2:NFD_Versicherter>
+            <Versicherter>
+                <Versicherten_ID>M542994438</Versicherten_ID>
+                <Geburtsdatum>19700606</Geburtsdatum>
+                <Vorname>Sarah</Vorname>
+                <Nachname>Mustermann</Nachname>
+                <Vorsatzwort>von</Vorsatzwort>
+                <Namenszusatz>Freifrau</Namenszusatz>
+                <Titel>Prof.</Titel>
+                <Geschlecht>W</Geschlecht>
+            </Versicherter>
+            <ns2:NFD_Behandelnder_Arzt_Institution BAI_Art="Arzt">
+                <ns2:NFD_BAI_Arzt_Nachname>M�ller-Holzscheit</ns2:NFD_BAI_Arzt_Nachname>
+                <ns2:NFD_BAI_Arzt_Vorname>Marcello-Bernhardino</ns2:NFD_BAI_Arzt_Vorname>
+                <ns2:NFD_BAI_Institution_Bezeichnung>Charite</ns2:NFD_BAI_Institution_Bezeichnung>
+                <ns2:NFD_BAI_Arzt_Bezeichnung>Oberarzt</ns2:NFD_BAI_Arzt_Bezeichnung>
+                <ns2:NFD_BAI_Adresse>
+                    <Adresse>
+                        <Postleitzahl>98765</Postleitzahl>
+                        <Ort>Oberstubbling</Ort>
+                        <Strasse>Bergstr.</Strasse>
+                        <Hausnummer>11</Hausnummer>
+                        <Anschriftenzusatz>Haupthaus</Anschriftenzusatz>
+                        <Wohnsitzlaendercode>DE</Wohnsitzlaendercode>
+                    </Adresse>
+                </ns2:NFD_BAI_Adresse>
+                <ns2:NFD_BAI_Kommunikation>
+                    <Kommunikationsdaten>
+                        <Telefonnummer>0987/6544</Telefonnummer>
+                        <Faxnummer>0987/6555</Faxnummer>
+                        <E-Mail>oberarzt@charite.com</E-Mail>
+                    </Kommunikationsdaten>
+                </ns2:NFD_BAI_Kommunikation>
+            </ns2:NFD_Behandelnder_Arzt_Institution>
+            <ns2:NFD_Benachrichtigungskontakt>
+                <ns2:NFD_BK_Bezeichnung>Tochter</ns2:NFD_BK_Bezeichnung>
+                <ns2:NFD_BK_Nachname>von Huber</ns2:NFD_BK_Nachname>
+                <ns2:NFD_BK_Vorname>Clara</ns2:NFD_BK_Vorname>
+                <ns2:NFD_BK_Kommunikation>
+                    <Kommunikationsdaten>
+                        <Telefonnummer>0987/543</Telefonnummer>
+                        <Faxnummer>0987/555</Faxnummer>
+                        <E-Mail>clara.huber@charite.de</E-Mail>
+                    </Kommunikationsdaten>
+                </ns2:NFD_BK_Kommunikation>
+            </ns2:NFD_Benachrichtigungskontakt>
+            <ns2:NFD_Versicherter_Kommunikation>
+                <Kommunikationsdaten>
+                    <Telefonnummer>0987/65412</Telefonnummer>
+                    <Faxnummer>0987/65444</Faxnummer>
+                    <E-Mail>sarah@mustermann.de</E-Mail>
+                </Kommunikationsdaten>
+            </ns2:NFD_Versicherter_Kommunikation>
+        </ns2:NFD_Versicherter>
+        <ns2:NFD_Versicherter_Einwilligung>
+            <ns2:NFD_VE_Arzt_Nachname>Meyer</ns2:NFD_VE_Arzt_Nachname>
+            <ns2:NFD_VE_Arzt_Vorname>Eberhard</ns2:NFD_VE_Arzt_Vorname>
+            <ns2:NFD_VE_Adresse>
+                <Adresse>
+                    <Postleitzahl>54321</Postleitzahl>
+                    <Ort>Hannover</Ort>
+                    <Strasse>Bahnhofstr.</Strasse>
+                    <Hausnummer>13</Hausnummer>
+                    <Anschriftenzusatz>Vorderhaus</Anschriftenzusatz>
+                    <Wohnsitzlaendercode>DE</Wohnsitzlaendercode>
+                </Adresse>
+            </ns2:NFD_VE_Adresse>
+        </ns2:NFD_Versicherter_Einwilligung>
+        <ns2:NFD_Befunddaten>
+            <ns2:Besondere_Hinweise>
+                <ns2:Schwangerschaft>
+                    <ns2:Entbindungstermin_Errechnet>2019-08-14</ns2:Entbindungstermin_Errechnet>
+                    <ns2:Schwangerschaft>1</ns2:Schwangerschaft>
+                    <ns2:diagnostiziert_indiziert DI_Art="Arzt">
+                        <ns2:DI_Arzt>
+                            <ns2:DI_Arzt_Name>a</ns2:DI_Arzt_Name>
+                            <ns2:DI_Arzt_Fachgebiet>Gyn�kologe</ns2:DI_Arzt_Fachgebiet>
+                            <ns2:DI_Arzt_Ort>Hannover</ns2:DI_Arzt_Ort>
+                        </ns2:DI_Arzt>
+                    </ns2:diagnostiziert_indiziert>
+                </ns2:Schwangerschaft>
+                <ns2:Implantate>
+                    <ns2:Datum_Implantation>19981102</ns2:Datum_Implantation>
+                    <ns2:Implantate>VP-Shunt</ns2:Implantate>
+                    <ns2:Typenbezeichnung>Typ Medtronic Strata� Adjustable Pressure Valve</ns2:Typenbezeichnung>
+                    <ns2:diagnostiziert_indiziert DI_Art="Institution">
+                        <ns2:DI_Institution>
+                            <ns2:DI_Institution_Name>Uniklinikum Mannheim</ns2:DI_Institution_Name>
+                            <ns2:DI_Institution_Fachabteilung>Abteilung f�r Neurochirurgie</ns2:DI_Institution_Fachabteilung>
+                            <ns2:DI_Institution_Ort>Mannheim</ns2:DI_Institution_Ort>
+                        </ns2:DI_Institution>
+                    </ns2:diagnostiziert_indiziert>
+                </ns2:Implantate>
+                <ns2:Kommunikationsstoerungen>
+                    <ns2:Kommunikationsstoerung>ausgepr�gte Schwerh�rigkeit (Presbyakusis)</ns2:Kommunikationsstoerung>
+                    <ns2:diagnostiziert_indiziert DI_Art="Arzt">
+                        <ns2:DI_Arzt>
+                            <ns2:DI_Arzt_Name>Dr. Schneider</ns2:DI_Arzt_Name>
+                            <ns2:DI_Arzt_Fachgebiet>Allgemeinmedizin</ns2:DI_Arzt_Fachgebiet>
+                            <ns2:DI_Arzt_Ort>Thaleischweiler-Fr�schen</ns2:DI_Arzt_Ort>
+                        </ns2:DI_Arzt>
+                    </ns2:diagnostiziert_indiziert>
+                </ns2:Kommunikationsstoerungen>
+                <ns2:Weglaufgefaehrdung>
+                    <ns2:Weglaufgefaehrdung>1</ns2:Weglaufgefaehrdung>
+                    <ns2:Weglaufgefaehrdung_Erlaeuterung>Patient neigt bei Wechsel der gewohnten Umgebung zur Desorientiertheit mit ausgepr�gter Weglauftendenz (h�ufig mit erreichbaren �ffentlichen Verkehrsmitteln nach Hause!)</ns2:Weglaufgefaehrdung_Erlaeuterung>
+                    <ns2:diagnostiziert_indiziert DI_Art="Arzt">
+                        <ns2:DI_Arzt>
+                            <ns2:DI_Arzt_Name>Dr. Schneider</ns2:DI_Arzt_Name>
+                            <ns2:DI_Arzt_Fachgebiet>Allgemeinmedizin</ns2:DI_Arzt_Fachgebiet>
+                            <ns2:DI_Arzt_Ort>Thaleischweiler-Fr�schen</ns2:DI_Arzt_Ort>
+                        </ns2:DI_Arzt>
+                    </ns2:diagnostiziert_indiziert>
+                </ns2:Weglaufgefaehrdung>
+                <ns2:Sonstige_Hinweise>
+                    <ns2:sonstige_Hinweise>ICD ist �ber telemedizinische Plattform an Plattform Merlin.net angebunden. Kontakt Dr. Herzsprung Dt. Herzzentrum, M�nchen (089 1234 56 789)</ns2:sonstige_Hinweise>
+                    <ns2:diagnostiziert_indiziert DI_Art="Arzt">
+                        <ns2:DI_Arzt>
+                            <ns2:DI_Arzt_Name>Dr. Schneider</ns2:DI_Arzt_Name>
+                            <ns2:DI_Arzt_Fachgebiet>Allgemeinmedizin</ns2:DI_Arzt_Fachgebiet>
+                            <ns2:DI_Arzt_Ort>Thaleischweiler-Fr�schen</ns2:DI_Arzt_Ort>
+                        </ns2:DI_Arzt>
+                    </ns2:diagnostiziert_indiziert>
+                </ns2:Sonstige_Hinweise>
+            </ns2:Besondere_Hinweise>
+            <ns2:Allergien_Unvertraeglichkeiten>
+                <ns2:Substanz>Kontaktallergie Latex</ns2:Substanz>
+                <ns2:Reaktion>Kontaktallergie Latex</ns2:Reaktion>
+                <ns2:diagnostiziert_indiziert DI_Art="Arzt">
+                    <ns2:DI_Arzt>
+                        <ns2:DI_Arzt_Name>Dr. Schneider</ns2:DI_Arzt_Name>
+                        <ns2:DI_Arzt_Fachgebiet>Allgemeinmedizin</ns2:DI_Arzt_Fachgebiet>
+                        <ns2:DI_Arzt_Ort>Thaleischweiler-Fr�schen</ns2:DI_Arzt_Ort>
+                    </ns2:DI_Arzt>
+                </ns2:diagnostiziert_indiziert>
+            </ns2:Allergien_Unvertraeglichkeiten>
+            <ns2:Allergien_Unvertraeglichkeiten>
+                <ns2:Substanz>Nahrungsmittel N�sse</ns2:Substanz>
+                <ns2:Reaktion>Asthma, einmalige Reaktion (9/2009) bis Intubationspflichtigkeit!</ns2:Reaktion>
+                <ns2:diagnostiziert_indiziert DI_Art="Arzt">
+                    <ns2:DI_Arzt>
+                        <ns2:DI_Arzt_Name>Dr. Schneider</ns2:DI_Arzt_Name>
+                        <ns2:DI_Arzt_Fachgebiet>Allgemeinmedizin</ns2:DI_Arzt_Fachgebiet>
+                        <ns2:DI_Arzt_Ort>Thaleischweiler-Fr�schen</ns2:DI_Arzt_Ort>
+                    </ns2:DI_Arzt>
+                </ns2:diagnostiziert_indiziert>
+            </ns2:Allergien_Unvertraeglichkeiten>
+            <ns2:Diagnosen>
+                <ns2:Diagnose_Code>E10.74</ns2:Diagnose_Code>
+                <ns2:Diagnose_Text>Prim�r insulinabh�ngiger Diabetes mellitus [Typ-1-Diabetes] Mit multiplen Komplikationen Mit diabetischem Fu�syndrom, nicht als entgleist bezeichnet</ns2:Diagnose_Text>
+                <ns2:Diagnose_Zeitpunkt>19101101</ns2:Diagnose_Zeitpunkt>
+                <ns2:Diagnosesicherheit>G</ns2:Diagnosesicherheit>
+                <ns2:Seitenlokalisation/>
+                <ns2:Diagnose_Code_System DC_Version="String">
+                    <ns2:Kennzeichen_Code_System>ICD 10 GM 2012</ns2:Kennzeichen_Code_System>
+                </ns2:Diagnose_Code_System>
+                <ns2:diagnostiziert_indiziert DI_Art="Arzt">
+                    <ns2:DI_Arzt>
+                        <ns2:DI_Arzt_Name>Dr. Schneider</ns2:DI_Arzt_Name>
+                        <ns2:DI_Arzt_Fachgebiet>Allgemeinmedizin</ns2:DI_Arzt_Fachgebiet>
+                        <ns2:DI_Arzt_Ort>Thaleischweiler-Fr�schen</ns2:DI_Arzt_Ort>
+                    </ns2:DI_Arzt>
+                </ns2:diagnostiziert_indiziert>
+            </ns2:Diagnosen>
+            <ns2:Diagnosen>
+                <ns2:Diagnose_Code>G70.9</ns2:Diagnose_Code>
+                <ns2:Diagnose_Text>Neuromuskul�re Krankheit, nicht n�her bezeichnet</ns2:Diagnose_Text>
+                <ns2:Diagnose_Zeitpunkt>20111201</ns2:Diagnose_Zeitpunkt>
+                <ns2:Diagnosesicherheit>V</ns2:Diagnosesicherheit>
+                <ns2:Seitenlokalisation/>
+                <ns2:Diagnose_Code_System DC_Version="String">
+                    <ns2:Kennzeichen_Code_System>ICD 10 GM 2012</ns2:Kennzeichen_Code_System>
+                </ns2:Diagnose_Code_System>
+                <ns2:diagnostiziert_indiziert DI_Art="Arzt">
+                    <ns2:DI_Arzt>
+                        <ns2:DI_Arzt_Name>Dr. Neuron-Oberschlund</ns2:DI_Arzt_Name>
+                        <ns2:DI_Arzt_Fachgebiet>Facharzt f�r Neurologie</ns2:DI_Arzt_Fachgebiet>
+                        <ns2:DI_Arzt_Ort>Kaiserslautern</ns2:DI_Arzt_Ort>
+                    </ns2:DI_Arzt>
+                </ns2:diagnostiziert_indiziert>
+            </ns2:Diagnosen>
+        </ns2:NFD_Befunddaten>
+        <ns2:NFD_Medikationseintrag>
+            <ns2:diagnostiziert_indiziert DI_Art="Arzt">
+                <ns2:DI_Arzt>
+                    <ns2:DI_Arzt_Name>Dr. Itein</ns2:DI_Arzt_Name>
+                    <ns2:DI_Arzt_Fachgebiet>Chirurgie</ns2:DI_Arzt_Fachgebiet>
+                    <ns2:DI_Arzt_Ort>Trandorf</ns2:DI_Arzt_Ort>
+                </ns2:DI_Arzt>
+            </ns2:diagnostiziert_indiziert>
+            <ns2:M a="L-THYROX HEXAL 112 Tabletten" d="1" dud="00" f="TAB" fs="1.2.276.0.76.3.1.1.5.2.40" i="morgens n�chtern mindesten 1/2 Stunde vor dem Essen mit Leitungswasser ein..." m="1" p="4677685" ps="BMP v2.5, Kap 8.3.1, Tab 3">
+                <ns2:W s="0,109 mg" w="Levothyroxin"/>
+            </ns2:M>
+        </ns2:NFD_Medikationseintrag>
+        <ns2:NFD_Medikationseintrag>
+            <ns2:diagnostiziert_indiziert DI_Art="Arzt">
+                <ns2:DI_Arzt>
+                    <ns2:DI_Arzt_Name>Dr. Frankenstein</ns2:DI_Arzt_Name>
+                    <ns2:DI_Arzt_Fachgebiet>Chirurgie</ns2:DI_Arzt_Fachgebiet>
+                    <ns2:DI_Arzt_Ort>Trandorf</ns2:DI_Arzt_Ort>
+                </ns2:DI_Arzt>
+            </ns2:diagnostiziert_indiziert>
+            <ns2:M a="EXFORGE HCT 10 mg/160 mg/12,5 mg Filmtabletten" d="1" dud="00" fd="Film" i="Einnahme unabh�ngig von den Mahlzeiten" m="1" p="5111359" ps="BMP v2.5, Kap 8.3.1, Tab 3">
+                <ns2:W s="10 mg" w="Amlodipin"/>
+                <ns2:W s="160 mg" w="Valsartan"/>
+                <ns2:W s="12,5 mg" w="Hydrochlorothiazid"/>
+            </ns2:M>
+        </ns2:NFD_Medikationseintrag>
+        <ns2:NFD_Freiwillige_Zusatzinformationen>
+            <ns2:Freiwillige_Zusatzinformationen>Blutgruppe AB Rh neg; Knochenmark-Spender (Typisierung 2011 erfolgt / DKMS)</ns2:Freiwillige_Zusatzinformationen>
+        </ns2:NFD_Freiwillige_Zusatzinformationen>
+    </ns2:Notfalldaten>
+    <ns2:SignatureArzt><ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#" Id="Signature-883c90e7-b126-4a52-af9b-be6341e844cc">
+<ds:SignedInfo>
+<ds:CanonicalizationMethod Algorithm="http://www.w3.org/2006/12/xml-c14n11"/>
+<ds:SignatureMethod Algorithm="http://www.w3.org/2007/05/xmldsig-more#sha256-rsa-MGF1"/>
+<ds:Reference Id="Reference-Document-71dfd3c7-5eba-4b74-8700-2de1c89be144" URI="#ID1">
+<ds:Transforms>
+<ds:Transform Algorithm="http://www.w3.org/2006/12/xml-c14n11"/>
+</ds:Transforms>
+<ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+<ds:DigestValue>s7tERS6w4mjG8mcrcpBvD/gu/laPT54wDblKY73sIFU=</ds:DigestValue>
+</ds:Reference>
+<ds:Reference Type="http://uri.etsi.org/01903#SignedProperties" URI="#SignedProperties-bc7fb9cc-8dfc-431e-859c-64b002a91054">
+<ds:Transforms>
+<ds:Transform Algorithm="http://www.w3.org/2006/12/xml-c14n11"/>
+</ds:Transforms>
+<ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+<ds:DigestValue>Sl4RsPOzHI8QTLA3qYsxleDhvDxKulxvtKzh5AAxZ7U=</ds:DigestValue>
+</ds:Reference>
+<ds:Reference Type="http://www.w3.org/2000/09/xmldsig#Manifest" URI="#Manifest-8068565f-ea2c-452e-ad88-158d6cb54352">
+<ds:Transforms>
+<ds:Transform Algorithm="http://www.w3.org/2006/12/xml-c14n11"/>
+</ds:Transforms>
+<ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+<ds:DigestValue>J8crNrcuW9qQQ36Vx/lC+91bzJOdqpM/H0PCVCZWT/Y=</ds:DigestValue>
+</ds:Reference>
+</ds:SignedInfo>
+<ds:SignatureValue>
+TV2Q/IRdfIzqUJYCh6v97trJCiIxXpCCYlvLWY/tqjaDy6nxvn3tfqIMF1wzVkfL11pQwi0QhUZj&#13;
+3R7tVESTLaKpD5uyZk0nlRT5IW4apvIW5kFgp1wGIhN9DFwxBeUBRmGouzA4MosbLCpOSmU+NFkY&#13;
+uI27BBvB1k0HcSv/WL2J9hsTD8ZqCSQSNr00Zo4MQeH4GkYsCA9Ypv9HyKZVn7n0RRNsvdUdiSw3&#13;
+vR4UzLsJtW8fBRyVk/lZwOndRQrvWn0xgCN+wqugaGXAccty54LEl2d6oC06EUbwVDV7niZQ3BeT&#13;
+wSmi+p5zPwsnH+uz7fc5JXiDr+iYP6PC2V7umg==
+</ds:SignatureValue>
+<ds:KeyInfo>
+<ds:X509Data>
+<ds:X509Certificate>
+MIIFGDCCBACgAwIBAgIHAZ3Z8vNXKzANBgkqhkiG9w0BAQsFADBQMQswCQYDVQQGEwJERTEfMB0G&#13;
+A1UECgwWZ2VtYXRpayBHbWJIIE5PVC1WQUxJRDEgMB4GA1UEAwwXR0VNLkhCQS1xQ0EyNCBURVNU&#13;
+LU9OTFkwHhcNMTgwMzI5MDAwMDAwWhcNMjMwMzI4MjM1OTU5WjCBhzEnMCUGA1UEAwweQW5uYW1h&#13;
+cmlhIFBvcMOzd2l0c2NoVEVTVC1PTkxZMRowGAYDVQQqDBFBbm5hbWFyaWEgR3LDpGZpbjEUMBIG&#13;
+A1UEBAwLUG9ww7N3aXRzY2gxHTAbBgNVBAUTFDgwMjc2ODgzMTEwMDAwMDk0ODY3MQswCQYDVQQG&#13;
+EwJERTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAJNo0+/9K8yD45/oVktx2kfMCae5&#13;
+/qqTMuOx1iLqDAI59d+xFgCiQ63XcNq1wOKLXpPff1thbcin5MTfDFH4rBLz4vGSOWqnTMte0MRY&#13;
+fWXzZVMayYuUbjwpZK8y+k4uZ4z5GD4bsyiJLFqIcxg4PRwaSgn0zA8kEdYbBbfrYSpWZp+//V5s&#13;
+hUewaIxYzSNzQekK3gDTjcdqhCEFbrtxWfnjqhgd5WotkZagnpGfxaJm/4/pmucA/vLn0RvM5q3b&#13;
+6beXeYOTEr/q6IFk26BQTAyXE0ituolXdayO/j6tEjXhH8NLQ8ub8FvEZh42JlZ/Ala0e2RLzlh6&#13;
+AYdI5SvGF1ECAwEAAaOCAb0wggG5MB0GA1UdDgQWBBSbDt8V+4Y6M0kI/H2nrtKkX+uGjDAMBgNV&#13;
+HRMBAf8EAjAAMIGBBgUrJAgDAwR4MHakKDAmMQswCQYDVQQGEwJERTEXMBUGA1UECgwOZ2VtYXRp&#13;
+ayBCZXJsaW4wSjBIMEYwRDAWDBRaYWhuw6RyenRpbi9aYWhuYXJ6dDAJBgcqghQATAQfEx8yLUhC&#13;
+QS1UZXN0a2FydGUtODgzMTEwMDAwMDk0ODY3MBsGCSsGAQQBwG0DBQQOMAwGCisGAQQBwG0DBQEw&#13;
+IgYIKwYBBQUHAQMEFjAUMAgGBgQAjkYBATAIBgYEAI5GAQQwHwYDVR0jBBgwFoAUZ5wxtunAN+od&#13;
+G4HnpPU7zB4XATkwRwYDVR0gBEAwPjAJBgcqghQATARIMAkGBwQAi+xAAQIwGAYIKoIUAEwEgREw&#13;
+DDAKBggrBgEFBQcCATAMBgorBgEEAYLNMwEBMA4GA1UdDwEB/wQEAwIGQDBLBggrBgEFBQcBAQQ/&#13;
+MD0wOwYIKwYBBQUHMAGGL2h0dHA6Ly9vY3NwLnBraS50ZWxlbWF0aWstdGVzdDo4MDgwL0NNT0NT&#13;
+UC9PQ1NQMA0GCSqGSIb3DQEBCwUAA4IBAQBn9wPExvSy5A2UXeo7ygQwSzD/ZUGV2cgGCkBthVM1&#13;
+JzcXlwArwYFIsFJzr2ExuqekMBvJ20Kxrex4cxQCli5pDVw7OwDmvdjYkaUgM8RsTFFB5C2++6Nj&#13;
+QXR2wWZ4AJtBemd3RYHjVDhyH2xSR0KTu16A8NwrAJkNjFFmVKY8QupjlonQVzbsMsfgMlxgq/O0&#13;
+oqgO4uZJ83ufMVv1Zl2xuJSSuS8NDojXNPj9ANL4a0vPmJ50oyQU+L81ymDxgkZmfGyoqzGVddec&#13;
+l8k+7ci6jbZCOT/H5rC0qcwa7LibWzctiovZ9q2rLDvC6Tym+GCqO5fERdOHMgtSmYWTXKM0
+</ds:X509Certificate>
+</ds:X509Data>
+</ds:KeyInfo>
+<ds:Object><QualifyingProperties xmlns="http://uri.etsi.org/01903/v1.3.2#" xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" Target="#Signature-883c90e7-b126-4a52-af9b-be6341e844cc"><SignedProperties Id="SignedProperties-bc7fb9cc-8dfc-431e-859c-64b002a91054"><SignedSignatureProperties><SigningTime>2020-02-12T14:15:50.919Z</SigningTime><SigningCertificate><Cert><CertDigest><ns2:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/><ns2:DigestValue>+EGwXXpstzr/3McwbUNYsKPJZg15gIsl/YRm/7A1Cuo=</ns2:DigestValue></CertDigest><IssuerSerial><ns2:X509IssuerName>CN=GEM.HBA-qCA24 TEST-ONLY,O=gematik GmbH NOT-VALID,C=DE</ns2:X509IssuerName><ns2:X509SerialNumber>455034386208555</ns2:X509SerialNumber></IssuerSerial></Cert></SigningCertificate><SignaturePolicyIdentifier><SignaturePolicyId><SigPolicyId><Identifier>urn:gematik:fa:sak:nfdm:r1:v1</Identifier></SigPolicyId><SigPolicyHash><ns2:DigestMethod Algorithm=""/><ns2:DigestValue/></SigPolicyHash></SignaturePolicyId></SignaturePolicyIdentifier></SignedSignatureProperties><SignedDataObjectProperties><DataObjectFormat ObjectReference="#Reference-Document-71dfd3c7-5eba-4b74-8700-2de1c89be144"><Description>NFD_sample_1.4.xml</Description><MimeType>text/xml</MimeType></DataObjectFormat></SignedDataObjectProperties></SignedProperties></QualifyingProperties></ds:Object>
+<ds:Object><ds:Manifest Id="Manifest-8068565f-ea2c-452e-ad88-158d6cb54352">
+<ds:Reference Type="http://www.w3.org/2001/XMLSchema" URI="urn:gematik:fa:sak:nfdm:r1:v1:hardened:NFD_Document_v1_4_hardened.xsd">
+<ds:Transforms>
+<ds:Transform Algorithm="http://www.w3.org/2006/12/xml-c14n11"/>
+</ds:Transforms>
+<ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+<ds:DigestValue>K2ECxIuW7IDnvuNFo2zIMQLJJSweAevxhh1Vz2JbbA4=</ds:DigestValue>
+</ds:Reference>
+<ds:Reference Type="http://www.w3.org/2001/XMLSchema" URI="urn:gematik:fa:sak:nfdm:r1:v1:hardened:XAdES_NFDM_hardened.xsd">
+<ds:Transforms>
+<ds:Transform Algorithm="http://www.w3.org/2006/12/xml-c14n11"/>
+</ds:Transforms>
+<ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+<ds:DigestValue>GMoZgUHbTN1rZBRZxttMjQKqt4XpcR1axnhlf2HyQLk=</ds:DigestValue>
+</ds:Reference>
+<ds:Reference Type="http://www.w3.org/2001/XMLSchema" URI="urn:gematik:fa:sak:nfdm:r1:v1:fa:nfds:common:NFDM_Common_v1_1.xsd">
+<ds:Transforms>
+<ds:Transform Algorithm="http://www.w3.org/2006/12/xml-c14n11"/>
+</ds:Transforms>
+<ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+<ds:DigestValue>2nSKDVkQqt5NvrY0JdjcXNgB0W8Y9cUV3AHGg0PS0Oc=</ds:DigestValue>
+</ds:Reference>
+<ds:Reference Type="http://www.w3.org/2001/XMLSchema" URI="urn:gematik:fa:sak:nfdm:r1:v1:hardened:xmldsig_NFDM_hardened.xsd">
+<ds:Transforms>
+<ds:Transform Algorithm="http://www.w3.org/2006/12/xml-c14n11"/>
+</ds:Transforms>
+<ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+<ds:DigestValue>UAlFEZoAOXIgtO7EK4g8TY1nYhYJ3bLIw9uv4Y1qDRg=</ds:DigestValue>
+</ds:Reference>
+</ds:Manifest></ds:Object>
+</ds:Signature></ns2:SignatureArzt>
+</ns2:NFD_Document>

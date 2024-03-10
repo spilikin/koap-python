@@ -1,0 +1,33 @@
+--_MIME_MTOM_Boundary_
+Content-Type: application/xop+xml; charset=UTF-8; type="application/soap+xml"
+Content-Transfer-Encoding: 8bit
+Content-ID: <Start@Request.konlan>
+
+<?xml version="1.0" encoding="utf-8"?>
+{{envelope}}
+
+--_MIME_MTOM_Boundary_
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: binary
+Content-ID: <Document0@PHRService.konlan>
+
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<AMTS:MP xmlns="http://ws.gematik.de/fa/amtss/AMTS_Document/v1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:AMTS="http://ws.gematik.de/fa/amtss/AMTS_Document/v1.6" v="025" l="de-DE" llcs="ISO 639-1" lccs="ISO 3166-1" iv="1.6.0" oid="1.2.276.0.76.7.7" on="eMP/AMTS" so="eGK" ko="" xsi:schemaLocation="http://ws.gematik.de/fa/amtss/AMTS_Document/v1.6 AMTS_Document_v1_6.xsd" U="67ED02F1641D4D50AD167C28BF98E166">
+  <AMTS:P egk="M542994438" b="19720905" g="Sarah" f="Mustermann" v="von" z="Freifrau" t="Prof." s="W" sd="true"/>
+  <AMTS:A n="Arzt" s="Bergstr." z="98765" c="Berlin" p="0987/6544" e="oberarzt@charite.com" lanr="012345678" t="2020-01-10T09:09:31"/>
+  <AMTS:O ai="Milchprodukte" aid="true" w="77" wd="true" h="175" hd="true" c="0" cda="1957-08-13" cd="true" et="2018-11-13"/>
+  <AMTS:S t="Schilddr�se">
+    <AMTS:M dm="true" ied="2012-08-13" icd="2017-05-13" bmp="true" hi="false" a="Thyronajod 50 Henning 100 Tbl. N3" f="TAB" fs="1.2.276.0.76.3.1.1.5.2.40" m="1/2" d="1/2" v="1/2" h="1" dud="Tablette" r="Schilddr�senhormone">
+      <AMTS:W w="Levothyroxin natrium xH2O" gwe="0,05mg/TAB"/>
+      <AMTS:W w="Kaliumiodid" gwe="0,196mg/TAB"/>
+    </AMTS:M>
+  </AMTS:S>
+  <AMTS:S t="Diabetes">
+    <AMTS:M dm="true" ied="2015-11-09" icd="2018-03-30" bmp="true" hi="false" p="4245922" ps="BMP v2.5, Kap 8.3.1, Tab 3" m="10" d="6" v="8" h="1" dud="IE" r="Diabetes mellitus">
+		</AMTS:M>
+    <AMTS:M dm="true" ied="2015-11-09" icd="2018-03-30" bmp="true" hi="false" a="Lantus 100 E/ml" f="SRI" fs="1.2.276.0.76.3.1.1.5.2.40" i="Abends 18-30 I.E. nach Messergebnis" dud="IE" r="Diabetes mellitus">
+		</AMTS:M>
+  </AMTS:S>
+</AMTS:MP>
+
+--_MIME_MTOM_Boundary_--
