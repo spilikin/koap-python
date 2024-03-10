@@ -1,15 +1,22 @@
-from koap.client import ConnectorConfig, ConnectorClient
 from zeep.xsd.elements.element import Element
+from zeep.xsd.elements import Attribute
 from typing import Mapping, List, Set
 from zeep.xsd.types import ComplexType
 from zeep.xsd.elements import Sequence, Choice
+from zeep.xsd.elements.any import Any
+from zeep import Client, Settings
 from datetime import datetime
 import os
 from urllib.parse import urlparse
 import logging
 import re
 from os import path
-from lxml.etree import QName
+from importlib import resources
+
+shortnames = {
+  "urn:oasis:names:tc:dss:1.0:core:schema": "dss1core",
+  "urn:oasis:names:tc:dss-x:1.0:profiles:verificationreport:schema#": "dssx1verificationreport",
+}
 
 
 class GoGenerator:
@@ -18,23 +25,46 @@ class GoGenerator:
         self.package = package
         os.makedirs(dest, exist_ok=True)
 
-        config = ConnectorConfig()
-        self.client = ConnectorClient(config)
-
     types: Mapping[str, Mapping[str, Element]] = {}
+
+    def scan_for_wsdl(self):
+        wsdl_files = resources.files("koap") / "api-telematik" / "conn"
+        # we make use of gematik naming conventions:
+        # - the wsdl file name is the service name
+        # - if wsdl file name has vX_Y_Z.wsdl, then the service version is vX.Y.Z
+        # - if no version is pecified in the wsdl file name, then the service version taken from targetNamespace. Patch level is 0
+        for wsdl_file in wsdl_files.glob("*.wsdl"):
+            service_name = wsdl_file.stem
+            match = re.match(r"^([^\_]+)_v(\d+_\d+_\d+)$", service_name, re.IGNORECASE)
+            if match:
+                service_name = match.group(1)
+                service_version = match.group(2).replace("_", ".")
+            else:
+                soap_settings = Settings()
+                soap_settings.forbid_entities = False
+                client = Client(wsdl=str(wsdl_file), settings=soap_settings)
+                _, binding = list(client.wsdl.bindings.items())[0]
+                namespace = binding.name.namespace
+                service_version = namespace.split("/")[-1].replace("v", "") + ".0"
+
+            self.add_service(wsdl_file, service_name, service_version)
 
     def add_service(
         self,
+        wsdl_file: str,
         service_name: str,
         service_version: str,
-        module: str = None,
-        binding_local_name: str = None,
     ):
-        service_proxy = self.client.create_service_client(
-            service_name, service_version, module, binding_local_name
+
+        soap_settings = Settings()
+        soap_settings.forbid_entities = False
+
+        client = Client(
+            wsdl=str(wsdl_file),
+            settings=soap_settings,
         )
-        service_wsdl = service_proxy._client.wsdl
-        for svc in service_wsdl.services.values():
+
+        for svc in client.wsdl.services.values():
             for port in svc.ports.values():
                 for op in port.binding.all().values():
                     self.add_type(op.abstract.input_message.parts["parameter"].element)
@@ -46,18 +76,28 @@ class GoGenerator:
         if ns not in self.types:
             self.types[ns] = {}
 
+        if name in self.types[ns]:
+            # already added
+            return
+
         self.types[ns][name] = element
         if isinstance(element.type, ComplexType):
             for child in self._iterate_children(element):
-                if child.qname.namespace is not None:
+                if isinstance(child, Element) and isinstance(child.type, ComplexType):
                     self.add_type(child)
                 else:
                     logging.warning(
-                        f"Skipping {child.qname.localname} because it has no namespace"
+                        f"Skipping unknown {type(child)} {child}"
                     )
+        else:
+            logging.warning(
+                f"Not complex type {type(element.type)} {element.type}"
+            )
 
     # given a namespace, return a list of paths to the types in that namespace
     def paths(self, ns: str) -> List[str]:
+        if ns in shortnames:
+            ns = shortnames[ns]
         # parse url
         url = urlparse(ns)
         # split path
@@ -68,6 +108,10 @@ class GoGenerator:
         if re.match(r"v\d+\.\d+(\.\d+)?", paths[-1]):
             paths[-2] = paths[-2] + "_" + paths[-1].replace(".", "_")
             paths = paths[:-1]
+        # ist last path starts with number, prepend x to it
+        if re.match(r"^\d", paths[-1]):
+            paths[-1] = "x" + paths[-1]
+
         return paths
 
     def generate_all_types(self):
@@ -109,7 +153,14 @@ class GoGenerator:
     def _iterate_children(self, element: ComplexType):
         for name, child in element.type.elements_nested:
             if isinstance(child, Sequence) or isinstance(child, Choice):
+                # TODO: handle sequence and choice
+                processed = set()
                 for name, grandchild in child.elements:
+                    if isinstance(grandchild, Any):
+                        continue
+                    if grandchild.qname in processed:
+                        continue
+                    processed.add(grandchild.qname)
                     yield grandchild
             elif isinstance(child, Element):
                 yield child
@@ -123,6 +174,11 @@ class GoGenerator:
 
         for _, attr in element.type.attributes:
             opts = ",attr"
+
+            if not isinstance(attr, Attribute):
+                logging.warning(f"Skipping {type(attr)}: {attr}")
+                continue
+
             go_field = self._go_field(attr.qname.localname)
             go_type, imp = self._go_type_of(element, attr)
             if imp is not None:
@@ -131,12 +187,16 @@ class GoGenerator:
 
         for child in self._iterate_children(element):
             opts = ""
+            if isinstance(child, Any):
+                continue
+                
             element_name = f"{child.qname.namespace} {child.qname.localname}"
             go_field = self._go_field(child.qname.localname)
             if child.qname.localname == "_value_1":
                 go_field = "Value"
                 element_name = ""
                 opts = ",chardata"
+
             go_type, imp = self._go_type_of(element, child)
             # see if go type is from another package (contains .)
             if imp is not None:
@@ -159,7 +219,7 @@ class GoGenerator:
                 return paths[
                     -1
                 ] + "." + child.qname.localname, self.package + "/" + "/".join(paths)
-        else:
+        elif len(child.type.accepted_types) > 0:
             pyt = child.type.accepted_types[0]
             if pyt == str:
                 return "string", None
@@ -173,6 +233,8 @@ class GoGenerator:
                 return "time.Time", "time"
             else:
                 return "interface{}", None
+        else:
+            return "interface{}", None
 
     def _go_field(self, localname: str):
         # convert snake case to camel case
