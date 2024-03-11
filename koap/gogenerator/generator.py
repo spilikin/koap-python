@@ -14,8 +14,11 @@ from os import path
 from importlib import resources
 
 shortnames = {
-  "urn:oasis:names:tc:dss:1.0:core:schema": "dss1core",
-  "urn:oasis:names:tc:dss-x:1.0:profiles:verificationreport:schema#": "dssx1verificationreport",
+  "urn:oasis:names:tc:dss:1.0:core:schema": "ext/dss10core",
+  "urn:oasis:names:tc:dss-x:1.0:profiles:verificationreport:schema#": "ext/dssx10verificationreport",
+  "http://www.w3.org/2000/09/xmldsig#": "ext/xmldsig",
+  "http://uri.etsi.org/02231/v2#": "ext/etsi02232v2",
+  "http://uri.etsi.org/01903/v1.3.2#": "ext/etsi01903v132",
 }
 
 
