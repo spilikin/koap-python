@@ -4,14 +4,17 @@ from typing import Mapping, List, Set
 from zeep.xsd.types import ComplexType
 from zeep.xsd.elements import Sequence, Choice
 from zeep.xsd.elements.any import Any
+from zeep.wsdl.bindings.soap import Soap11Binding
 from zeep import Client, Settings
 from datetime import datetime
 import os
 from urllib.parse import urlparse
 import logging
 import re
-from os import path
+from pathlib import Path
 from importlib import resources
+from dataclasses import dataclass
+
 
 shortnames = {
   "urn:oasis:names:tc:dss:1.0:core:schema": "ext/dss10core",
@@ -22,13 +25,40 @@ shortnames = {
 }
 
 
+@dataclass
+class ServiceBindingDefinition:
+    name: str
+    version: str
+    soap11Binding: Soap11Binding
+
+    def types_namespace(self):
+        return self.soap11Binding.port_type.name.namespace.replace("/WSDL/v", "/v")
+
+
+@dataclass
+class ElementDefinition:
+    element: Element
+    version: str = None
+
+    def __hash__(self):
+        return hash((self.element.qname.namespace, self.element.qname.localname, self.version))
+    
+    def __eq__(self, other):
+        return (
+            self.element.qname.namespace == other.element.qname.namespace
+            and self.element.qname.localname == other.element.qname.localname
+            and self.version == other.version
+        )
+
+
 class GoGenerator:
     def __init__(self, dest: str, package: str):
         self.dest = dest
         self.package = package
         os.makedirs(dest, exist_ok=True)
 
-    types: Mapping[str, Mapping[str, Element]] = {}
+    elements: Set[ElementDefinition] = set()
+    bindings: List[ServiceBindingDefinition] = []
 
     def scan_for_wsdl(self):
         wsdl_files = resources.files("koap") / "api-telematik" / "conn"
@@ -69,25 +99,37 @@ class GoGenerator:
 
         for svc in client.wsdl.services.values():
             for port in svc.ports.values():
-                for op in port.binding.all().values():
-                    self.add_type(op.abstract.input_message.parts["parameter"].element)
-                    self.add_type(op.abstract.output_message.parts["parameter"].element)
+                binding = port.binding
+                if isinstance(binding, Soap11Binding):
+                    service_binding = ServiceBindingDefinition(
+                        name=service_name,
+                        version=service_version,
+                        soap11Binding=binding,
+                    )
+                    self.bindings.append(service_binding)
 
-    def add_type(self, element: Element):
+                    for op in port.binding.all().values():
+                        self.add_type(service_binding.types_namespace(), op.abstract.input_message.parts["parameter"].element, version=service_version)
+                        self.add_type(service_binding.types_namespace(), op.abstract.output_message.parts["parameter"].element, version=service_version)
+
+    def add_type(self, context_namespase: str, element: Element, version: str = None):
         ns = element.qname.namespace
-        name = element.qname.localname
-        if ns not in self.types:
-            self.types[ns] = {}
 
-        if name in self.types[ns]:
+        if ns != context_namespase:
+            version = None
+
+        element_definition = ElementDefinition(element=element, version=version)
+
+        if element_definition in self.elements:
             # already added
             return
 
-        self.types[ns][name] = element
+        self.elements.add(element_definition)
+
         if isinstance(element.type, ComplexType):
             for child in self._iterate_children(element):
                 if isinstance(child, Element) and isinstance(child.type, ComplexType):
-                    self.add_type(child)
+                    self.add_type(context_namespase, child, version)
                 else:
                     logging.warning(
                         f"Skipping unknown {type(child)} {child}"
@@ -98,7 +140,7 @@ class GoGenerator:
             )
 
     # given a namespace, return a list of paths to the types in that namespace
-    def paths(self, ns: str) -> List[str]:
+    def paths(self, ns: str, version: str = None) -> List[str]:
         if ns in shortnames:
             ns = shortnames[ns]
         # parse url
@@ -107,24 +149,37 @@ class GoGenerator:
         paths = url.path.split("/")
         # remove empty elements
         paths = [p for p in paths if p]
-        # if last path is semantic version, join it with the previous path
+        # if last path is semantic version and version in None, prepend with _v
         if re.match(r"v\d+\.\d+(\.\d+)?", paths[-1]):
-            paths[-2] = paths[-2] + "_" + paths[-1].replace(".", "_")
-            paths = paths[:-1]
-        # ist last path starts with number, prepend x to it
-        if re.match(r"^\d", paths[-1]):
-            paths[-1] = "x" + paths[-1]
+            if version is None:          
+                paths[-2] = paths[-2] + "_" + paths[-1].replace(".", "_")
+            else:
+                paths[-2] = paths[-2] + "_v" + version.replace(".", "_")
+
+            paths.pop()
 
         return paths
 
-    def generate_all_types(self):
-        for ns, types in self.types.items():
-            paths = self.paths(ns)
-            dest_dir = path.join(self.dest, *paths)
-            self.generate_complextypes(dest_dir, types.values())
+    def generate_all(self):
+        self.generate_all_types()
+        self.generate_all_bindings()
 
-    def generate_complextypes(self, dest_dir: str, elements: List[Element]):
-        os.makedirs(dest_dir, exist_ok=True)
+    def generate_all_types(self):
+        # group types by namespace and version
+        elements_by_file: Mapping[str, List[Element]] = {}
+        for element in self.elements:
+            dest_dir = Path(self.dest, *self.paths(element.element.qname.namespace, element.version))
+            os.makedirs(dest_dir, exist_ok=True)
+            dest_file = dest_dir / "types.gen.go"
+            if dest_file not in elements_by_file:
+                elements_by_file[dest_file] = []
+            elements_by_file[dest_file].append(element.element)
+
+        for dest_file, elements in elements_by_file.items():
+            self.generate_complextypes(dest_file, elements)
+
+    def generate_complextypes(self, dest_file: Path, elements: List[Element]):
+        logging.error(f"Generating {len(elements)} to {dest_file} complex types")
         elements = sorted(elements, key=lambda e: e.qname.localname)
 
         file_imports = set()
@@ -138,20 +193,67 @@ class GoGenerator:
                 file_code += "\n"
                 file_imports.update(imports)
 
-        dest_file = path.join(dest_dir, "types.gen.go")
         if file_code == "":
             # do not generate empty files
             return
         with open(dest_file, "w") as f:
-            f.write("package " + path.basename(dest_dir) + "\n\n")
+            f.write("package " + dest_file.parent.name + "\n\n")
             f.write("import (\n")
             for imp in file_imports:
                 f.write(f'    "{imp}"\n')
             f.write(")\n\n")
             f.write(file_code)
 
-    def generate_all(self):
-        self.generate_all_types()
+    def generate_all_bindings(self):
+        for binding in self.bindings:
+            self.generate_binding(binding)
+
+    def generate_binding(self, binding: ServiceBindingDefinition):
+        ns = binding.types_namespace()
+        paths = self.paths(ns, binding.version)
+
+        dest_dir = Path(self.dest, *paths)
+        os.makedirs(dest_dir, exist_ok=True)
+        dest_file = dest_dir / "binding.gen.go"
+
+        file_imports = set()
+        file_imports.add("reflect")
+        file_imports.add("github.com/spilikin/koap-go/pkg/koap")
+        file_code = ""
+
+        for op_name in binding.soap11Binding.port_type.operations:
+            op = binding.soap11Binding.get(op_name)
+            code, imports = self._operation_to_go(op)
+            file_code += code
+            file_imports.update(imports)
+
+        with open(dest_file, "w") as f:
+            f.write("package " + dest_dir.name + "\n\n")
+            f.write("import (\n")
+            for imp in file_imports:
+                f.write(f'    "{imp}"\n')
+            f.write(")\n\n")
+            f.write(file_code)
+
+    def _operation_to_go(self, op) -> tuple[str, Set[str]]:
+        imports = set()
+        inputType, _ = self._go_type_of(op.input.body.qname.namespace, op.input.body)
+        outputType, _ = self._go_type_of(op.input.body.qname.namespace, op.output.body)
+
+        faultElement = op.faults['FaultMessage'].abstract.parts['parameter'].element
+        faultType, pkg = self._go_type_of(op.input.body.qname.namespace, faultElement)
+
+        if pkg is not None:
+            imports.add(pkg)
+
+        s = f'var Operation{op.name} = &koap.Operation{{\n'
+        s += f'    Name: "{op.name}",\n'
+        s += f'    SOAPAction: "{op.soapaction}",\n'
+        s += f'    InputType: reflect.TypeOf({inputType}{{}}),\n'
+        s += f'    OutputType: reflect.TypeOf({outputType}{{}}),\n'
+        s += f'    FaultType: reflect.TypeOf({faultType}{{}}),\n'
+        s += "}\n\n"
+        return s, imports
 
     def _iterate_children(self, element: ComplexType):
         for name, child in element.type.elements_nested:
@@ -183,7 +285,7 @@ class GoGenerator:
                 continue
 
             go_field = self._go_field(attr.qname.localname)
-            go_type, imp = self._go_type_of(element, attr)
+            go_type, imp = self._go_type_of(element.qname.namespace, attr)
             if imp is not None:
                 imports.add(imp)
             s += f'    {go_field} {go_type} `xml:"{attr.qname.localname}{opts}"`\n'
@@ -200,7 +302,7 @@ class GoGenerator:
                 element_name = ""
                 opts = ",chardata"
 
-            go_type, imp = self._go_type_of(element, child)
+            go_type, imp = self._go_type_of(element.qname.namespace, child)
             # see if go type is from another package (contains .)
             if imp is not None:
                 imports.add(imp)
@@ -213,15 +315,15 @@ class GoGenerator:
 
         return s, imports
 
-    def _go_type_of(self, parent: Element, child: Element) -> tuple[str, str]:
+    def _go_type_of(self, current_namespace: str, child: Element) -> tuple[str, str]:
         if isinstance(child.type, ComplexType):
-            if parent.qname.namespace == child.qname.namespace:
+            if current_namespace == child.qname.namespace:
                 return child.qname.localname, None
             else:
                 paths = self.paths(child.qname.namespace)
-                return paths[
-                    -1
-                ] + "." + child.qname.localname, self.package + "/" + "/".join(paths)
+                go_type = paths[-1] + "." + child.qname.localname
+                go_package = self.package + "/" + "/".join(paths)
+                return go_type, go_package
         elif len(child.type.accepted_types) > 0:
             pyt = child.type.accepted_types[0]
             if pyt == str:

@@ -6,15 +6,11 @@ import subprocess
 
 if __name__ == "__main__":
     gen = GoGenerator(
-        "../dsr/gemcard/pkg/koap/api_telematik/",
-        "github.com/spilikin/healthcard/pkg/koap/api_telematik",
+        "../koap-go/pkg/koap/api_telematik/",
+        "github.com/spilikin/koap-go/pkg/koap/api_telematik",
     )
-#    gen.add_service("EventService", "7.2.0")
-#    gen.add_service("CardService", "8.1.0")
-#    gen.add_service("CardService", "8.1.1")
-#    gen.add_service("CardService", "8.1.2")
     gen.scan_for_wsdl()
     gen.generate_all()
 
     # execute go fmt
-    subprocess.run(["go", "fmt", "./..."], cwd="../dsr/gemcard/pkg/koap/api_telematik")
+    subprocess.run(["go", "fmt", "./..."], cwd="../koap-go/")
