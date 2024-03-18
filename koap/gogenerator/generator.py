@@ -1,7 +1,7 @@
 from zeep.xsd.elements.element import Element
 from zeep.xsd.elements import Attribute
 from typing import Mapping, List, Set
-from zeep.xsd.types import ComplexType
+from zeep.xsd.types import ComplexType, AnySimpleType
 from zeep.xsd.elements import Sequence, Choice
 from zeep.xsd.elements.any import Any
 from zeep.wsdl.bindings.soap import Soap11Binding
@@ -130,9 +130,12 @@ class GoGenerator:
             for child in self._iterate_children(element):
                 if isinstance(child, Element) and isinstance(child.type, ComplexType):
                     self.add_type(context_namespase, child, version)
+                elif isinstance(child, Element) and isinstance(child.type, AnySimpleType):
+                    # TODO: handle simple types
+                    pass
                 else:
                     logging.warning(
-                        f"Skipping unknown {type(child)} {child}"
+                        f"Skipping unknown {type(child.type)} {type(child)}"
                     )
         else:
             logging.warning(
@@ -151,7 +154,7 @@ class GoGenerator:
         paths = [p for p in paths if p]
         # if last path is semantic version and version in None, prepend with _v
         if re.match(r"v\d+\.\d+(\.\d+)?", paths[-1]):
-            if version is None:          
+            if version is None:
                 paths[-2] = paths[-2] + "_" + paths[-1].replace(".", "_")
             else:
                 paths[-2] = paths[-2] + "_v" + version.replace(".", "_")
@@ -179,7 +182,7 @@ class GoGenerator:
             self.generate_complextypes(dest_file, elements)
 
     def generate_complextypes(self, dest_file: Path, elements: List[Element]):
-        logging.error(f"Generating {len(elements)} to {dest_file} complex types")
+        logging.info(f"Generating {len(elements)} complex types to {dest_file}")
         elements = sorted(elements, key=lambda e: e.qname.localname)
 
         file_imports = set()
@@ -216,6 +219,8 @@ class GoGenerator:
         os.makedirs(dest_dir, exist_ok=True)
         dest_file = dest_dir / "binding.gen.go"
 
+        logging.info(f"Generating binding to {dest_file}")
+
         file_imports = set()
         file_imports.add("reflect")
         file_imports.add("github.com/spilikin/koap-go/pkg/koap")
@@ -223,7 +228,7 @@ class GoGenerator:
 
         for op_name in binding.soap11Binding.port_type.operations:
             op = binding.soap11Binding.get(op_name)
-            code, imports = self._operation_to_go(op)
+            code, imports = self._operation_to_go(binding.types_namespace(), op)
             file_code += code
             file_imports.update(imports)
 
@@ -235,10 +240,15 @@ class GoGenerator:
             f.write(")\n\n")
             f.write(file_code)
 
-    def _operation_to_go(self, op) -> tuple[str, Set[str]]:
+    def _operation_to_go(self, types_namespace, op) -> tuple[str, Set[str]]:
         imports = set()
-        inputType, _ = self._go_type_of(op.input.body.qname.namespace, op.input.body)
-        outputType, _ = self._go_type_of(op.input.body.qname.namespace, op.output.body)
+
+        inputType, inputImport = self._go_type_of(types_namespace, op.input.body)
+        if inputImport is not None:
+            imports.add(inputImport)
+        outputType, outputImport = self._go_type_of(types_namespace, op.output.body)
+        if outputImport is not None:
+            imports.add(outputImport)
 
         faultElement = op.faults['FaultMessage'].abstract.parts['parameter'].element
         faultType, pkg = self._go_type_of(op.input.body.qname.namespace, faultElement)
@@ -294,7 +304,7 @@ class GoGenerator:
             opts = ""
             if isinstance(child, Any):
                 continue
-                
+
             element_name = f"{child.qname.namespace} {child.qname.localname}"
             go_field = self._go_field(child.qname.localname)
             if child.qname.localname == "_value_1":

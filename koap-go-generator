@@ -2,6 +2,9 @@
 # -*- coding: utf-8 -*-
 from koap.gogenerator.generator import GoGenerator
 import subprocess
+import logging
+
+logging.basicConfig(level=logging.INFO)
 
 
 if __name__ == "__main__":
