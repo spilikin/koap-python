@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "koap-sample"
+version = "0.1.0"
+description = "Sample project for KOAP library"
+authors = ["Sergej Suskov <git@spilikin.dev>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.13"
+koap = "^0.3.0"
+icecream = "^2.1.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
