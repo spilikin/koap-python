@@ -1,0 +1,73 @@
+= Concept for unified configuration format for Konnektor Clients
+
+To establish a connection a Konnektor each client requires a set of parameters which are provided by the administrator. Suche parameters include:
+
+* Address of the Konnektor (url, port)
+* Whether to use SSL or not
+* Infomodell configuration (client, mandant, worklpace)
+* Credentials (e.g. username, password, TLS certificate)
+
+Typically each parameter is configured separately by client specific configuration means. This concept proposes a unified configuration format for all Konnektor clients. Such configurations can be provided by the administrator to all the clients in a standardized way.
+
+*TODO: How to protect the credentials?*
+
+[source,javascript]
+----
+{
+  "url": "https://konnektor.example.com:8443",
+  "mandantId": "M1",
+  "workspaceId": "W1",
+  "clientId": "C1",
+  "credentials": {
+    "provider": "encrypted-inline",
+    "encrypted": "",
+  },
+  "credentials": {
+    "provider": "env",
+    "username": "${KONNEKTOR_AUTH_BASIC_USERNAME}",
+    "password": "${KONNEKTOR_AUTH_BASIC_PASSWORD}",
+  }
+}
+----
+
+Naming convention for the username which contains all required information to connect to the Konnektor. The username is used to identify the client and to determine the client specific configuration. The username is composed of the following parts:
+
+* Mandant ID
+* Workspace ID
+* Client ID
+* Authentication method
+* Authentication parameters
+
+The username is encoded in the following format:
+
+Username: /W1/M1/C1/basic/user1
+Password: changeme
+
+For TLS:
+Username: /W1/M1/C1/cert
+Password: base64 encoded PKCS12
+
+[source,javascript]
+----
+
+openssl ecparam -name prime256v1 -genkey -noout -out client_prk.pem
+openssl req -new -x509 -key client_prk.pem -out client_cert.pem -days 365 -subj "/C=DE/O=Organization/CN=C1"
+openssl pkcs12 -export -out client_keypair.p12 -inkey client_prk.pem -in client_cert.pem -name "MyECCKey" -passout pass:changeme
+
+
+.Sample configuration using client certificate authentication
+[source,javascript]
+----
+{
+  "url": "https://konnektor.example.com:8443",
+  "mandantId": "M1",
+  "clientId": "C1",
+  "workspaceId": "W1",
+  "auth": {
+    "method": "cert",
+    "pkcs12": "base64 encoded pkcs12",
+    "password": "changeme",
+  },
+}
+
+Security considerations:
