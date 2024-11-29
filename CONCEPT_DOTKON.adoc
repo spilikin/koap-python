@@ -1,13 +1,13 @@
 = Concept for unified configuration format for Konnektor Clients
 
-To establish a connection a Konnektor each client requires a set of parameters which are provided by the administrator. Suche parameters include:
+To establish a connection with a Konnektor each client requires a set of parameters which should be provided by the administrator. Such parameters include:
 
 * Address of the Konnektor (url, port)
 * Whether to use SSL or not
 * Infomodell configuration (client, mandant, worklpace)
 * Credentials (e.g. username, password, TLS certificate)
 
-Typically each parameter is configured separately by client specific configuration means. This concept proposes a unified configuration format for all Konnektor clients. Such configurations can be provided by the administrator to all the clients in a standardized way.
+Typically each parameter is configured separately by client specific configuration means. This concept proposes a unified configuration format for all Konnektor clients. Such configurations can be provided by the administrators to all the clients in a standardized way.
 
 *TODO: How to protect the credentials?*
 
@@ -19,11 +19,16 @@ Typically each parameter is configured separately by client specific configurati
   "workspaceId": "W1",
   "clientId": "C1",
   "credentials": {
-    "provider": "encrypted-inline",
-    "encrypted": "",
+    "type": "pkcs12",
+    "pkcs12": "base64 encoded pkcs12",
+    "password": "changeme",
   },
   "credentials": {
-    "provider": "env",
+    "type": "cert",
+    "id": "konnektor.example.com",
+  },
+  "credentials": {    
+    "type": "basic",
     "username": "${KONNEKTOR_AUTH_BASIC_USERNAME}",
     "password": "${KONNEKTOR_AUTH_BASIC_PASSWORD}",
   }
@@ -37,15 +42,6 @@ Naming convention for the username which contains all required information to co
 * Client ID
 * Authentication method
 * Authentication parameters
-
-The username is encoded in the following format:
-
-Username: /W1/M1/C1/basic/user1
-Password: changeme
-
-For TLS:
-Username: /W1/M1/C1/cert
-Password: base64 encoded PKCS12
 
 [source,javascript]
 ----
