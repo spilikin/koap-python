@@ -24,7 +24,17 @@ Typically each parameter is configured separately by client specific configurati
     "password": "changeme",
   },
   "credentials": {
-    "type": "cert",
+    "type": "der",
+    "cert": "base64 encoded der",
+    "key": "base64 encoded der",
+  },
+  "credentials": {
+    "type": "pem",
+    "cert": "pem as string",
+    "key": "as pem string",
+  },
+  "credentials": {
+    "type": "os",
     "id": "konnektor.example.com",
   },
   "credentials": {    
@@ -59,8 +69,8 @@ openssl pkcs12 -export -out client_keypair.p12 -inkey client_prk.pem -in client_
   "mandantId": "M1",
   "clientId": "C1",
   "workspaceId": "W1",
-  "auth": {
-    "method": "cert",
+  "credentials": {
+    "type": "pkcs12",
     "pkcs12": "base64 encoded pkcs12",
     "password": "changeme",
   },
