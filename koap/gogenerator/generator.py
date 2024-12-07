@@ -52,9 +52,10 @@ class ElementDefinition:
 
 
 class GoGenerator:
-    def __init__(self, dest: str, package: str):
-        self.dest = dest
-        self.package = package
+    def __init__(self, dest: str, base_package: str):
+        self.dest = Path(dest, "api")
+        self.base_package = base_package
+        self.package = base_package + "/api"
         os.makedirs(dest, exist_ok=True)
 
     elements: Set[ElementDefinition] = set()
@@ -220,11 +221,27 @@ class GoGenerator:
         dest_file = dest_dir / "binding.gen.go"
 
         logging.info(f"Generating binding to {dest_file}")
-
         file_imports = set()
         file_imports.add("reflect")
-        file_imports.add("github.com/spilikin/koap-go/pkg/koap")
+        
         file_code = ""
+
+        file_code += f'var Name = "{binding.name}"\n'
+        file_code += f'var Version = "{binding.version}"\n\n'
+
+        file_code = "type operation struct {\n"
+        file_code += "    name string\n"
+        file_code += "    soapAction string\n"
+        file_code += "    inputType reflect.Type\n"
+        file_code += "    outputType reflect.Type\n"
+        file_code += "    faultType reflect.Type\n"
+        file_code += "}\n\n"
+
+        file_code += "func (o *operation) Name() string {return o.name}\n\n"
+        file_code += "func (o *operation) SOAPAction() string {return o.soapAction}\n\n"
+        file_code += "func (o *operation) InputType() reflect.Type {return o.inputType}\n\n"
+        file_code += "func (o *operation) OutputType() reflect.Type {return o.outputType}\n\n"
+        file_code += "func (o *operation) FaultType() reflect.Type {return o.faultType}\n\n"
 
         for op_name in binding.soap11Binding.port_type.operations:
             op = binding.soap11Binding.get(op_name)
@@ -256,12 +273,12 @@ class GoGenerator:
         if pkg is not None:
             imports.add(pkg)
 
-        s = f'var Operation{op.name} = &koap.Operation{{\n'
-        s += f'    Name: "{op.name}",\n'
-        s += f'    SOAPAction: "{op.soapaction}",\n'
-        s += f'    InputType: reflect.TypeOf({inputType}{{}}),\n'
-        s += f'    OutputType: reflect.TypeOf({outputType}{{}}),\n'
-        s += f'    FaultType: reflect.TypeOf({faultType}{{}}),\n'
+        s = f'var Operation{op.name} = &operation{{\n'
+        s += f'    name: "{op.name}",\n'
+        s += f'    soapAction: "{op.soapaction}",\n'
+        s += f'    inputType: reflect.TypeOf({inputType}{{}}),\n'
+        s += f'    outputType: reflect.TypeOf({outputType}{{}}),\n'
+        s += f'    faultType: reflect.TypeOf({faultType}{{}}),\n'
         s += "}\n\n"
         return s, imports
 

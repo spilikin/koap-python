@@ -9,8 +9,8 @@ logging.basicConfig(level=logging.INFO)
 
 if __name__ == "__main__":
     gen = GoGenerator(
-        "../koap-go/pkg/koap/api_telematik/",
-        "github.com/spilikin/koap-go/pkg/koap/api_telematik",
+        "../koap-go",
+        "github.com/spilikin/koap-go",
     )
     gen.scan_for_wsdl()
     gen.generate_all()
