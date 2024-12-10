@@ -48,7 +48,7 @@ Aufgrund der Einfachheit und der weiten Verbreitung wird in diesem Konzept JSON 
 | Optional. Falls der Client für eine bestimmte Identität konfiguriert ist (z.B. KIM Clientmodul), wird die Telematik-ID der Karte angegeben um die Auswahl der richtigen Smartcard zu erleichtern.
 
 | credentials
-| Verpflichtend. Enthält die Konfiguration für die Authentifizierung gegenüber dem Konnektor. Siehe Abschnitt [Konfiguration der Credentials]
+| Verpflichtend. Enthält die Konfiguration für die Authentifizierung gegenüber dem Konnektor. Siehe Abschnitt <<_konfiguration_der_credentials,"Konfiguration der Credentials">>.
 
 | env
 | Optional. Umgebung, in der der Konnektor betrieben wird. Mögliche Werte sind `ru` (Referenzumgebung), `tu` (Testumgebung) und `pu` (Produktivumgebung).
