@@ -102,6 +102,8 @@ Weitere Credential-Typen können in der Zukunft hinzugefügt werden.
 
 === Basic
 
+Ermöglicht die Authentifizierung gegenüber dem Konnektor mit Benutzername und Passwort.
+
 |===
 | Parameter | Beschreibung
 
@@ -127,6 +129,8 @@ Weitere Credential-Typen können in der Zukunft hinzugefügt werden.
 ----
 
 === TLS Client Certificate als DER
+
+Ermöglicht die Authentifizierung gegenüber dem Konnektor mit einem TLS-Client-Zertifikat im DER-Format.
 
 |===
 | Parameter | Beschreibung
@@ -154,6 +158,8 @@ Weitere Credential-Typen können in der Zukunft hinzugefügt werden.
 
 === TLS Client Certificate als  PKCS#12
 
+Ermöglicht die Authentifizierung gegenüber dem Konnektor mit einem TLS-Client-Zertifikat im PKCS#12-Format.
+
 |===
 | Parameter | Beschreibung
 
@@ -178,3 +184,26 @@ Weitere Credential-Typen können in der Zukunft hinzugefügt werden.
 }
 ----
 
+=== System
+
+Ermöglicht die Verwendung von betriebssystemspezifischen Credential-Stores. Der Name des Elements im Credential-Store wird als Parameter übergeben.
+
+|===
+| Parameter | Beschreibung
+
+| type
+| `system`
+
+| name
+| Name des Elements im Credential-Store
+
+|===
+
+.*Beispiel:*
+[source,javascript]
+----
+{
+  "type": "system",
+  "name": "credential-name",
+}
+----
