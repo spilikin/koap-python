@@ -1,15 +1,42 @@
-= Concept for unified configuration format for Konnektor Clients
+= .kon: Einheitliches Konfigurationsformat für Konnektor-Clients
 
-To establish a connection with a Konnektor each client requires a set of parameters which should be provided by the administrator. Such parameters include:
+Um eine Verbindung mit einem Konnektor herzustellen, benötigt jeder Client eine Reihe von Parametern, die vom Administrator bereitgestellt werden sollten. Zu diesen Parametern gehören unter anderem:
 
-* Address of the Konnektor (url, port)
-* Whether to use SSL or not
-* Infomodell configuration (client, mandant, worklpace)
-* Credentials (e.g. username, password, TLS certificate)
+* Adresse des Konnektors (URL, Port)
+* Angabe, ob TLS verwendet werden soll oder nicht
+* Infomodell-Konfiguration (Client, Mandant, Workspace)
+* Credentials für den Zugang zur Konnektor-Schnittstellen (z. B. Benutzername/Passwort oder TLS-Zertifikat)
 
-Typically each parameter is configured separately by client specific configuration means. This concept proposes a unified configuration format for all Konnektor clients. Such configurations can be provided by the administrators to all the clients in a standardized way.
+In der Regel wird jeder Parameter für jeden Client separat über clientspezifische Konfigurationsmechanismen eingestellt. Dieses Konzept schlägt ein einheitliches Konfigurationsformat für alle Konnektor-Clients vor. Durch ein solches Format können Administratoren standardisierte Konfigurationen an alle Clients übermitteln.
 
-*TODO: How to protect the credentials?*
+== Konfigurationsformat
+
+Das Konfigurationsformat ist ein Objekt, das alle erforderlichen Parameter für die Konnektor-Konfiguration enthält. Unterschiedliche Kodierungen der Konfiguration sind möglich, z. B. JSON, YAML oder XML. Aufgrund der Einfachheit und der weiten Verbreitung wird in diesem Konzept JSON als Konfigurationsformat verwendet. 
+
+* Alle Clients MÜSSEN JSON basierte Konfigurationen unterstützen.
+
+[cols="m,a"]
+|===
+| Parameter | Beschreibung
+| url 
+| verpflichtend
+| URL des Konnektors. URL muss das Protokoll (in der Regel `https://`), FQDN oder IP-Adresse und Port (falls abweichend vom standard Port) enthalten. URL darf nicht mit `/` enden. Durch einfügen von `/connector.sds` muss service directory service abfragbar sein. Beispiele:
+
+  * `https://konnektor.example.com:8443`
+  * `https://192.168.1.2`
+  * `https://konnektor.example.com/kon1`
+
+| mandantId
+| Entspricht dem Mandanten-ID aus dem Infomodell. Wird als Aufrufkontext für die Konnektor-Schnittstellen verwendet.
+
+| workspaceId
+| Entspricht dem Workspace-ID aus dem Infomodell. Wird als Aufrufkontext für die Konnektor-Schnittstellen verwendet.
+
+| clientSystemId
+| Entspricht dem Client-ID aus dem Infomodell. Wird als Aufrufkontext für die Konnektor-Schnittstellen verwendet.
+
+
+|===
 
 [source,javascript]
 ----
