@@ -9,17 +9,23 @@ Um eine Verbindung mit einem Konnektor herzustellen, benötigt jeder Client eine
 
 In der Regel wird jeder Parameter für jeden Client separat über clientspezifische Konfigurationsmechanismen eingestellt. Dieses Konzept schlägt ein einheitliches Konfigurationsformat für alle Konnektor-Clients vor. Durch ein solches Format können Administratoren standardisierte Konfigurationen an alle Clients übermitteln.
 
+Dadurch, dass die TI eine private PKI verwendet ist es notwendig, dass die Konnektor-Clients die Zertifikate des Konnektors verifizieren können. Die Konfiguration muss in der Lage sein sowohl die Umgebung zu spezifizieren, in der der Konnektor betrieben wird, als auch die vertrauenswürdigen Zertifikate, die zur Verifizierung der Konnektor-Zertifikate verwendet werden sollen.
+
+Darüber hinaus muss es möglich sein, dass die Credentials, die zur Authentifizierung gegenüber dem Konnektor verwendet werden sowohl in der Konfiguration als auch in betriebssystemspezifischen Credential-Stores gespeichert werden können. Letzteres ist insbesondere für die Produktionssysteme wichtig, da die Credentials nicht im Klartext in der Konfiguration gespeichert werden sollten. In den Cloud-Umgebungen ist es denkbar, dass die gesamte Konfiguration inkl. der Credentials als Umgebungsvariablen bereitgestellt oder als Secrets aus einem Secret-Store abgerufen werden.
+
 == Konfigurationsformat
 
-Das Konfigurationsformat ist ein Objekt, das alle erforderlichen Parameter für die Konnektor-Konfiguration enthält. Unterschiedliche Kodierungen der Konfiguration sind möglich, z. B. JSON, YAML oder XML. Aufgrund der Einfachheit und der weiten Verbreitung wird in diesem Konzept JSON als Konfigurationsformat verwendet. 
+Das Konfigurationsformat ist ein Objekt, das alle erforderlichen Parameter für die Konnektor-Konfiguration enthält. Unterschiedliche Kodierungen der Konfiguration sind möglich, z. B. JSON, YAML oder XML. Ebenso ist es möglich, die Konfiguration in einer Datei oder in einem Umgebungsvariablen zu speichern.
+
+Aufgrund der Einfachheit und der weiten Verbreitung wird in diesem Konzept JSON als Konfigurationsformat als Mindestanforderung gefordert.
 
 * Alle Clients MÜSSEN JSON basierte Konfigurationen unterstützen.
 
 [cols="m,a"]
 |===
 | Parameter | Beschreibung
+
 | url 
-| verpflichtend
 | URL des Konnektors. URL muss das Protokoll (in der Regel `https://`), FQDN oder IP-Adresse und Port (falls abweichend vom standard Port) enthalten. URL darf nicht mit `/` enden. Durch einfügen von `/connector.sds` muss service directory service abfragbar sein. Beispiele:
 
   * `https://konnektor.example.com:8443`
@@ -35,72 +41,140 @@ Das Konfigurationsformat ist ein Objekt, das alle erforderlichen Parameter für 
 | clientSystemId
 | Entspricht dem Client-ID aus dem Infomodell. Wird als Aufrufkontext für die Konnektor-Schnittstellen verwendet.
 
+| userId
+| Optional. User-Id des HBA-Inhabers. Wird als Aufrufkontext für die Konnektor-Schnittstellen verwendet.
+
+| telematikId
+| Optional. Falls der Client für eine bestimmte Identität konfiguriert ist (z.B. KIM Clientmodul), wird die Telematik-ID der Karte angegeben um die Auswahl der richtigen Smartcard zu erleichtern.
+
+| credentials
+| Verpflichtend. Enthält die Konfiguration für die Authentifizierung gegenüber dem Konnektor. Siehe Abschnitt [Konfiguration der Credentials]
+
+| env
+| Optional. Umgebung, in der der Konnektor betrieben wird. Mögliche Werte sind `ru` (Referenzumgebung), `tu` (Testumgebung) und `pu` (Produktivumgebung).
+
+| insecureTLS
+| Optional. Wenn `true`, wird die TLS-Verifizierung deaktiviert. Dieser Parameter sollte nur für Testzwecke verwendet werden.
+
+| trustedSAN
+| Optional. FQDN des Konnektors, das in den Zertifikaten des Konnektors als Subject Alternative Name (SAN) enthalten sein muss. Dieser Parameter wird verwendet, um die Verifizierung des Zertifikats des Konnektors zu erleichtern.
+
+| trustedCertificates
+| Optional. Liste der Zertifikate, die zur Verifizierung des Konnektors verwendet werden sollen. Die Zertifikate werden in DER-Kodierung als Base64-String übergeben. Es ist möglich sowohl das EE-Zertifikat als auch die CA-Zertifikate zu übergeben.
 
 |===
 
+.*Beispiel:*
 [source,javascript]
 ----
 {
   "url": "https://konnektor.example.com:8443",
   "mandantId": "M1",
   "workspaceId": "W1",
-  "clientId": "C1",
+  "clientSystemId": "C1",
+  "userId": "U1",
+  "telematikId": "2-2134567890",
   "credentials": {
-    "type": "pkcs12",
-    "pkcs12": "base64 encoded pkcs12",
-    "password": "changeme",
-  },
-  "credentials": {
-    "type": "der",
-    "cert": "base64 encoded der",
-    "key": "base64 encoded der",
-  },
-  "credentials": {
-    "type": "pem",
-    "cert": "pem as string",
-    "key": "as pem string",
-  },
-  "credentials": {
-    "type": "os",
-    "id": "konnektor.example.com",
-  },
-  "credentials": {    
     "type": "basic",
-    "username": "${KONNEKTOR_AUTH_BASIC_USERNAME}",
-    "password": "${KONNEKTOR_AUTH_BASIC_PASSWORD}",
-  }
+    "username": "user",
+    "password": "password",
+  },
+  "env": "ru",
+  "insecureTLS": false,
+  "trustedSAN": "konnektor.example.com",
+  "trustedCertificates": [
+    "base64 encoded der certificate",
+    "base64 encoded der certificate",
+  ],
 }
 ----
 
-Naming convention for the username which contains all required information to connect to the Konnektor. The username is used to identify the client and to determine the client specific configuration. The username is composed of the following parts:
+== Konfiguration der Credentials
 
-* Mandant ID
-* Workspace ID
-* Client ID
-* Authentication method
-* Authentication parameters
+Der .kon Konfigurationsformat unterstützt verschiedene Arten von Credentials. Die folgenden Credential-Typen sind definiert:
 
-[source,javascript]
-----
+* `basic`: Benutzername und Passwort für HTTP Basic Authentifizierung
+* `der`: TLS-Zertifikat und privater Schlüssel in DER-Kodierung
+* `pkcs12`: PKCS#12 Container mit Zertifikat und privatem Schlüssel
+* `system`: Verwendung von betriebssystemspezifischen Credential-Stores
 
-openssl ecparam -name prime256v1 -genkey -noout -out client_prk.pem
-openssl req -new -x509 -key client_prk.pem -out client_cert.pem -days 365 -subj "/C=DE/O=Organization/CN=C1"
-openssl pkcs12 -export -out client_keypair.p12 -inkey client_prk.pem -in client_cert.pem -name "MyECCKey" -passout pass:changeme
+Weitere Credential-Typen können in der Zukunft hinzugefügt werden.
 
+=== Basic
 
-.Sample configuration using client certificate authentication
+|===
+| Parameter | Beschreibung
+
+| type
+| `basic`
+
+| username
+| Benutzername für die Authentifizierung
+
+| password
+| Passwort für die Authentifizierung
+
+|===
+
+.*Beispiel:*
 [source,javascript]
 ----
 {
-  "url": "https://konnektor.example.com:8443",
-  "mandantId": "M1",
-  "clientId": "C1",
-  "workspaceId": "W1",
-  "credentials": {
-    "type": "pkcs12",
-    "pkcs12": "base64 encoded pkcs12",
-    "password": "changeme",
-  },
+  "type": "basic",
+  "username": "user",
+  "password": "password",
 }
+----
 
-Security considerations:
+=== TLS Client Certificate als DER
+
+|===
+| Parameter | Beschreibung
+
+| type
+| `der`
+
+| certificate
+| Base64-kodiertes DER-Zertifikat
+
+| privateKey
+| Base64-kodierter privater Schlüssel
+
+|===
+
+.*Beispiel:*
+[source,javascript]
+----
+{
+  "type": "der",
+  "certificate": "base64 encoded der certificate",
+  "privateKey": "base64 encoded private key",
+}
+----
+
+=== TLS Client Certificate als  PKCS#12
+
+|===
+| Parameter | Beschreibung
+
+| type
+| `pkcs12`
+
+| pkcs12
+| Base64-kodierter PKCS#12 Container
+
+| password
+| Passwort für den PKCS#12 Container
+
+|===
+
+.*Beispiel:*
+[source,javascript]
+----
+{
+  "type": "pkcs12",
+  "pkcs12": "base64 encoded pkcs12 container",
+  "password": "password",
+}
+----
+
