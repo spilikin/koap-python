@@ -53,11 +53,12 @@ Aufgrund der Einfachheit und der weiten Verbreitung wird in diesem Konzept JSON 
 | env
 | Optional. Umgebung, in der der Konnektor betrieben wird. Mögliche Werte sind `ru` (Referenzumgebung), `tu` (Testumgebung) und `pu` (Produktivumgebung).
 
-| insecureTLS
+| insecureTls
 | Optional. Wenn `true`, wird die TLS-Verifizierung deaktiviert. Dieser Parameter sollte nur für Testzwecke verwendet werden.
 
-| trustedSAN
-| Optional. FQDN des Konnektors, das in den Zertifikaten des Konnektors als Subject Alternative Name (SAN) enthalten sein muss. Dieser Parameter wird verwendet, um die Verifizierung des Zertifikats des Konnektors zu erleichtern.
+| trustedSan
+| Optional. FQDN des Konnektors, das in den Zertifikaten des Konnektors als Subject Alternative Name (SAN) enthalten sein muss. Dieser Parameter wird verwendet, um die Verifizierung des Zertifikats des Konnektors zu erleichtern. 
+Kann dann verwendet werden, wenn der Konnektor mit einem Zertifikat betrieben wird, dass abweichenden FQDN im Zertifikat hat als die URL des Konnektors.
 
 | trustedCertificates
 | Optional. Liste der Zertifikate, die zur Verifizierung des Konnektors verwendet werden sollen. Die Zertifikate werden in DER-Kodierung als Base64-String übergeben. Es ist möglich sowohl das EE-Zertifikat als auch die CA-Zertifikate zu übergeben.
@@ -80,8 +81,8 @@ Aufgrund der Einfachheit und der weiten Verbreitung wird in diesem Konzept JSON 
     "password": "password",
   },
   "env": "ru",
-  "insecureTLS": false,
-  "trustedSAN": "konnektor.example.com",
+  "insecureTls": false,
+  "trustedSan": "konnektor.example.com",
   "trustedCertificates": [
     "base64 encoded der certificate",
     "base64 encoded der certificate",
@@ -142,7 +143,7 @@ Ermöglicht die Authentifizierung gegenüber dem Konnektor mit einem TLS-Client-
 | Base64-kodiertes DER-Zertifikat
 
 | privateKey
-| Base64-kodierter privater Schlüssel
+| Base64-kodierter privater Schlüssel im DER PKCS#8-Format
 
 |===
 
@@ -151,7 +152,7 @@ Ermöglicht die Authentifizierung gegenüber dem Konnektor mit einem TLS-Client-
 ----
 {
   "type": "der",
-  "certificate": "base64 encoded der certificate",
+  "certificate": "base64 encoded certificate",
   "privateKey": "base64 encoded private key",
 }
 ----
