@@ -1,8 +1,10 @@
-from pydantic import BaseModel
-from koap.config import ConnectorConfig
-from typing import List, Tuple, Optional
-from requests import Session
 import xml.etree.ElementTree as ET
+from typing import List, Optional, Tuple
+
+from pydantic import BaseModel
+from requests import Session
+
+from koap.config import ConnectorConfig
 from koap.util import element_to_obj
 
 
@@ -55,21 +57,30 @@ class ConnectorServices(BaseModel):
     ProductInformation: ProductInformation
     ServiceInformation: ServiceInformation
 
-    def find_service_version(self, service_name: str, service_version: str) -> Tuple[Service, ServiceVersion]:
+    def find_service_version(
+        self, service_name: str, service_version: str
+    ) -> Tuple[Service, ServiceVersion]:
         for service in self.ServiceInformation.Service:
             if service.Name == service_name:
                 for version in service.Versions:
                     if version.Version == service_version:
                         return (service, version)
-                raise Exception(f"Version '{service_version}' for service '{service_name}' is provided by your connector. Available Versions: {','.join(s.Version for s in service.Versions)} ")
+                raise Exception(
+                    f"Version '{service_version}' for service '{service_name}' is provided by your connector. Available Versions: {','.join(s.Version for s in service.Versions)} "
+                )
 
         raise Exception(f"Service not found: '{service_name}'")
 
 
-def load_service_directory(config: ConnectorConfig, session: Session) -> ConnectorServices:
+def load_service_directory(
+    config: ConnectorConfig, session: Session
+) -> ConnectorServices:
     url = config.construct_url("/connector.sds")
 
     response = session.get(url)
+    if response.status_code != 200:
+        raise Exception(f"Failed to load Service Directory: {response.text}")
+
     root = ET.fromstring(response.text)
 
     root_obj = element_to_obj(
@@ -86,9 +97,7 @@ def load_service_directory(config: ConnectorConfig, session: Session) -> Connect
             "Endpoint",
             "EndpointTLS",
         ],
-        collapse_elements=[
-            ("Versions", "Version")
-        ]
+        collapse_elements=[("Versions", "Version")],
     )
 
     # import json

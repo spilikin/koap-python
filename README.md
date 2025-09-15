@@ -62,9 +62,9 @@ config = ConnectorConfig(
     workplace_id='w1',
     user_id='user1',
     # Basic Auth
-    auth_method='basic',
-    auth_basic_username='user1',
-    auth_basic_password='use secure passwords in production',
+    auth_method='cert',
+    auth_cert_p12_filename='client.p12',
+    auth_cert_p12_password='password for p12 file',
 )
 
 client = ConnectorClient(config)

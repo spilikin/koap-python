@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "koap"
-version = "0.3.1"
+version = "0.4.0"
 description = ""
 authors = ["Sergej Suskov <git@spilikin.dev>"]
 readme = "README.md"
@@ -18,11 +18,10 @@ jwcrypto = "^1.5.0"
 
 [tool.poetry.group.dev.dependencies]
 pyinstaller = "^6.7.0"
+flake8 = "^5.0.4"
+pytest = "^7.3"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
-[tool.poetry.dev-dependencies]
-flake8 = "^5.0.4"
-pytest = "^7.3"
