@@ -41,7 +41,7 @@ class ServiceVersion(BaseModel):
     TargetNamespace: str
     Version: str
     EndpointTLS: Endpoint
-    Endpoint: Optional[Endpoint] = None
+    Endpoint: Optional["Endpoint"]
 
 
 class Service(BaseModel):
@@ -99,6 +99,10 @@ def load_service_directory(
         ],
         collapse_elements=[("Versions", "Version")],
     )
+
+    import json
+
+    print(json.dumps(root_obj, indent=2))
 
     # import json
     # print(json.dumps(root_obj, indent=2))

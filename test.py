@@ -1,35 +1,87 @@
 import base64
-import gzip
-import xml.etree.ElementTree as ET
+import http.client as http_client
+import logging
+
+import requests
+from cryptography import x509
+from cryptography.hazmat.backends import default_backend
+from cryptography.hazmat.primitives.asymmetric import ec
+from rich.console import Console
+
+from koap.client import ConnectorClient
+from koap.config import AuthMethod, ConnectorConfig
+from koap.debug import RichSoapDebugPlugin
+from koap.facade.model import CertRefEnum, CryptEnum
 
 
-b64_str = 'AXAfiwgABwCjZAL/jVLbTgIxEP0V0ne2sLJczGyJgkESECOKvpG6O7Ibty1pu3j5emcREIwPvkx7zsycOZkW+u+qqG3QutzomDWDBquhTkya61XMxvNZvduNevVmxGrOS53KwmiM2Qc61hfwMFjeUqtBXeRJhotKhk7rkSopPE0ntcFwulxc3c3Hs5uYRUFYTaCZ2sUs8359zvmbC1aopM9fgxT5i+Qbl6oq8A3VMwFHuvYE6eV4KO4bYTtqNcJuG/jvHGztaQEjfC6td+SqVKLZ6/QaURgBP6FhYayWCsVQ6hwLUtthuJFJtr1NS0celNQa+IEkcZdkBSaZF9NK84Bg7q10DvVFapFO8mOcLzD3nzIrRKsdnpHpEw5m1otL4701a+AVgAntXcCjybSjokLSctHSE5FR4H/RwL9bdtPFiFzLTX2WqTpRAfB9Aq5l6XSpFO210wF+BA9FP975fpn89EH4P76B+AJBWcqjaQIAAA=='
+def log_details(response, *args, **kwargs):
+    print("Request URL:", response.request.url)
+    for header, value in response.request.headers.items():
+        print(f"Request Header: {header}: {value}")
+    if response.request.body:
+        print(
+            "Request Body:",
+            response.request.body.decode()
+            if isinstance(response.request.body, bytes)
+            else response.request.body,
+        )
+    print("Response Status Code:", response.status_code)
+    for header, value in response.headers.items():
+        print(f"Response Header: {header}: {value}")
+    print("Response Body:", response.text)
 
-d = base64.b64decode(b64_str)
 
-l = int.from_bytes(d[0:2], byteorder='big', signed=False)
+debug_console = Console(record=True)
+debug_plugin = RichSoapDebugPlugin(debug_console)
 
-print(l, len(d))
-xml_bytes = gzip.decompress(d[2:2+l])
+config = ConnectorConfig(
+    # base_url="https://tig.spilikin.dev",
+    #    mandant_id="Mandant2",
+    #    workplace_id="AP200",
+    #    client_system_id="CS200",
+    #    auth_method=AuthMethod.cert,
+    #    user_id="-",
+    #    auth_cert_p12_filename="CS200.p12",
+    #    auth_cert_p12_password="nse<$;gNJl|+LPcu",
+    # danger_verify_tls=False,
+)
 
-xml_str = xml_bytes.decode('ISO8859-15')
 
-root = ET.fromstring(xml_str)
+client = ConnectorClient(config, soap_plugins=[debug_plugin])
 
-ET.indent(root)
-print(ET.tostring(root).decode('ISO8859-15'))
+client.transport.session.hooks["response"].append(log_details)
 
-print(xml_str)
+event_service = client.create_service_client("EventService", "7.2.0")
 
-new_xml_str = '<?xml version="1.0" encoding="ISO-8859-15" standalone="yes"?><UC_PersoenlicheVersichertendatenXML CDM_VERSION="5.2.0" xmlns="http://ws.gematik.de/fa/vsdm/vsd/v5.2"><Versicherter><Versicherten_ID>T026540286</Versicherten_ID><Person><Geburtsdatum>19790525</Geburtsdatum><Vorname>Daniel</Vorname><Nachname>Mustermann</Nachname><Geschlecht>M</Geschlecht><StrassenAdresse><Postleitzahl>46236</Postleitzahl><Ort>Bottrop</Ort><Land><Wohnsitzlaendercode>D</Wohnsitzlaendercode></Land><Strasse>Gustav-Ohm-Str.</Strasse><Hausnummer>77</Hausnummer></StrassenAdresse></Person></Versicherter></UC_PersoenlicheVersichertendatenXML>'
+cards = event_service.GetCards(client.context())
+print(cards)
 
-new_xml_bytes = new_xml_str.encode('ISO8859-15')
+cert_service = client.create_service_client("CertificateService", "6.0.1")
 
-gzip_bytes = gzip.compress(new_xml_bytes)
-new_len = len(gzip_bytes)
+cert_responses = []
+for card in cards.Cards.Card:
+    print(card.CardHandle)
+    try:
+        cert_response = cert_service.ReadCardCertificate(
+            CardHandle=card.CardHandle,
+            Context=client.context(),
+            CertRefList=[CertRefEnum.C_AUT.value],
+            Crypt=CryptEnum.ECC.value,
+        )
+        print(cert_response)
+        cert_responses.append(cert_response)
+    except Exception as e:
+        print(f"Failed to read certificate for card {card.CardHandle}: {e}")
 
-new_data = new_len.to_bytes(2, byteorder='big', signed=False)+gzip_bytes
-
-new_b64_str = base64.b64encode(new_data).decode('utf-8')
-
-print(new_b64_str)
+for cert_response in cert_responses:
+    cert_der = cert_response.X509DataInfoList.X509DataInfo[0].X509Data.X509Certificate
+    cert = x509.load_der_x509_certificate(cert_der, default_backend())
+    print(cert.subject)
+    try:
+        admission_ext = cert.extensions.get_extension_for_oid(
+            x509.ObjectIdentifier("1.3.36.8.3.3")
+        )
+        print(f"Found extension: {admission_ext}")
+        print(f"Extension value: {admission_ext.value}")
+    except x509.ExtensionNotFound:
+        print("Extension with OID 1.3.36.8.3.3 not found")
